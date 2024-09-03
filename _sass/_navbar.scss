@@ -9,6 +9,15 @@
   .btn.yellow {
     margin-left: 0.5rem;
   }
+
+  .label {
+    display: none;
+  
+    @media (min-width: 500px) {
+      display: block;
+    }
+
+  }
 }
 
 .prx-logo {
