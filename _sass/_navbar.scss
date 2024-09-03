@@ -1,0 +1,20 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+
+  .btn.cyan,
+  .btn.yellow {
+    margin-left: 0.5rem;
+
+    .material-icons {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.prx-logo {
+  margin-left: 0.25rem;
+}
