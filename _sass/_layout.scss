@@ -11,6 +11,10 @@ body {
   padding: 1rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .flex {
   display: flex;
 }
@@ -22,3 +26,27 @@ body {
 .justify-between {
   justify-content: space-between;
 }
+
+.hidden {
+  display: none;
+}
+
+.-translate-x-full {
+  transform: translateX(-100%);
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+

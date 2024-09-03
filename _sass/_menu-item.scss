@@ -1,21 +1,28 @@
-.btn {
+.menu-item {
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+}
+
+.menu-link {
   display: flex;
   align-items: center;
-  gap: 0.25rem; 
-  padding: 0.5rem;
-  border-radius: 10px;
+  width: 100%;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
   color: $navy;
-  font-weight: bold;
-  text-transform: uppercase;
   text-decoration: none;
-  border: 0;
 
-  &:hover {
-    cursor: pointer;
+  &.icon {
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   &.white {
     background-color: $white;
+
+    &:hover {
+      background-color: $light-blue;
+    }
   }
 
   &.cyan {
@@ -34,15 +41,11 @@
     }
   }
 
-  &.orange {
-    background-color: $orange;
+  &.light-blue {
+    background-color: $light-blue;
 
     &:hover {
-      background-color: $light-orange;
+      background-color: $cyan;
     }
-  }
-
-  &.blue {
-    background-color: $blue;
   }
 }

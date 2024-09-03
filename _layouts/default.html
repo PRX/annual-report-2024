@@ -12,10 +12,8 @@
 
 <body>
   {% include navbar/navbar.html %}
-
-  <div class="content-container">
-    {{ content }}
-    {% include app/footer.html %}
-  </div>
+  {{ content }}
+  {% include navbar/navbar-drawer.html %}
+  {% include app/footer.html %}
 </body>
 </html>

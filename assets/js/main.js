@@ -1,13 +1,24 @@
-const drawerToggle = document.getElementById('drawerToggle');
-const drawer = document.getElementById('drawer');
-const drawerBackdrop = document.getElementById('drawerBackdrop');
+document.addEventListener('DOMContentLoaded', function() {
+  var drawerToggle = document.getElementById('drawerToggle');
+  var drawer = document.getElementById('drawer');
+  var drawerBackdrop = document.getElementById('drawerBackdrop');
 
-drawerToggle.addEventListener('click', () => {
-  drawer.classList.toggle('-translate-x-full');
-  drawerBackdrop.classList.toggle('hidden');
-});
+  if (drawerToggle && drawer && drawerBackdrop) {
+    drawerToggle.addEventListener('click', function() {
+      if (drawer.style.transform === 'translateX(0%)') {
+        drawer.style.transform = 'translateX(-100%)';
+        drawerBackdrop.style.display = 'none';
+      } else {
+        drawer.style.transform = 'translateX(0%)';
+        drawerBackdrop.style.display = 'block';
+      }
+    });
 
-drawerBackdrop.addEventListener('click', () => {
-  drawer.classList.add('-translate-x-full');
-  drawerBackdrop.classList.add('hidden');
+    drawerBackdrop.addEventListener('click', function() {
+      drawer.style.transform = 'translateX(-100%)';
+      drawerBackdrop.style.display = 'none';
+    });
+  } else {
+    console.error('One or more drawer elements not found');
+  }
 });
