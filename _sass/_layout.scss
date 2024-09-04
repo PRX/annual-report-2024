@@ -3,8 +3,26 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.container {
+  min-height: 80vh;
+
+  &.navy {
+    background-color: $navy;
+    color: $white;
+  }
+}
+
+h2 {
+  font-weight: 900;
+  margin-bottom: .5rem;
+}
+
 .p-2 {
  padding: 0.5rem;
+}
+
+.py-4 {
+
 }
 
 .p-4 {

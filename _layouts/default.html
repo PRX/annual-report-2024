@@ -13,7 +13,14 @@
 <body>
   {% include navbar/navbar.html %}
   {% include page-types/hero.html %}
-  {{ content }}
+  
+  <section class="intro container navy">
+    {% include components/show-tiles.html %}
+    <div class="content">
+      {{ content }}
+    </div>
+  </section>
+  
   {% include navbar/navbar-drawer.html %}
   {% include app/footer.html %}
 </body>
