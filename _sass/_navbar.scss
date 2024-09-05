@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   background-color: $white;
+  z-index: 1000;
 
   .btn.cyan,
   .btn.yellow {
@@ -13,7 +14,7 @@
   .label {
     display: none;
   
-    @media (min-width: 500px) {
+    @media (min-width: 480px) {
       display: block;
     }
 
@@ -38,6 +39,7 @@
 
 #drawerBackdrop {
   position: fixed;
+  z-index: 1200;
   top: 0;
   right: 0;
   bottom: 0;
