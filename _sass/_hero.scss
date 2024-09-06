@@ -1,4 +1,6 @@
 .hero {
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -27,25 +29,21 @@ h1 {
   display: grid;
   gap: 1rem;
   position: relative;
-  overflow: hidden;
+  justify-content: center;
+  
 
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "col1 col2 col3";
+  grid-template-rows: repeat(3, 1fr);
   width: calc(100vw + 20rem);
   margin-top: 6rem;
-  margin-left: -10rem;
 
   @media (min-width: 480px) {
     width: calc(100vw + 4rem);
-    margin-left: -2rem;
   }  
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: "col1 col2 col3 col4 col5";
     width: calc(100vw + 9rem);
-    margin-left: -4.5rem;
   }
 }
 
@@ -84,9 +82,13 @@ h1 {
   overflow: hidden;
   border-radius: 20px;
   color: $navy;
-  height: 100%;
-  max-height: 330px;
-  aspect-ratio: 2 / 3;
+  width: auto;
+  height: 186px;
+  aspect-ratio: 1 / 2;
+
+  @media (min-width: 768px) {
+    height: 330px;
+  }
 
   &.cyan {
     background-color: $cyan;
