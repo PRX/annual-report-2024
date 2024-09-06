@@ -22,4 +22,3 @@ document.addEventListener('DOMContentLoaded', function() {
     console.error('One or more drawer elements not found');
   }
 });
-
