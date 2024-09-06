@@ -14,13 +14,23 @@
   {% include navbar/navbar.html %}
   {% include page-types/hero.html %}
   
-  <section class="intro container navy">
+  <section class="container section-centered navy">
     {% include components/show-tiles.html %}
     <div class="content">
       {{ content }}
     </div>
   </section>
   
+  <section class="container">
+    <h2>Kerri's Letter</h2>
+  </section>
+
+  <section class="container">
+    <h2>Show name</h2>
+  </section>
+
+  {% include page-types/playlist.html %}
+
   {% include navbar/navbar-drawer.html %}
   {% include app/footer.html %}
 </body>

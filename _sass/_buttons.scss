@@ -46,3 +46,10 @@
     background-color: $blue;
   }
 }
+
+a:link,
+a:visited {
+  &.btn {
+    color: $navy;
+  }
+}

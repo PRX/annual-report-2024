@@ -2,6 +2,7 @@ $white: #fff;
 $black: #000;
 $blue: #0873A9;
 $navy: #003A57;
+$gray: #eee;
 
 $cyan: #8CD2F4;
 $orange: #FB9306;
@@ -11,4 +12,4 @@ $light-blue: #8CD2F420;
 $light-orange: #FF960020;
 $light-yellow: #FEC40020;
 
-$border-color: #ddd;
+$border-color: $gray;
