@@ -1,6 +1,6 @@
 .menu-item {
   justify-content: space-between;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .menu-link {
@@ -9,7 +9,7 @@
   width: 100%;
   gap: 0.25rem;
   padding: 0.5rem 1rem;
-  color: $navy;
+  color: var(--navy);
   text-decoration: none;
 
   &.icon {
@@ -18,34 +18,34 @@
   }
 
   &.white {
-    background-color: $white;
+    background-color: var(--white);
 
     &:hover {
-      background-color: $light-blue;
+      background-color: var(--light-blue);
     }
   }
 
   &.cyan {
-    background-color: $cyan;
+    background-color: var(--cyan);
 
     &:hover {
-      background-color: $light-blue;
+      background-color: var(--light-blue);
     }
   }
 
   &.yellow {
-    background-color: $yellow;
+    background-color: var(--yellow);
 
     &:hover {
-      background-color: $light-yellow;
+      background-color: var(--light-yellow);
     }
   }
 
   &.light-blue {
-    background-color: $light-blue;
+    background-color: var(--light-blue);
 
     &:hover {
-      background-color: $cyan;
+      background-color: var(--cyan);
     }
   }
 }
