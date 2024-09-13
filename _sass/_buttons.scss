@@ -4,7 +4,8 @@
   gap: 0.25rem; 
   padding: 0.5rem;
   border-radius: 10px;
-  color: $navy;
+  color: var(--navy);
+  
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -15,41 +16,34 @@
   }
 
   &.white {
-    background-color: $white;
+    background-color: var(--white);
   }
 
   &.cyan {
-    background-color: $cyan;
+    background-color: var(--cyan);
 
     &:hover {
-      background-color: $light-blue;
+      background-color: var(--light-blue);
     }
   }
 
   &.yellow {
-    background-color: $yellow;
+    background-color: var(--yellow);
 
     &:hover {
-      background-color: $light-yellow;
+      background-color: var(--light-yellow);
     }
   }
 
   &.orange {
-    background-color: $orange;
+    background-color: var(--orange);
 
     &:hover {
-      background-color: $light-orange;
+      background-color: var(--light-orange);
     }
   }
 
   &.blue {
-    background-color: $blue;
-  }
-}
-
-a:link,
-a:visited {
-  &.btn {
-    color: $navy;
+    background-color: var(--blue);
   }
 }

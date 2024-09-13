@@ -19,9 +19,9 @@ h1 {
   span {
     display: block;
 
-    &.cyan {color: $cyan;}
-    &.yellow {color: $yellow;}
-    &.orange {color: $orange;}
+    &.cyan {color: var(--cyan);}
+    &.yellow {color: var(--yellow);}
+    &.orange {color: var(--orange);}
   }
 }
 
@@ -81,7 +81,7 @@ h1 {
   justify-content: center;
   overflow: hidden;
   border-radius: 20px;
-  color: $navy;
+  color: var(--navy);
   width: auto;
   height: 186px;
   aspect-ratio: 1 / 2;
@@ -103,25 +103,25 @@ h1 {
   }
 
   &.cyan {
-    background-color: $cyan;
+    background-color: var(--cyan);
   }
 
   &.orange {
-    background-color: $orange;
+    background-color: var(--orange);
   }
 
   &.yellow {
-    background-color: $yellow;
+    background-color: var(--yellow);
   }
 
   &.blue {
-    background-color: $blue;
-    color: $white;
+    background-color: var(--blue);
+    color: var(--white);
   }
 
   &.navy {
-    background-color: $navy;
-    color: $white
+    background-color: var(--navy);
+    color: var(--white);
   }
 
   figure,

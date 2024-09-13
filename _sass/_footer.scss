@@ -1,6 +1,6 @@
 .footer {
   padding: 1rem;
-  background-color: $black;
+  background-color: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@
   .content {
     width: 100%;
     max-width: 800px;
-    color: $gray;
+    color: var(--gray);
     text-align: center;
     
     p {
@@ -19,6 +19,6 @@
 
   a:link,
   a:visited {
-    color: $cyan;
+    color: var(--cyan);
   }
 }
