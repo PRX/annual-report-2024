@@ -12,6 +12,11 @@
   color: var(--navy);
   text-decoration: none;
 
+  &:link,
+  &:visited {
+    color: var(--navy);
+  }
+
   &.icon {
     font-weight: bold;
     text-transform: uppercase;
