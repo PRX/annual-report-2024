@@ -1,11 +1,9 @@
 <header class="navbar">
   <nav class="flex items-center justify-between p-2">
     <div class="flex items-center">
-      {% include components/button.html
-        id="drawerToggle"
-        color="white"
-        icon="menu"  
-      %} 
+      <button popovertarget="navDrawerPopover" class="btn {{ include.white }}">
+        <span class="material-icons">menu</span>
+      </button>
       <a href="#" class="prx-logo">
         {% include svg/prx-logo-color.svg %} 
       </a>
