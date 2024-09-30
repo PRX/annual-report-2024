@@ -1,0 +1,39 @@
+<section id="page-{{ page.prx-id }}" class="container show-page">
+  
+  <h2 class="show-header">{{ page.title }}</h2>
+  
+  <div class="show-featured">
+    {%- if page.logo -%}
+      {% include components/show-logo.html 
+        image=page.logo.url 
+        alt=page.logo.alt 
+      %}
+    {%- endif -%} 
+  
+    {%- if page.quote -%}
+      {{ page.quote.text }}
+      {{ page.quote.citation }}
+    {%- endif -%}
+
+    {%- if page.audio -%}
+      {{ page.audio.url }}
+      {{ page.audio.title }}
+    {%- endif -%} 
+  </div>
+  <div class="show-content">
+    {{ page.content }}
+
+    {%- if page.funders -%}
+      <h3>Sponsored By:</h3>
+      <p>{{ page.funders }}</p>
+    {%- endif -%} 
+  </div>
+
+  <div class="show-footer">
+    {%- if page.donor-quote -%}
+      {{ page.donor-quote.text }}
+      {{ page.donor-quote.citation }}
+    {%- endif -%} 
+  </div>
+
+</section>

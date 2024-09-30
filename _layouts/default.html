@@ -21,13 +21,18 @@
     </div>
   </section>
   
-  <section class="container">
-    <h2>Kerri's Letter</h2>
-  </section>
 
-  <section class="container">
-    <h2>Show name</h2>
-  </section>
+  {% assign pages = site.pages | where_exp: "page", "page.type contains 'welcome'" | sort: "order" %}
+  {% for page in pages %}
+    <section class="container">
+      <h2>Kerri's Letter</h2>
+    </section>
+  {% endfor %}
+
+  {% assign pages = site.pages | where_exp: "page", "page.type contains 'show'" | sort: "order" %}
+  {% for page in pages %}
+    {% include page-types/show.html %}
+  {% endfor %}
 
   {% include page-types/playlist.html %}
 
