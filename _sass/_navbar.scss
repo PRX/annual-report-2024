@@ -26,37 +26,89 @@
   margin-left: 0.25rem;
 }
 
-@keyframes slide-open {
-  0% {
+#navDrawerPopover {
+  --_nav-animation-speed: var(--nav-animation-speed, 0.3s);
+  --_nav-backdrop-opacity: var(--nav-backdrop-opacity, 50%);
+
+  animation: navbar-closed var(--_nav-animation-speed);
+
+  /* Allows backdrop to fade out. */
+  transition-property: overlay;
+  transition-duration: var(--_nav-animation-speed);
+  transition-behavior: allow-discrete;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 16rem;
+  height: 100vh;
+  height: 100dvh;
+  padding: 0;
+  background: var(--white);
+  border: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  &::backdrop {
+    animation: backdrop-fade-out var(--_nav-animation-speed);
+
+    background-image: radial-gradient(
+      circle at top left in oklch,
+      color-mix(in oklch, transparent, $cyan var(--_nav-backdrop-opacity)) 20rem,
+      color-mix(in oklch, transparent, $orange var(--_nav-backdrop-opacity)),
+      color-mix(in oklch, transparent, $yellow var(--_nav-backdrop-opacity)) 60%,
+      color-mix(in oklch, transparent, $white var(--_nav-backdrop-opacity))
+    );
+
+    backdrop-filter: blur(10px);
+  }
+
+  &:popover-open {
+    animation: navbar-open var(--_nav-animation-speed);
+    
+    &::backdrop {
+      animation: backdrop-fade-in var(--_nav-animation-speed);
+    }
+  }
+}
+
+/* Animations */
+
+@keyframes navbar-open {
+  from {
     transform: translateX(-100%);
   }
-  100% {
+  to {
     transform: translate(0);
   }
 }
 
-#navDrawerPopover {
-    &:popover-open {
-      position: fixed;
-      inset: auto;
-      top: 0;
-      left: 0;
-      margin: 0;
-      width: 16rem;
-      height: 100vh;
-      padding: 0;
-      background: var(--white);
-      border: none;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-
-      animation: slide-open 0.3s;
-
-      /* Make sure the popup isn't screen-covering */
-      //max-block-size: 50dvh;
-      //overflow: auto;
+@keyframes navbar-closed {
+  from {
+    display: block;
+    transform: translateX(0);
   }
+  to {
+    display: none;
+    transform: translate(-100%);
+  }
+}
 
-  &::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+@keyframes backdrop-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdrop-fade-out {
+  from {
+    display: block;
+    opacity: 1;
+  }
+  to {
+    display: none;
+    opacity: 0;
   }
 }
