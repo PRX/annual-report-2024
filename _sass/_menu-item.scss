@@ -10,10 +10,8 @@
 }
 
 .menu-link {
-  --_menu-link-background-color: 
-    var(--menu-link-background-color, #{$white});
-  --_menu-link-background-color--hover: 
-    var(--menu-link-background-color--hover, #{mix(white, $cyan, 10%)});
+  --_menu-link-background-color: var(--menu-link-background-color, #{$white});
+  --_menu-link-background-color--hover: var(--menu-link-background-color--hover, #{mix(white, $cyan, 10%)});
   
   display: flex;
   align-items: center;
@@ -36,17 +34,17 @@
   }
 
   &.cyan {
-    --_menu-link-background-color: #{$cyan};
-    --_menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
+    --menu-link-background-color: #{$cyan};
+    --menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
   }
 
   &.yellow {
-    --_menu-link-background-color: #{$yellow};
-    --_menu-link-background-color--hover: #{mix(white, $yellow, 25%)};
+    --menu-link-background-color: #{$yellow};
+    --menu-link-background-color--hover: #{mix(white, $yellow, 25%)};
   }
 
   &.light-blue {
-    --_menu-link-background-color: #{$cyan-a-10};
-    --_menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
+    --menu-link-background-color: #{$cyan-a-10};
+    --menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
   }
 }
