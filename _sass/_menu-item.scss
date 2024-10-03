@@ -1,6 +1,12 @@
+.menu {
+  margin: 0;
+  padding: 0;
+}
+
 .menu-item {
   justify-content: space-between;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid $border-color;
+  list-style: none;
 }
 
 .menu-link {
@@ -9,7 +15,7 @@
   width: 100%;
   gap: 0.25rem;
   padding: 0.5rem 1rem;
-  color: var(--navy);
+  color: $navy;
   text-decoration: none;
 
   &.icon {
@@ -18,34 +24,34 @@
   }
 
   &.white {
-    background-color: var(--white);
+    background-color: $white;
 
     &:hover {
-      background-color: var(--light-blue);
+      background-color: $cyan-a-10;
     }
   }
 
   &.cyan {
-    background-color: var(--cyan);
+    background-color: $cyan;
 
     &:hover {
-      background-color: var(--light-blue);
+      background-color: $cyan-a-10;
     }
   }
 
   &.yellow {
-    background-color: var(--yellow);
+    background-color: $yellow;
 
     &:hover {
-      background-color: var(--light-yellow);
+      background-color: $yellow-a-10;
     }
   }
 
   &.light-blue {
-    background-color: var(--light-blue);
+    background-color: $cyan-a-10;
 
     &:hover {
-      background-color: var(--cyan);
+      background-color: $cyan;
     }
   }
 }
