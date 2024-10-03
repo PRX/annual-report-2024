@@ -10,10 +10,10 @@
 }
 
 .menu-link {
-  --_menu-link-background-color: 
-    var(--menu-link-background-color, #{$white});
-  --_menu-link-background-color--hover: 
-    var(--menu-link-background-color--hover, #{mix(white, $cyan, 10%)});
+  --_menu-link-background-color: var(--menu-link-background-color, #{$white});
+  --_menu-link-background-color--hover: var(--menu-link-background-color--hover, #{mix(white, $cyan, 10%)});
+  --_menu-link-text-color: var(--menu-link-text-color, #{$navy});
+  --_menu-link-text-color--hover: var(--menu-link-text-color--hover, var(--_menu-link-text-color));
   
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@
   padding: 0.5rem 1rem;
   
   background-color: var(--_menu-link-background-color);
-  color: $navy;
+  color: var(--_menu-link-text-color);
   
   text-decoration: none;
 
@@ -38,21 +38,22 @@
 
   &:hover {
     background-color: var(--_menu-link-background-color--hover);
+    color: var(--_menu-link-text-color--hover);
   }
 
   &.cyan {
-    --_menu-link-background-color: #{$cyan};
-    --_menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
+    --menu-link-background-color: #{$cyan};
+    --menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
   }
 
   &.yellow {
-    --_menu-link-background-color: #{$yellow};
-    --_menu-link-background-color--hover: #{mix(white, $yellow, 25%)};
+    --menu-link-background-color: #{$yellow};
+    --menu-link-background-color--hover: #{mix(white, $yellow, 25%)};
   }
   
 
   &.light-blue {
-    --_menu-link-background-color: #{$cyan-a-10};
-    --_menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
+    --menu-link-background-color: #{$cyan-a-10};
+    --menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
   }
 }
