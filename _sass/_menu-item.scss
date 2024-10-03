@@ -10,12 +10,20 @@
 }
 
 .menu-link {
+  --_menu-link-background-color: 
+    var(--menu-link-background-color, #{$white});
+  --_menu-link-background-color--hover: 
+    var(--menu-link-background-color--hover, #{mix(white, $cyan, 10%)});
+  
   display: flex;
   align-items: center;
   width: 100%;
   gap: 0.25rem;
   padding: 0.5rem 1rem;
+  
+  background-color: var(--_menu-link-background-color);
   color: $navy;
+  
   text-decoration: none;
 
   &.icon {
@@ -23,35 +31,22 @@
     text-transform: uppercase;
   }
 
-  &.white {
-    background-color: $white;
-
-    &:hover {
-      background-color: $cyan-a-10;
-    }
+  &:hover {
+    background-color: var(--_menu-link-background-color--hover);
   }
 
   &.cyan {
-    background-color: $cyan;
-
-    &:hover {
-      background-color: $cyan-a-10;
-    }
+    --_menu-link-background-color: #{$cyan};
+    --_menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
   }
 
   &.yellow {
-    background-color: $yellow;
-
-    &:hover {
-      background-color: $yellow-a-10;
-    }
+    --_menu-link-background-color: #{$yellow};
+    --_menu-link-background-color--hover: #{mix(white, $yellow, 25%)};
   }
 
   &.light-blue {
-    background-color: $cyan-a-10;
-
-    &:hover {
-      background-color: $cyan;
-    }
+    --_menu-link-background-color: #{$cyan-a-10};
+    --_menu-link-background-color--hover: #{mix(white, $cyan, 25%)};
   }
 }
