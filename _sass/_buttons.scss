@@ -18,6 +18,10 @@
 
   cursor: pointer;
 
+  &:link {
+    color: $navy;
+  }
+
   &:hover {
     background-color: var(--_btn-background-color--hover);
   }

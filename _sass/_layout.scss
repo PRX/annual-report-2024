@@ -1,5 +1,5 @@
 body {
-  background-color: var(--white);
+  background-color: $white;
   font-family: 'Montserrat', sans-serif;
   
   margin: 0;
@@ -13,17 +13,17 @@ body {
   min-height: 80vh;
 
   &.navy {
-    background-color: var(--navy);
-    color: var(--white);
+    background-color: $navy;
+    color: $white;
   }
 }
 
 a:link,
 a:visited {
-  color: var(--blue);
+  color: $blue;
 
   &.orange {
-    color: var(--orange);
+    color: $orange;
   }
 }
 
