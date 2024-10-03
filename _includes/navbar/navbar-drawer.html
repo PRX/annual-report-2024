@@ -1,0 +1,38 @@
+<nav id="navDrawerPopover" class="nav-drawer" popover>
+  <ul class="menu" role="list">
+    {% include components/menu-item.html
+      href="#"
+      label="Introduction"
+      color="white"  
+    %}
+    {% include components/menu-item.html
+      href="#"
+      label="CEO Letter"
+      color="white"    
+    %}
+    
+    <!-- # Todo: Loop through pages once they are created --> 
+    {% include components/menu-item.html
+      href="#"
+      label="Show Name"
+      color="light-blue"    
+    %} 
+
+    {% include components/menu-item.html
+      href="#"
+      label="Podcast Playlist"
+      color="yellow"
+      icon="playlist_play"
+      aria-label="hidden"
+    %}
+
+    {% include components/menu-item.html
+      href="https://give.prx.org/give/529551/#!/donation/checkout"
+      color="cyan"
+      campaign-id="529551"
+      icon="favorite" 
+      aria-label="hidden"
+      label="Donate" 
+    %}
+  </ul>  
+</nav>

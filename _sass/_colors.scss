@@ -1,0 +1,32 @@
+  
+$white: #fff;
+$black: #000;
+
+$blue: #0873A9;
+$navy: #003A57;
+$cyan: #8CD2F4;
+$orange: #FB9306;
+$yellow: #FEC400;
+
+$cyan-a-10: rgba($cyan, 0.1);
+$orange-a-10: rgba($orange, 0.1);
+$yellow-a-10: rgba($yellow, 0.1);
+
+$border-color: #eee;
+
+:root {  
+  --white: #fff;
+  --black: #000;
+  --blue: #0873A9;
+  --navy: #003A57;
+
+  --cyan: #8CD2F4;
+  --orange: #FB9306;
+  --yellow: #FEC400;
+
+  --light-blue: #8CD2F420;
+  --light-orange: #FF960020;
+  --light-yellow: #FEC40020;
+
+  --border-color: #ddd;
+}

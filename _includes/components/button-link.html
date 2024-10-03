@@ -1,0 +1,17 @@
+<a 
+  href="{{ include.href }}" 
+  class="btn {{ include.color }}"
+  {%- if include.target -%}
+    target="{{ include-target }}"
+  {%- endif -%}
+  {%- if include.campaign-id -%}  
+    data-donate-campaign-id="{{ include.campaign-id }}"
+  {%- endif -%}  
+>  
+  {%- if include.icon -%}
+    <span class="material-icons" aria-label="{{ include.aria-label }}">{{ include.icon }}</span>
+  {%- endif -%}
+  {%- if include.label -%}   
+    <span class="label">{{ include.label }}</span>
+  {%- endif -%}
+</a>

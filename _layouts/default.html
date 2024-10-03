@@ -11,13 +11,9 @@
 </head>
 
 <body>
-  <header class="nav-container">
-    {% include navbar/navbar.html %}
-  </header>
-
-  <div class="content-container">
-    {{ content }}
-    {% include app/footer.html %}
-  </div>
+  {% include navbar/navbar.html %}
+  {{ content }}
+  {% include navbar/navbar-drawer.html %}
+  {% include app/footer.html %}
 </body>
 </html>
