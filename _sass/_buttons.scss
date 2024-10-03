@@ -11,7 +11,7 @@
   border-radius: 10px;
 
   background-color: var(--_btn-background-color);
-
+  
   color: var(--_btn-text-color);
 
   font-weight: bold;
@@ -26,6 +26,11 @@
   }
 
   cursor: pointer;
+
+  &:active,
+  &:link {
+    color: var(--_btn-text-color);
+  }
 
   &:hover {
     background-color: var(--_btn-background-color--hover);

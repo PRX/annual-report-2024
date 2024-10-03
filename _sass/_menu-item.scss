@@ -28,7 +28,7 @@
 
   &:link,
   &:visited {
-    color: var(--navy);
+    color: $navy;
   }
 
   &.icon {
@@ -50,6 +50,7 @@
     --menu-link-background-color: #{$yellow};
     --menu-link-background-color--hover: #{mix(white, $yellow, 25%)};
   }
+  
 
   &.light-blue {
     --menu-link-background-color: #{$cyan-a-10};

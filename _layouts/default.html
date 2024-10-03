@@ -20,7 +20,6 @@
       {{ content }}
     </div>
   </section>
-  
 
   {% assign pages = site.pages | where_exp: "page", "page.type contains 'welcome'" | sort: "order" %}
   {% for page in pages %}

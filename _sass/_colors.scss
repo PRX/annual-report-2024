@@ -1,5 +1,6 @@
 $white: #fff;
 $black: #000;
+$gray: #eee;
 
 $blue: #0873A9;
 $navy: #003A57;
@@ -11,7 +12,8 @@ $cyan-a-10: rgba($cyan, 0.1);
 $orange-a-10: rgba($orange, 0.1);
 $yellow-a-10: rgba($yellow, 0.1);
 
-$border-color: #eee;
+$border-color: $gray;
+
 
 :root {  
   --white: #fff;
@@ -19,7 +21,6 @@ $border-color: #eee;
   --blue: #0873A9;
   --navy: #003A57;
   --gray: #ddd;
-
 
   --cyan: #8CD2F4;
   --orange: #FB9306;
@@ -29,5 +30,8 @@ $border-color: #eee;
   --light-orange: #FF960020;
   --light-yellow: #FEC40020;
 
-  --border-color: var(--gray);
+  --border-color: $gray;
+
+  --_header-text-color: var(--header-text-color, #{$navy});
+  --_text-color: var(--text-color, #{$navy});
 }
