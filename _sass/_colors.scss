@@ -30,5 +30,8 @@ $border-color: $gray;
   --light-orange: #FF960020;
   --light-yellow: #FEC40020;
 
-  --border-color: var(--gray);
+  --border-color: $gray;
+
+  --_header-text-color: var(--header-text-color, #{$navy});
+  --_text-color: var(--text-color, #{$navy});
 }

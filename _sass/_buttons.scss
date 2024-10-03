@@ -21,8 +21,9 @@
 
   cursor: pointer;
 
+  &:active,
   &:link {
-    color: $navy;
+    color: var(--_btn-text-color);
   }
 
   &:hover {

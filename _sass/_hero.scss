@@ -17,12 +17,21 @@ h1 {
   text-transform: uppercase;
   font-weight: 900;
 
-  span {
+  span {    
     display: block;
+    color: var(--header-text-color);
 
-    &.cyan {color: $cyan;}
-    &.yellow {color: $yellow;}
-    &.orange {color: $orange;}
+    &.cyan {
+      --header-text-color: #{$cyan};
+    }
+  
+    &.orange {
+      --header-text-color: #{$orange};
+    }
+  
+    &.yellow {
+      --header-text-color: #{$yellow};
+    }
   }
 }
 
@@ -82,7 +91,7 @@ h1 {
   justify-content: center;
   overflow: hidden;
   border-radius: 20px;
-  color: $navy;
+  --header-text-color: #{$navy};
   width: auto;
   height: 186px;
   aspect-ratio: 1 / 2;
