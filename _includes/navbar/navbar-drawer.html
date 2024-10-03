@@ -11,12 +11,15 @@
       color="white"    
     %}
     
-    <!-- # Todo: Loop through pages once they are created --> 
-    {% include components/menu-item.html
-      href="#"
-      label="Show Name"
-      color="light-blue"    
+    {% assign pages = site.pages | where_exp: "page", "page.type contains 'show'" | sort: "order" %}
+    {% for page in pages %}
+      {% include components/menu-item.html
+      href=page.page-link
+      label=page.title
     %} 
+    {% endfor %}
+    <!-- # Todo: Loop through pages once they are created --> 
+
 
     {% include components/menu-item.html
       href="#playlist"
