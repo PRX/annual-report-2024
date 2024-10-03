@@ -38,7 +38,7 @@
   max-width: 1200px;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  grid-column-gap: 2rem;
+  grid-column-gap: 3rem;
   grid-row-gap: 2rem;
   grid-template-areas: 
   "header"
@@ -68,6 +68,8 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
+  justify-content: center;
+  text-align: center;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
   grid-template-areas: 
@@ -97,6 +99,8 @@
   img {
     margin-bottom: 1rem;
     border-radius: 20px;
+    width: 100%;
+    max-width: 300px;
     box-shadow: 10px -10px 0px 0px var(--cyan), -10px 10px 0px 0px var(--orange);
   }
 }

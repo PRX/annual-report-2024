@@ -19,18 +19,18 @@ h1 {
 
   span {    
     display: block;
-    color: var(--header-text-color);
+    color: var(--text-color);
 
     &.cyan {
-      --header-text-color: #{$cyan};
+      --text-color: #{$cyan};
     }
   
     &.orange {
-      --header-text-color: #{$orange};
+      --text-color: #{$orange};
     }
   
     &.yellow {
-      --header-text-color: #{$yellow};
+      --text-color: #{$yellow};
     }
   }
 }
@@ -91,7 +91,7 @@ h1 {
   justify-content: center;
   overflow: hidden;
   border-radius: 20px;
-  --header-text-color: #{$navy};
+  --text-color: #{$navy};
   width: auto;
   height: 186px;
   aspect-ratio: 1 / 2;
