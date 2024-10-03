@@ -1,6 +1,8 @@
 .btn {
   --_btn-background-color: var(--btn-background-color, transparent);
   --_btn-background-color--hover: var(--btn-background-color--hover, rgba(#{$black}, 10%));
+  --_btn-text-color: var(--btn-background-color, #{$navy});
+  --_btn-text-color--hover: var(--btn-background-color--hover, var(--_btn-text-color));
 
   display: flex;
   align-items: center;
@@ -10,7 +12,7 @@
 
   background-color: var(--_btn-background-color);
 
-  color: $navy;
+  color: var(--_btn-text-color);
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -20,6 +22,7 @@
 
   &:hover {
     background-color: var(--_btn-background-color--hover);
+    color: var(--_btn-text-color--hover);
   }
 
   &.white {
