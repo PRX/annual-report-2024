@@ -3,23 +3,17 @@ $hero--columns: 15;
 
 // This should only need updated if hero design changes card size or row number.
 $hero--column-width: 270px;
+$hero--column-width--mobile: 50vw;
+$hero--column-width--mobile--minimum: 150px;
 $hero--rows: 3;
 $hero--gap: 16px;
 $hero--card-count: $hero--columns * $hero--rows;
 
-$hero--row-height: $hero--column-width * (9 / 11);
-
 .hero {
-  --_hero--columns: #{$hero--columns};
-  --_hero--column-width: #{$hero--column-width};
-  --_hero--column-width--mobile: 50vw;
-  --_hero--rows: #{$hero--rows};
-
   // TODO: REMOVE CARD NUMBERING STYLES.
   counter-set: card-number;
 
   display: grid;
-
   justify-content: center;
   align-content: start;
   overflow: hidden;
@@ -57,7 +51,7 @@ $hero--row-height: $hero--column-width * (9 / 11);
 
 .hero-card-grid {
   display: grid;
-  grid-template-columns: repeat(var(--_hero--columns), clamp(150px, var(--_hero--column-width--mobile), var(--_hero--column-width)));
+  grid-template-columns: repeat($hero--columns, clamp($hero--column-width--mobile--minimum, $hero--column-width--mobile, $hero--column-width));
   gap: #{$hero--gap};
   justify-content: center;
 
@@ -69,6 +63,7 @@ $hero--row-height: $hero--column-width * (9 / 11);
 
   --_hero-card--bg--color: #{$gray};
 
+  // TODO: REMOVE CARD NUMBERING STYLES.
   counter-increment: card-number;
   
   grid-column: var(--_hero-card--column, 1);
@@ -87,6 +82,7 @@ $hero--row-height: $hero--column-width * (9 / 11);
 
   background-color: var(--_hero-card--bg--color);
 
+  // TODO: REMOVE CARD NUMBERING STYLES.
   &::after {
     content: counter(card-number);
     position: absolute;

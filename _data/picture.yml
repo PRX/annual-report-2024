@@ -21,11 +21,8 @@ presets:
 
   hero-card:
     crop: 9:11 attention
-    widths: [150, 240, 270]
-    fallback_width: 270 # The default is 800, which is probably too big.
-    sizes:
-      mobile: 50vw
-    size: 270px
+    base_width: 270 # How wide the 1x image should be.
+    pixel_ratios: [1, 1.5, 2] # Which multipliers to target.
 
   thumbnail:
     base_width: 250 # How wide the 1x image should be.
