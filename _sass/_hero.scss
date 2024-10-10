@@ -15,6 +15,7 @@ $hero--row-height: $hero--column-width * (9 / 11);
   --_hero--column-width--mobile: 50vw;
   --_hero--rows: #{$hero--rows};
 
+  // TODO: REMOVE CARD NUMBERING STYLES.
   counter-set: card-number;
 
   display: grid;
@@ -69,6 +70,9 @@ $hero--row-height: $hero--column-width * (9 / 11);
   --_hero-card--bg--color: #{$gray};
 
   counter-increment: card-number;
+  
+  grid-column: var(--_hero-card--column, 1);
+  grid-row-start: var(--_hero-card--row, 1);
 
   display: grid;
   position: relative;
@@ -141,6 +145,20 @@ $hero--row-height: $hero--column-width * (9 / 11);
       &:nth-of-type(#{$n}) {
         --_hero-card--bg--color: #{$card-bg-color};
       }
+    }
+  }
+
+  // Since we will be hiding edge cards responsively, we need to lock in which
+  // column cards belong to.
+  @for $col from 0 through $hero--columns {
+    &:nth-of-type(#{$hero--columns}n - #{$hero--columns - $col}) {
+      --_hero-card--column: #{$col};
+    }
+  }
+  // And lock in the cards rows.
+  @for $row from 2 through $hero--rows {
+    &:nth-of-type(n + #{($row - 1) * $hero--columns + 1}):nth-of-type(-1n + #{$hero--columns * $row}) {
+      --_hero-card--row: #{$row};
     }
   }
 
