@@ -1,137 +1,101 @@
+$hero--columns: 15; // This should always be an odd number to get a center column.
+$hero--column-width: 270px;
+$hero--rows: 3;
+$hero--gap: 16px;
+$hero--card-count: $hero--columns * $hero--rows;
+
+$hero--row-height: $hero--column-width * (9 / 11);
+
 .hero {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  padding-top: 56px;
-}
+  --_hero--columns: #{$hero--columns};
+  --_hero--column-width: #{$hero--column-width};
+  --_hero--column-width--mobile: 50vw;
+  --_hero--rows: #{$hero--rows};
 
-h1 {
-  position: absolute;
-  width: 100%;
+  counter-set: card-number;
 
-  font-size: 2.5rem;
-  line-height: 1.15;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 900;
-
-  span {    
-    display: block;
-    color: var(--header-text-color);
-
-    &.cyan {
-      --header-text-color: #{$cyan};
-    }
-  
-    &.orange {
-      --header-text-color: #{$orange};
-    }
-  
-    &.yellow {
-      --header-text-color: #{$yellow};
-    }
-  }
-}
-
-.hero-section {
   display: grid;
-  gap: 1rem;
-  position: relative;
+
   justify-content: center;
+  align-content: start;
+  // min-height: 100vh;
+  overflow: hidden;
 
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  width: calc(100vw + 20rem);
-  margin-top: 6rem;
+  h1 {
+    display: grid;
+    place-content: center;
 
-  @media (min-width: 480px) {
-    width: calc(100vw + 4rem);
-  }  
+    font-size: 2.5rem;
+    line-height: 1.15;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(5, 1fr);
-    width: calc(100vw + 9rem);
+    margin: 0;
+  
+    span {    
+      display: block;
+      color: var(--header-text-color);
+  
+      &.cyan {
+        --header-text-color: #{$cyan};
+      }
+    
+      &.orange {
+        --header-text-color: #{$orange};
+      }
+    
+      &.yellow {
+        --header-text-color: #{$yellow};
+      }
+    }
   }
 }
 
-.hero-col {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: 1rem;
-  min-width: 20vw;
-  box-sizing: border-box;
+.hero-card-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--_hero--columns), clamp(150px, var(--_hero--column-width--mobile), var(--_hero--column-width)));
+  // grid-template-rows: repeat(var(--_hero--rows), 1fr);
+  gap: #{$hero--gap};
+  justify-content: center;
 
-  &:nth-child(1),
-  &:nth-child(5) {
-    display: none;
-
-    @media (min-width: 768px) {
-      display: flex;
-    }  
-  }
-  
-  &:nth-child(2),
-  &:nth-child(4) {
-    margin-top: 3rem;
-  }
-
-  &:nth-child(3) {
-    margin-top: 6rem;
-  }
+  margin-block: -5rem -10rem;
 }
 
 .hero-card {
-  display: flex;
+  $bg-colors: $yellow, $navy, $orange, $cyan, $blue;
+
+  --_hero-card--bg--color: #{$gray};
+
+  counter-increment: card-number;
+
+  grid-column: var(--_hero-card--column, 1);
+  grid-row-start: var(--_hero-card--row, 1);
+  grid-row-end: span var(--_hero--sub-rows);
+
+  display: grid;
   position: relative;
-  align-items: center;
-  justify-content: center;
+  place-content: stretch;
   overflow: hidden;
+  aspect-ratio: 270 / 330;
+  max-width: 270px;
+
+  translate: 0 var(--_hero-card--column-shift);
+
   border-radius: 20px;
-  --header-text-color: #{$navy};
-  width: auto;
-  height: 186px;
-  aspect-ratio: 1 / 2;
 
-  @media (min-width: 768px) {
-    height: 330px;
-  }
+  background-color: var(--_hero-card--bg--color);
 
-  &:hover {
-    figure {
-      display: none;
-    }
+  &::after {
+    content: counter(card-number);
+    position: absolute;
+    place-self: end;
 
-    .hero-card-content {
-      display: flex;
-      opacity: 1;
-      transition: opacity 300ms;
-    }
-  }
+    padding: 1rem 1.5rem;
 
-  &.cyan {
-    background-color: $cyan;
-  }
-
-  &.orange {
-    background-color: $orange;
-  }
-
-  &.yellow {
-    background-color: $yellow;
-  }
-
-  &.blue {
-    background-color: $blue;
     color: $white;
-  }
-
-  &.navy {
-    background-color: $navy;
-    color: $white;
+    font-weight: 700;
+    font-size: 2em;
   }
 
   figure,
@@ -145,6 +109,82 @@ h1 {
 
   img {
     object-fit: cover;
+  }
+
+  $picked-colors: ();
+  @for $row from 1 through $hero--rows{
+    @for $col from 1 through $hero--columns {
+      $n: grid-n($hero--columns, $col, $row);
+
+      // Pick colors to avoid for this card.
+      // We want to avoid repeating a color, and alternating two color in a row.
+      $neighbor-colors: (
+        grid-at($picked-colors, $hero--columns, $col - 1, $row),
+        grid-at($picked-colors, $hero--columns, $col - 2, $row),
+        grid-at($picked-colors, $hero--columns, $col, $row - 1)
+      );
+
+      $valid-colors: ();
+      @each $color in $bg-colors {
+        @if not index($neighbor-colors, $color) {
+          $valid-colors: append($valid-colors, $color);
+        }
+      }
+
+      // Narrow down to one color from our valid colors.
+      $color-index: ($n % length($valid-colors)) + 1;
+      $card-bg-color: nth($valid-colors, $color-index);
+
+      // Keep track of picked colors.
+      $picked-colors: append($picked-colors, $card-bg-color);
+
+      // Create our selector for this card.
+      &:nth-of-type(#{$n}) {
+        --_hero-card--bg--color: #{$card-bg-color};
+      }
+    }
+  }
+
+  @for $col from 0 through $hero--columns {
+    &:nth-of-type(#{$hero--columns}n - #{$hero--columns - $col}) {
+      --_hero-card--column: #{$col};
+    }
+  }
+
+  @for $row from 2 through $hero--rows {
+    &:nth-of-type(n + #{($row - 1) * $hero--columns + 1}):nth-of-type(-1n + #{$hero--columns * $row}) {
+      --_hero-card--row: #{$row};
+    }
+  }
+
+  &:nth-of-type(#{$hero--columns}n - #{floor($hero--columns / 2)}) {
+    --_hero-card--column-shift:  8rem;
+  }
+
+  &:nth-of-type(#{$hero--columns}n - #{floor($hero--columns / 2) + 1}),
+  &:nth-of-type(#{$hero--columns}n - #{floor($hero--columns / 2) - 1}) {
+    --_hero-card--column-shift:  4rem;
+  }
+
+  // Use media queries to hide offscreen cards.
+  $max-edge-offset: ceil($hero--columns / 2) - 2;
+  @for $edge-offset from 1 through $max-edge-offset {
+    $cols: $hero--columns - ($edge-offset * 2);
+    $breakpoint_width: ($cols * $hero--column-width) + ($cols - 1) * $hero--gap;
+
+    // Left edge cards.
+    &:nth-of-type(#{$hero--columns}n - #{$hero--columns - $edge-offset}),
+    // Right edge cards. 
+    &:nth-of-type(#{$hero--columns}n - #{$edge-offset - 1})
+    {
+      @if $hero--columns > 7 and $edge-offset < 5 {
+        --_hero-card--column-shift: #{4rem * ($max-edge-offset - $edge-offset - 1)};
+      }
+
+      @media (max-width: $breakpoint_width) {
+        display: none;
+      }
+    }
   }
 
 }

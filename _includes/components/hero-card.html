@@ -1,12 +1,7 @@
-<div class="hero-card {{ include.color }}">
-  {%- if include.text -%} 
-    <div class="hero-card-content">
-      <p>{{ include.text }}</p>
-    </div>
-  {%- endif -%}   
+<div class="hero-card"">
   {%- if include.image -%}
     <figure>
-      {% picture {{ include.image }} --alt {{ include.alt }}  %}
+      {% picture hero-card {{ include.image }} --alt {{ include.alt }}  %}
     </figure>
   {%- endif -%} 
 </div>
