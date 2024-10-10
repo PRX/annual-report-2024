@@ -10,12 +10,13 @@
   .content {    
     width: 100%;
     max-width: 800px;
-    color: var(--_text-color);
+    color: $gray;
     text-align: center;
     
     p {
       font-size: .875rem;
       margin-bottom: 1rem;
+      color: $gray;
     }
   }
 

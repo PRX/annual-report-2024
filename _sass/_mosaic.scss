@@ -1,0 +1,42 @@
+.mosaic-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+  background-color: #f0f8ff;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mosaic-item {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.mosaic-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item1 { grid-area: 1 / 1 / 3 / 3; }
+.item2 { grid-area: 1 / 3 / 2 / 4; }
+.item3 { grid-area: 2 / 3 / 4 / 4; }
+.item4 { grid-area: 3 / 1 / 4 / 2; }
+.item5 { grid-area: 3 / 2 / 4 / 3; }
+.item6 { grid-area: 1 / 4 / 2 / 5; }
+.item7 { grid-area: 2 / 4 / 3 / 5; }
+.item8 { grid-area: 3 / 4 / 4 / 5; }
+
+.color-block {
+  background-color: $cyan;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.bg-yellow { background-color: $yellow; }
+.bg-orange { background-color: $orange; }

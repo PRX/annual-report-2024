@@ -32,20 +32,30 @@
       {{ page.content }}
 
       {%- if page.funders -%}
-        <h3>Sponsored By:</h3>
-        <p>{{ page.funders }}</p>
+        <p class="text-sm"><strong>Supported by:</strong> <em>{{ page.funders }}</em></p>
       {%- endif -%} 
     </div>
+  </div>
+  <div class="show-footer">
+    {%- if page.donor-quote -%}
+      <div class="donor-quote">
+        {% include components/quote.html 
+          text=page.donor-quote.text 
+          citation=page.donor-quote.citation
+        %}
+      </div>
+    {%- endif -%} 
 
-    <div class="show-footer">
-      {%- if page.donor-quote -%}
-        <div class="donor-quote">
-          {% include components/quote.html 
-            text=page.donor-quote.text 
-            citation=page.donor-quote.citation
-          %}
-        </div>
-      {%- endif -%} 
-    </div>
+    {%- if page.mosaic-images -%}
+      {% include components/mosaic.html %}
+    {%- endif -%}
+
+    {%- if page.featured-image -%}
+      {% include components/image.html 
+        image=page.featured-image.url 
+        alt=page.featured-image.alt
+        class="featured-image"
+      %}
+    {%- endif -%}
   </div>
 </section>

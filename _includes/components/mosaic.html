@@ -1,0 +1,23 @@
+<div class="mosaic-container">
+  {% assign item_number = 0 %}
+  {% for image in page.mosaic-images %}
+    <div class="mosaic-item item{{ item_number | plus: 1 }}">
+      {% picture {{ image.image }} --alt {{ image.alt }}  %}
+    </div>
+    {% assign item_number = item_number | plus: 1 %}		
+  {% endfor %}
+
+  
+  {%- if page.logo -%}
+    <div class="mosaic-item item5 logo"></div>
+    {% include components/show-logo.html 
+      image=page.logo.url 
+      alt=page.logo.alt
+    %}
+    </div>
+  {%- endif -%}
+
+  <div class="mosaic-item item6 color-block"></div>
+  <div class="mosaic-item item7 color-block bg-yellow"></div>
+  <div class="mosaic-item item8 color-block bg-orange"></div>
+</div>
