@@ -1,15 +1,30 @@
 .navbar {
+  display: flex;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: $white;
   z-index: 1000;
 
+  > nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
-  .btn.cyan,
-  .btn.yellow {
-    margin-left: 0.5rem;
+    padding: 1rem;
+
+    border-radius: 0 0 20px 20px;
+
+    background-color: $white;
+
+    &:first-of-type {
+      border-bottom-left-radius: 0;
+    }
+
+    &:last-of-type {
+      border-bottom-right-radius: 0;
+    }
   }
 
   .label {
