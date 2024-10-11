@@ -24,14 +24,11 @@ presets:
     base_width: 270 # How wide the 1x image should be.
     pixel_ratios: [1, 1.5, 2] # Which multipliers to target.
 
-  thumbnail:
-    base_width: 250 # How wide the 1x image should be.
-    pixel_ratios: [1, 1.5, 2] # Which multipliers to target.
-    widths: [250]
-    fallback_width: 250 # The default is 800, which is probably too big.
-    size: 250px
+  show-logo:
+    widths: [100, 200, 300, 400, 500]
+    fallback_width: 300 # The default is 800, which is probably too big.
+    size: calc(10vw - 0.5rem)
+    sizes:
+      tablet: 100px
     formats:  [webp, original]
     dimension_attributes: true
-    attributes:
-      picture: 'class="thumbnail"'
-      img: 'class="thumbnail-image"'
