@@ -28,16 +28,16 @@ $show-tiles--tile-size: minmax($show-tiles--tile-min-size, 1fr);
 
   grid-template-columns: repeat(#{$show-tiles--columns}, #{$show-tiles--tile-size});
   grid-template-rows: repeat(#{$show-tiles--rows}, #{$show-tiles--tile-size});
-
 }
 
 $show-logo--animation-duration: 180s;
 $show-logo--animation-duration--step: $show-logo--animation-duration / ($show-tiles--rows);
+
 .show-logo {
   grid-column: var(--_show-logo--column, auto);
+  // All cards start in the same row. Animation delay will be used to distribute each to their row.
   grid-row: 1;
 
-  // position: absolute;
   display: grid;
   min-width: $show-tiles--tile-min-size;
   opacity: 0.8;
@@ -64,20 +64,35 @@ $show-logo--animation-duration--step: $show-logo--animation-duration / ($show-ti
     border-radius: 20px;
   }
 
+  // Lock logos to their columns.
+  // Since we set app logos to the first row, this is needed to keep them from becoming one long row.
   @for $col from 0 through $show-tiles--columns {
     &:nth-of-type(#{$show-tiles--columns}n - #{$show-tiles--columns - $col}) {
       --_show-logo--column: #{$col};
     }
   }
 
+  // Set animation delays to put logos into the rows.
   @for $row from 1 through $show-tiles--rows {
     &:nth-of-type(n + #{($row - 1) * $show-tiles--columns + 1}):nth-of-type(-1n + #{$show-tiles--columns * $row}) {
+      // Uses a negative delay to have the animation start at the appropriate time for the logo to appear to be in its row.
       --_show-logo--animation-delay: #{($row - 1) * $show-logo--animation-duration--step * -1};
+
+      @media (prefers-reduced-motion: reduce) {
+        // Slightly offset delay for a more interesting pattern when not in motion.
+        --_show-logo--animation-delay: #{($row - 1) * $show-logo--animation-duration--step * -1 + ($show-logo--animation-duration--step / 3)};
+      }
     }
   }
 
+  // Alternate direction of columns movement.
   &:nth-of-type(even) {
     animation-direction: reverse;
+  }
+
+  // Pause animation for those who want reduced motion.
+  @media (prefers-reduced-motion: reduce) {
+    animation-play-state: paused;
   }
 }
 
