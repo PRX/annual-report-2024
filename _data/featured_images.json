@@ -25,6 +25,11 @@
     "show": "Content"
   },
   {
+    "image": "img/hero/john-legend.jpg",
+    "alt": "John Legend on a panel with PRX!!!",
+    "show": "Content"
+  },
+  {
     "image": "img/hero/daniel-reporting.jpg",
     "alt": "Daniel Estrin reports from Ukraine",
     "show": "The World"
@@ -48,5 +53,35 @@
     "image": "img/hero/tibi-reporting.jpg",
     "alt": "Tibi reports from the field",
     "show": "The World"
+  },
+  {
+    "image": "img/hero/big_questions-1.jpg",
+    "alt": "TBD",
+    "show": "Big Questions"
+  },
+  {
+    "image": "img/hero/big_questions-2.jpg",
+    "alt": "TBD",
+    "show": "Big Questions"
+  },
+  {
+    "image": "img/hero/big_questions-3.jpg",
+    "alt": "TBD",
+    "show": "Big Questions"
+  },
+  {
+    "image": "img/hero/big_questions-4.jpg",
+    "alt": "TBD",
+    "show": "Big Questions"
+  },
+  {
+    "image": "img/hero/big_questions-5.jpg",
+    "alt": "TBD",
+    "show": "Big Questions"
+  },
+  {
+    "image": "img/hero/big_questions-6.jpg",
+    "alt": "TBD",
+    "show": "Big Questions"
   }
 ]  
