@@ -1,0 +1,52 @@
+[
+  {
+    "image": "img/hero/nigel-earlonne.jpg",
+    "alt": "Nigel and Earlonne, hosts of Ear Hustle, stand in a parking lot",
+    "show": "Ear Hustle"
+  },
+  {
+    "image": "img/hero/snap-judgement.jpg",
+    "alt": "The team behind Snap Judgement poses at the PRX Garage at KQED",
+    "show": "Snap Judgement"
+  },
+  {
+    "image": "img/hero/wamu.jpg",
+    "alt": "The team behind Weight for It speak at a panel held at WAMU",
+    "show": "Weight for it"
+  },
+  {
+    "image": "img/hero/normal-gossip.jpg",
+    "alt": "The hosts of Normal Gossip hold up a Radiotopia sign",
+    "show": "Normal Gossip"
+  },
+  {
+    "image": "img/hero/steph-training.jpg",
+    "alt": "Stephanie Kuo leads a training session",
+    "show": "Content"
+  },
+  {
+    "image": "img/hero/daniel-reporting.jpg",
+    "alt": "Daniel Estrin reports from Ukraine",
+    "show": "The World"
+  },
+  {
+    "image": "img/hero/marco-and-carolyn.jpg",
+    "alt": "Marco Werman and Carolyn Beeler host an episode of The World from a broadcast recording studio",
+    "show": "The World"
+  },
+  {
+    "image": "img/hero/matthew-reporting.jpg",
+    "alt": "Matthew Bell reports from the field",
+    "show": "The World"
+  },
+  {
+    "image": "img/hero/shirin-reporting.jpg",
+    "alt": "Shirin Jafaari reports from the back of a cargo plane",
+    "show": "The World"
+  },
+  {
+    "image": "img/hero/tibi-reporting.jpg",
+    "alt": "Tibi reports from the field",
+    "show": "The World"
+  }
+]  
