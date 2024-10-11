@@ -8,10 +8,6 @@
     "name": "The World"
   },
   {
-    "image": "img/shows/the_moth.png",
-    "name": "The Moth"
-  },
-  {
     "image": "img/shows/2018+square-logo-black_new_prx+copy.jpg",
     "name": "Reveal"
   },
@@ -364,39 +360,43 @@
     "name": "Bot Love"
   },
   {
-    "image": "img/shows/this_american_life.png",
-    "name": "This American Life"
+    "image": "img/shows/Altered_States-Cover_1A.jpg",
+    "name": "Altered States"
   },
   {
-    "image": "img/shows/the-world.png",
-    "name": "The World"
+    "image": "img/shows/Arthur_Podcast_Logo_CR9553_F2.png",
+    "name": "Arthur Podcast"
   },
   {
-    "image": "img/shows/Left+Right+and+Center.png",
-    "name": "Left, Right & Center"
+    "image": "img/shows/hyperfixed+ART-FINAL.png",
+    "name": "Hyperfixed"
   },
   {
-    "image": "img/shows/echoes.jpg",
-    "name": "Echoes"
+    "image": "img/shows/LFMO.jpeg",
+    "name": "Live from Mt Olympus"
   },
   {
-    "image": "img/shows/the_moth.png",
-    "name": "The Moth"
+    "image": "img/shows/molly_denalijpg.jpg",
+    "name": "Molly of Denali"
   },
   {
-    "image": "img/shows/living_on_earth.jpg",
-    "name": "Living on Earth"
+    "image": "img/shows/PAGE_FLIPPERS_ART.png",
+    "name": "Page Flippers Take on the World"
   },
   {
-    "image": "img/shows/2018+square-logo-black_new_prx+copy.jpg",
-    "name": "Reveal"
+    "image": "img/shows/PinkPodcast.png",
+    "name": "Pinkalicious & Peterrific Podcast"
   },
   {
-    "image": "img/shows/Snap+logo+w_KQED.png",
-    "name": "Snap Judgement"
+    "image": "img/shows/PT_Tile_v04_240703.jpg",
+    "name": "Peak Travel"
   },
   {
-    "image": "img/shows/LUSA+x+PRX+for+Amazon.png",
-    "name": "Latino USA"
+    "image": "img/shows/Show_Cover_ThePlateShow_3.jpg",
+    "name": "The Plate Show"
+  },
+  {
+    "image": "img/shows/State+of+Play+-+Show+Cover.jpg",
+    "name": "State of Play"
   }
 ]
