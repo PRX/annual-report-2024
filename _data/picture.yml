@@ -20,8 +20,8 @@ presets:
     size: 100vw
 
   hero-card:
-    crop: 9:11 attention
-    base_width: 270 # How wide the 1x image should be.
+    crop: 9:11 entropy
+    base_width: 304 # How wide the 1x image should be. Styled to be 270, but zooms to 1.125x.
     pixel_ratios: [1, 1.5, 2] # Which multipliers to target.
 
   show-logo:

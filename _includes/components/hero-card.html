@@ -1,7 +1,7 @@
-<div class="hero-card">
-  {%- if include.image -%}
-    <figure>
-      {% picture hero-card {{ include.image }} --alt {{ include.alt }}  %}
+<div class="hero-card" style="--hero-card--image-count: {{ site.data.featured_images | size }};">
+  {% for photo in site.data.featured_images %}
+    <figure class="hero-card-image" style="--hero-card-image--index: {{ forloop.index0 }};">
+      {% picture hero-card {{ photo.image }} --alt {{ photo.alt }}  %}
     </figure>
-  {%- endif -%} 
+  {% endfor %}
 </div>

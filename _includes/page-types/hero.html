@@ -5,53 +5,8 @@
     <span class="orange">Report</span>
   </h1>
   <div class="hero-card-grid">
-    <!-- First Row -->
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html image="img/hero/rt1.jpg" alt="Alt Text..." %} <!-- Center Column -->
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    <!-- second Row -->
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %} <!-- Center Column -->
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    <!-- Third Row -->
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %} <!-- Center Column -->
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
-    {% include components/hero-card.html %}
+    {% for i in (1..45) %}
+      {%- include components/hero-card.html image=logo.image show-name=logo.name -%}
+    {% endfor %}
   </div>
 </section>

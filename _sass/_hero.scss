@@ -10,9 +10,6 @@ $hero--gap: 16px;
 $hero--card-count: $hero--columns * $hero--rows;
 
 .hero {
-  // TODO: REMOVE CARD NUMBERING STYLES.
-  counter-set: card-number;
-
   display: grid;
   justify-content: center;
   align-content: start;
@@ -62,15 +59,11 @@ $hero--card-count: $hero--columns * $hero--rows;
   $bg-colors: $yellow, $navy, $orange, $cyan, $blue;
 
   --_hero-card--bg--color: #{$gray};
-
-  // TODO: REMOVE CARD NUMBERING STYLES.
-  counter-increment: card-number;
   
   grid-column: var(--_hero-card--column, 1);
   grid-row-start: var(--_hero-card--row, 1);
 
   display: grid;
-  position: relative;
   place-content: stretch;
   overflow: hidden;
   aspect-ratio: 270 / 330;
@@ -82,30 +75,10 @@ $hero--card-count: $hero--columns * $hero--rows;
 
   background-color: var(--_hero-card--bg--color);
 
-  // TODO: REMOVE CARD NUMBERING STYLES.
-  &::after {
-    content: counter(card-number);
-    position: absolute;
-    place-self: end;
-
-    padding: 1rem 1.5rem;
-
-    color: $white;
-    font-weight: 700;
-    font-size: 2em;
-  }
-
-  figure,
-  picture {
-    flex: 1;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-
   img {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 
   // Color each card pseudo-randomly, but consistently.
@@ -140,6 +113,7 @@ $hero--card-count: $hero--columns * $hero--rows;
       // Create our selector for this card.
       &:nth-of-type(#{$n}) {
         --_hero-card--bg--color: #{$card-bg-color};
+        --_hero-card--bg--color--index: #{index($bg-colors, $card-bg-color)};
       }
     }
   }
@@ -152,7 +126,7 @@ $hero--card-count: $hero--columns * $hero--rows;
     }
   }
   // And lock in the cards rows.
-  @for $row from 2 through $hero--rows {
+  @for $row from 1 through $hero--rows {
     &:nth-of-type(n + #{($row - 1) * $hero--columns + 1}):nth-of-type(-1n + #{$hero--columns * $row}) {
       --_hero-card--row: #{$row};
     }
@@ -199,15 +173,84 @@ $hero--card-count: $hero--columns * $hero--rows;
 
 }
 
-.hero-card-content {
-  flex: 1;
-  display: none;
-  opacity: 0;
-  transition: opacity 300ms;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  font-weight: bold;
+.hero-card-image {
+  // Seed used to vary initial image and transition speed.
+  --_hero-card-image--seed: calc(hypot(var(--_hero-card--column), var(--_hero-card--row)) * var(--_hero-card--bg--color--index));
+  // How long it take to show an image.
+  --_hero-card-image--step-duration: calc(max(8s, var(--_hero-card-image--seed) * 1s + 2s));
+  // How long it takes for an image to be shown again.
+  --_hero-card-image--animation-duration:  calc(var(--hero-card--image-count) * var(--_hero-card-image--step-duration));
+  // Determine which image is shown first.
+  --_hero-card-image--animation-delay: calc((round(var(--hero-card-image--index) + var(--_hero-card-image--seed)) * -1) * var(--_hero-card-image--step-duration));
 
-  p {margin: 0;}
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+
+  animation-name: hero-card-image-select, hero-card-image-cross-fade;
+  animation-duration: var(--_hero-card-image--animation-duration), var(--_hero-card-image--step-duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(var(--hero-card--image-count), jump-none), linear;
+  animation-delay: var(--_hero-card-image--animation-delay);
+
+  display: grid;
+  overflow: hidden;
+
+  img {
+    animation-name: hero-card-image-zoom;
+    animation-duration: var(--_hero-card-image--step-duration);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-delay: var(--_hero-card-image--animation-delay);
+
+    &, &::before {
+      appearance: none;
+
+      display: grid;
+      place-content: center;
+      height: 100%;
+
+      color: $white;
+      font-style: normal;
+      font-weight: 200;
+      text-align: center;
+      text-wrap: balance;
+    }
+  }
+}
+
+// Animation to control which image is shown.
+@keyframes hero-card-image-select {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 calc((var(--hero-card--image-count) - 1) * -100%);
+  }
+}
+
+// Animation to smooth out visibility of image and add some time for showing the background color.
+@keyframes hero-card-image-cross-fade {
+  0%, 60%, 100% {
+    opacity: 0%;
+  }
+  20%, 40% {
+    opacity: 100%;
+  }
+}
+
+// Animation to spice up image with motion and coloring.
+@keyframes hero-card-image-zoom {
+  0% {
+    scale: 1;
+    filter: saturate(0);
+  }
+  30% {
+    filter: saturate(100%);
+  }
+  60% {
+    filter: saturate(0);
+  }
+  100% {
+    scale: 1.125;
+  }
 }
