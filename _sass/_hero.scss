@@ -181,7 +181,7 @@ $hero--card-count: $hero--columns * $hero--rows;
   // How long it takes for an image to be shown again.
   --_hero-card-image--animation-duration:  calc(var(--hero-card--image-count) * var(--_hero-card-image--step-duration));
   // Determine which image is shown first.
-  --_hero-card-image--animation-delay: calc((round(var(--hero-card-image--index) + var(--_hero-card-image--seed)) * -1) * var(--_hero-card-image--step-duration));
+  --_hero-card-image--animation-delay: calc(((var(--hero-card-image--index) + var(--_hero-card-image--seed)) * -1) * var(--_hero-card-image--step-duration));
 
   grid-row: 1 / -1;
   grid-column: 1 / -1;
