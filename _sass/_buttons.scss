@@ -11,14 +11,20 @@
   border-radius: 10px;
 
   background-color: var(--_btn-background-color);
-
+  
   color: var(--_btn-text-color);
+
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   border: 0;
 
   cursor: pointer;
+
+  &:active,
+  &:link {
+    color: var(--_btn-text-color);
+  }
 
   &:hover {
     background-color: var(--_btn-background-color--hover);

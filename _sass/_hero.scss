@@ -1,0 +1,256 @@
+// This should always be an odd number to get a center column.
+$hero--columns: 15;
+
+// This should only need updated if hero design changes card size or row number.
+$hero--column-width: 270px;
+$hero--column-width--mobile: 50vw;
+$hero--column-width--mobile--minimum: 150px;
+$hero--rows: 3;
+$hero--gap: 16px;
+$hero--card-count: $hero--columns * $hero--rows;
+
+.hero {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+  overflow: hidden;
+
+  h1 {
+    display: grid;
+    place-content: center;
+
+    font-size: 2.5rem;
+    line-height: 1.15;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+
+    margin: 0;
+  
+    span {    
+      display: block;
+      color: var(--header-text-color);
+  
+      &.cyan {
+        --header-text-color: #{$cyan};
+      }
+    
+      &.orange {
+        --header-text-color: #{$orange};
+      }
+    
+      &.yellow {
+        --header-text-color: #{$yellow};
+      }
+    }
+  }
+}
+
+.hero-card-grid {
+  display: grid;
+  grid-template-columns: repeat($hero--columns, clamp($hero--column-width--mobile--minimum, $hero--column-width--mobile, $hero--column-width));
+  gap: #{$hero--gap};
+  justify-content: center;
+
+  margin-block: -5rem -10rem;
+}
+
+.hero-card {
+  $bg-colors: $yellow, $navy, $orange, $cyan, $blue;
+
+  --_hero-card--bg--color: #{$gray};
+  
+  grid-column: var(--_hero-card--column, 1);
+  grid-row-start: var(--_hero-card--row, 1);
+
+  display: grid;
+  place-content: stretch;
+  overflow: hidden;
+  aspect-ratio: 270 / 330;
+  max-width: 270px;
+
+  translate: 0 var(--_hero-card--column-shift);
+
+  border-radius: 20px;
+
+  background-color: var(--_hero-card--bg--color);
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  // Color each card pseudo-randomly, but consistently.
+  $picked-colors: ();
+  @for $row from 1 through $hero--rows{
+    @for $col from 1 through $hero--columns {
+      $n: grid-n($hero--columns, $col, $row);
+
+      // Pick colors to avoid for this card.
+      // We want to avoid repeating a color in both directions,
+      // or alternating two color in a row.
+      $neighbor-colors: (
+        grid-at($picked-colors, $hero--columns, $col - 1, $row),
+        grid-at($picked-colors, $hero--columns, $col - 2, $row),
+        grid-at($picked-colors, $hero--columns, $col, $row - 1)
+      );
+
+      $valid-colors: ();
+      @each $color in $bg-colors {
+        @if not index($neighbor-colors, $color) {
+          $valid-colors: append($valid-colors, $color);
+        }
+      }
+
+      // Narrow down to one color from our valid colors.
+      $color-index: ($n % length($valid-colors)) + 1;
+      $card-bg-color: nth($valid-colors, $color-index);
+
+      // Keep track of picked colors.
+      $picked-colors: append($picked-colors, $card-bg-color);
+
+      // Create our selector for this card.
+      &:nth-of-type(#{$n}) {
+        --_hero-card--bg--color: #{$card-bg-color};
+        --_hero-card--bg--color--index: #{index($bg-colors, $card-bg-color)};
+      }
+    }
+  }
+
+  // Since we will be hiding edge cards responsively, we need to lock in which
+  // column cards belong to.
+  @for $col from 0 through $hero--columns {
+    &:nth-of-type(#{$hero--columns}n - #{$hero--columns - $col}) {
+      --_hero-card--column: #{$col};
+    }
+  }
+  // And lock in the cards rows.
+  @for $row from 1 through $hero--rows {
+    &:nth-of-type(n + #{($row - 1) * $hero--columns + 1}):nth-of-type(-1n + #{$hero--columns * $row}) {
+      --_hero-card--row: #{$row};
+    }
+  }
+
+  // Shift center column down to not overlap page heading.
+  &:nth-of-type(#{$hero--columns}n - #{floor($hero--columns / 2)}) {
+    --_hero-card--column-shift:  8rem;
+  }
+
+  // Shift columns around center column down as well, just slightly less.
+  &:nth-of-type(#{$hero--columns}n - #{floor($hero--columns / 2) + 1}),
+  &:nth-of-type(#{$hero--columns}n - #{floor($hero--columns / 2) - 1}) {
+    --_hero-card--column-shift:  4rem;
+  }
+
+  //// Style columns at the edges of the grid.
+  // Since we are offsetting from the edges symmetrically, our max offset will be
+  // half the number of columns, but should not include the center 3 columns that
+  // should always be visible. We round up due to the way CSS nth selectors work.
+  $max-edge-offset: ceil($hero--columns / 2) - 2;
+  @for $edge-offset from 1 through $max-edge-offset {
+    // Left edge cards.
+    &:nth-of-type(#{$hero--columns}n - #{$hero--columns - $edge-offset}),
+    // Right edge cards. 
+    &:nth-of-type(#{$hero--columns}n - #{$edge-offset - 1})
+    {
+      //// Taper edge columns to add interest to layout.
+      //// Should not affect the center 7 columns.
+      @if $hero--columns > 7 and $edge-offset < 5 {
+        --_hero-card--column-shift: #{4rem * ($max-edge-offset - $edge-offset - 1)};
+      }
+
+      //// Use media queries to hide offscreen cards.
+      // Calculate our centered range of columns.
+      $cols: $hero--columns - ($edge-offset * 2);
+      // Calculate breakpoint to fit our range of columns.
+      $breakpoint_width: ($cols * $hero--column-width) + ($cols - 1) * $hero--gap;
+      @media (max-width: $breakpoint_width) {
+        display: none;
+      }
+    }
+  }
+
+}
+
+.hero-card-image {
+  // Seed used to vary initial image and transition speed.
+  --_hero-card-image--seed: calc(hypot(var(--_hero-card--column), var(--_hero-card--row)) * var(--_hero-card--bg--color--index));
+  // How long it take to show an image.
+  --_hero-card-image--step-duration: calc(max(8s, var(--_hero-card-image--seed) * 1s + 2s));
+  // How long it takes for an image to be shown again.
+  --_hero-card-image--animation-duration:  calc(var(--hero-card--image-count) * var(--_hero-card-image--step-duration));
+  // Determine which image is shown first.
+  --_hero-card-image--animation-delay: calc(((var(--hero-card-image--index) + var(--_hero-card-image--seed)) * -1) * var(--_hero-card-image--step-duration));
+
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+
+  animation-name: hero-card-image-select, hero-card-image-cross-fade;
+  animation-duration: var(--_hero-card-image--animation-duration), var(--_hero-card-image--step-duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(var(--hero-card--image-count), jump-none), linear;
+  animation-delay: var(--_hero-card-image--animation-delay);
+
+  display: grid;
+  overflow: hidden;
+
+  img {
+    animation-name: hero-card-image-zoom;
+    animation-duration: var(--_hero-card-image--step-duration);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-delay: var(--_hero-card-image--animation-delay);
+
+    &, &::before {
+      appearance: none;
+
+      display: grid;
+      place-content: center;
+      height: 100%;
+
+      color: $white;
+      font-style: normal;
+      font-weight: 200;
+      text-align: center;
+      text-wrap: balance;
+    }
+  }
+}
+
+// Animation to control which image is shown.
+@keyframes hero-card-image-select {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 calc((var(--hero-card--image-count) - 1) * -100%);
+  }
+}
+
+// Animation to smooth out visibility of image and add some time for showing the background color.
+@keyframes hero-card-image-cross-fade {
+  0%, 60%, 100% {
+    opacity: 0%;
+  }
+  20%, 40% {
+    opacity: 100%;
+  }
+}
+
+// Animation to spice up image with motion and coloring.
+@keyframes hero-card-image-zoom {
+  0% {
+    scale: 1;
+    filter: saturate(0);
+  }
+  30% {
+    filter: saturate(100%);
+  }
+  60% {
+    filter: saturate(0);
+  }
+  100% {
+    scale: 1.125;
+  }
+}

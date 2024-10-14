@@ -1,0 +1,19 @@
+.section-centered {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  max-width: 800px;
+  z-index: 200;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}

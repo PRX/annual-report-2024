@@ -1,0 +1,106 @@
+.show-bg-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: $navy;
+  background: linear-gradient(90deg, rgba(0,58,87,0.7) 0%, rgba(0,58,87,0.9) 33%, rgba(0,58,87,0.9) 66%, rgba(0,58,87,0.7) 100%);
+}
+
+$show-tiles--columns: 10;
+$show-tiles--rows: 10;
+$show-tiles--tile-count: $show-tiles--columns * $show-tiles--rows;
+$show-tiles--gap: 16px;
+$show-tiles--tile-min-size: 100px + $show-tiles--gap;
+$show-tiles--tile-size: minmax($show-tiles--tile-min-size, 1fr);
+
+.show-tiles {
+  position: absolute;
+  min-height: 100%;
+  width: calc(100vw + 6rem);
+
+  display: grid;
+  justify-content: center;
+  aspect-ratio: 1;
+  overflow: hidden;
+
+  grid-template-columns: repeat(#{$show-tiles--columns}, #{$show-tiles--tile-size});
+  grid-template-rows: repeat(#{$show-tiles--rows}, #{$show-tiles--tile-size});
+}
+
+$show-logo--animation-duration: 180s;
+$show-logo--animation-duration--step: $show-logo--animation-duration / ($show-tiles--rows);
+
+.show-logo {
+  grid-column: var(--_show-logo--column, auto);
+  // All cards start in the same row. Animation delay will be used to distribute each to their row.
+  grid-row: 1;
+
+  display: grid;
+  min-width: $show-tiles--tile-min-size;
+  opacity: 0.8;
+
+  margin: 0;
+  padding: $show-tiles--gap / 2;
+
+  border-radius: 20px;
+
+  animation-name: show-logo--slide-y;
+  animation-timing-function: linear;
+  animation-duration: $show-logo--animation-duration;
+  animation-iteration-count: infinite;
+  animation-delay: var(--_show-logo--animation-delay);
+
+  picture {
+    margin: 0;
+  }
+
+  img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  // Lock logos to their columns.
+  // Since we set app logos to the first row, this is needed to keep them from becoming one long row.
+  @for $col from 0 through $show-tiles--columns {
+    &:nth-of-type(#{$show-tiles--columns}n - #{$show-tiles--columns - $col}) {
+      --_show-logo--column: #{$col};
+    }
+  }
+
+  // Set animation delays to put logos into the rows.
+  @for $row from 1 through $show-tiles--rows {
+    &:nth-of-type(n + #{($row - 1) * $show-tiles--columns + 1}):nth-of-type(-1n + #{$show-tiles--columns * $row}) {
+      // Uses a negative delay to have the animation start at the appropriate time for the logo to appear to be in its row.
+      --_show-logo--animation-delay: #{($row - 1) * $show-logo--animation-duration--step * -1};
+
+      @media (prefers-reduced-motion: reduce) {
+        // Slightly offset delay for a more interesting pattern when not in motion.
+        --_show-logo--animation-delay: #{($row - 1) * $show-logo--animation-duration--step * -1 + ($show-logo--animation-duration--step / 3)};
+      }
+    }
+  }
+
+  // Alternate direction of columns movement.
+  &:nth-of-type(even) {
+    animation-direction: reverse;
+  }
+
+  // Pause animation for those who want reduced motion.
+  @media (prefers-reduced-motion: reduce) {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes show-logo--slide-y {
+  from {
+    translate: 0 -100%;
+  }
+  to {
+    translate: 0 (($show-tiles--rows - 1) * 100%);
+  }
+}

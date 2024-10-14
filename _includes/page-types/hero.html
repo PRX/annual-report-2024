@@ -1,0 +1,12 @@
+<section id="top" class="hero">
+  <h1>
+    <span class="cyan">2024</span>
+    <span class="yellow">Annual</span>
+    <span class="orange">Report</span>
+  </h1>
+  <div class="hero-card-grid">
+    {% for i in (1..45) %}
+      {%- include components/hero-card.html image=logo.image show-name=logo.name -%}
+    {% endfor %}
+  </div>
+</section>
