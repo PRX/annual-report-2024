@@ -25,7 +25,7 @@
     "show": "Content"
   },
   {
-    "image": "img/hero/john-legend.jpg",
+    "image": "img/hero/legend.jpg",
     "alt": "John Legend on a panel with PRX!!!",
     "show": "Content"
   },
@@ -83,5 +83,55 @@
     "image": "img/hero/big_questions-6.jpg",
     "alt": "TBD",
     "show": "Big Questions"
+  },
+  {
+    "image": "img/hero/summit1.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
+  },
+  {
+    "image": "img/hero/summit2.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
+  },
+  {
+    "image": "img/hero/summit3.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
+  },
+  {
+    "image": "img/hero/summit4.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
+  },
+  {
+    "image": "img/hero/summit5.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
+  },
+  {
+    "image": "img/hero/summit6.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
+  },
+  {
+    "image": "img/hero/summit7.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
+  },
+  {
+    "image": "img/hero/summit8.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
+  },
+  {
+    "image": "img/hero/summit9.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
+  },
+  {
+    "image": "img/hero/summit10.jpg",
+    "alt": "TBD",
+    "show": "PRX Podcast Summit at WAMU"
   }
 ]  
