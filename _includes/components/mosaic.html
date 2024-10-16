@@ -1,19 +1,14 @@
 <div class="mosaic-container">
-  {% assign item_number = 0 %}
   {% for image in page.mosaic-images %}
-    <div class="mosaic-item item{{ item_number | plus: 1 }}">
+    <div class="mosaic-item" data-index="{{ forloop.index }}">
       {% picture {{ image.image }} --alt {{ image.alt }}  %}
-    </div>
-    {% assign item_number = item_number | plus: 1 %}		
+    </div>		
   {% endfor %}
 
   
   {%- if page.logo -%}
-    <div class="mosaic-item item5 logo"></div>
-    {% include components/show-logo.html 
-      image=page.logo.url 
-      alt=page.logo.alt
-    %}
+    <div class="mosaic-item item5 logo">
+      {% picture {{ page.logo.url }} --alt {{ page.logo.alt }}  %}
     </div>
   {%- endif -%}
 

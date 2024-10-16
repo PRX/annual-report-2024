@@ -1,61 +1,64 @@
-<section id="page-{{ page.prx-id }}" class="container show-page">
-  <div class="show-grid">
-    <h2 class="show-header">{{ page.title }}</h2>
-    
-    <div class="show-featured">
-      {%- if page.logo -%}
-        {% include components/show-logo.html 
-          image=page.logo.url 
-          alt=page.logo.alt
-        %}
-      {%- endif -%} 
-    
-      {%- if page.quote -%}
-      <div class="show-quote">
-        {% include components/quote.html 
-          text=page.quote.text 
-          citation=page.quote.citation
-        %}
-      </div>  
-      {%- endif -%}
+<section id="page-{{ page.prx-id }}" class="container show">
+  <div class="show-main">
+    <div class="show-main--layout">
+      <h2 class="show-header">{{ page.title }}</h2>
+      
+      <div class="show-sidebar">
+        <div class="show-sidebar--layout">
+          {%- if page.logo -%}
+          <div class="show-logo">
+            {% picture show-logo-featured {{ page.logo.url }} --alt {{ page.logo.alt }}  %}
+          </div>
+          {%- endif -%} 
+        
+          {%- if page.quote -%}
+          <div class="show-quote">
+            {% include components/quote.html 
+              text=page.quote.text 
+              citation=page.quote.citation
+            %}
+          </div>  
+          {%- endif -%}
 
-      {%- if page.audio -%}
-      <div class="show-audio">
-        {% include components/audio-inline.html 
-          url=page.audio.url
-          title=page.audio.title
-        %}
-      </div>  
-      {%- endif -%} 
-    </div>
-    <div class="show-content">
-      {{ page.content }}
+          {%- if page.audio -%}
+          <div class="show-audio">
+            {% include components/audio-inline.html 
+              url=page.audio.url
+              title=page.audio.title
+            %}
+          </div>  
+          {%- endif -%} 
+        </div>
+      </div>
+      <div class="show-content">
+        {{ page.content }}
 
-      {%- if page.funders -%}
-        <p class="text-sm"><strong>Supported by:</strong> <em>{{ page.funders }}</em></p>
-      {%- endif -%} 
+        {%- if page.funders -%}
+          <p class="text-sm"><strong>Supported by:</strong> <em>{{ page.funders }}</em></p>
+        {%- endif -%} 
+      </div>
     </div>
   </div>
   <div class="show-footer">
-    {%- if page.donor-quote -%}
-      <div class="donor-quote">
-        {% include components/quote.html 
-          text=page.donor-quote.text 
-          citation=page.donor-quote.citation
-        %}
-      </div>
-    {%- endif -%} 
-
     {%- if page.mosaic-images -%}
+    <div class="show-mosaic">
       {% include components/mosaic.html %}
+    </div>
+    {%- endif -%}
+
+    {%- if page.donor-quote -%}
+    <div class="show-donor-quote">
+      {% include components/quote.html 
+        text=page.donor-quote.text 
+        citation=page.donor-quote.citation
+      %}
+    </div>
     {%- endif -%}
 
     {%- if page.featured-image -%}
-      {% include components/image.html 
-        image=page.featured-image.url 
-        alt=page.featured-image.alt
-        class="featured-image"
-      %}
+    <figure class="show-featured-image">
+      {% picture show-featured-image {{ page.featured-image.url }} --alt {{ page.featured-image.alt }}  %}
+    </figure>
     {%- endif -%}
   </div>
 </section>
