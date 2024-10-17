@@ -40,7 +40,8 @@
     </div>
   </div>
   <div class="show-footer">
-    {%- if show.mosaic-images -%}
+    {%- if show.mosaic -%}
+    {%- assign mosaic = show.mosaic -%}
     <div class="show-mosaic">
       {% include components/show-mosaic.html %}
     </div>

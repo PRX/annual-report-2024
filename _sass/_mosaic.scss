@@ -1,17 +1,51 @@
 .mosaic-container {
+  --_mosaic--grid-size: 8;
+  --_mosaic--gap: clamp(4px, 2cqi, 16px);
+  --_mosaic--cell-size: calc(100cqi / var(--_mosaic--grid-size));
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 15px;
-  padding: 20px;
+  grid-template-columns: repeat(8, var(--_mosaic--cell-size));
+  grid-template-rows: repeat(8, var(--_mosaic--cell-size));
+  place-content: center;
   max-width: 800px;
+
   margin: 0 auto;
+  
+  filter: drop-shadow(0 0 20px color-mix(in oklab, var(--show--color) 60%, transparent));
 }
 
 .mosaic-item {
-  border-radius: 20px;
+  --_mosaic-item--color: var(--mosaic-item--color, auto);
+  --_mosaic-item--position: var(--mosaic-item--position, auto);
+
+  grid-area: var(--_mosaic-item--position);
+
+  container-name: mosaic-item;
+  container-type: inline-size;
+
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+  margin: calc(var(--_mosaic--gap) / 2);
+
+  background-color: var(--_mosaic-item--color);
+
+  border-radius: calc(var(--_mosaic--cell-size) / 4);
+
+  &[data-color="blue"] {
+    --mosaic-item--color: #{$blue};
+  }
+  &[data-color="navy"] {
+    --mosaic-item--color: #{$navy};
+  }
+  &[data-color="cyan"] {
+    --mosaic-item--color: #{$cyan};
+  }
+  &[data-color="orange"] {
+    --mosaic-item--color: #{$orange};
+  }
+  &[data-color="yellow"] {
+    --mosaic-item--color: #{$yellow};
+  }
 }
 
 .mosaic-item img {
@@ -19,23 +53,3 @@
   height: 100%;
   object-fit: cover;
 }
-
-.item1 { grid-area: 1 / 1 / 3 / 3; }
-.item2 { grid-area: 1 / 3 / 2 / 4; }
-.item3 { grid-area: 2 / 3 / 4 / 4; }
-.item4 { grid-area: 3 / 1 / 4 / 2; }
-.item5 { grid-area: 3 / 2 / 4 / 3; }
-.item6 { grid-area: 1 / 4 / 2 / 5; }
-.item7 { grid-area: 2 / 4 / 3 / 5; }
-.item8 { grid-area: 3 / 4 / 4 / 5; }
-
-.color-block {
-  background-color: $cyan;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.bg-yellow { background-color: $yellow; }
-.bg-orange { background-color: $orange; }

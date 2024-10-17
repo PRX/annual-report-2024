@@ -1,18 +1,9 @@
 <div class="mosaic-container">
-  {% for image in show.mosaic-images %}
-    <div class="mosaic-item" data-index="{{ forloop.index }}">
-      {% picture {{ image.image }} --alt {{ image.alt }}  %}
+  {% for cell in mosaic %}
+    <div class="mosaic-item" style="--mosaic-item--position: {{ cell.position }}" data-color="{{ cell.color }}">
+      {%- if cell.image -%}
+      {% picture mosaic-image {{ cell.image.src }} --alt {{ cell.image.alt }}  %}
+      {%- endif -%}
     </div>		
   {% endfor %}
-
-  
-  {%- if show.logo -%}
-    <div class="mosaic-item item5 logo">
-      {% picture {{ show.logo.url }} --alt {{ show.logo.alt }}  %}
-    </div>
-  {%- endif -%}
-
-  <div class="mosaic-item item6 color-block"></div>
-  <div class="mosaic-item item7 color-block bg-yellow"></div>
-  <div class="mosaic-item item8 color-block bg-orange"></div>
 </div>

@@ -3,7 +3,7 @@
   --_show--column-gap: var(--show--column-gap, var(--content---column-gap, 3rem));
   --_show--row-gap: var(--show--row-gap, var(--content---row-gap, 2rem));
   --_show--padding-y: var(--show--padding-y, var(--content--padding-y, 3rem));
-  --_show--color: var(--show--theme-color, #{$yellow});
+  --_show--color: var(--show--color, #{$yellow});
   --_show--bg--color--start: var(--show--bg--color--start, #{$white});
   --_show--bg--color--end: var(--show--bg--color--end, color-mix(in oklab, var(--_show--color) 10%, var(--_show--bg--color--start)));
 
@@ -11,6 +11,7 @@
   grid-template-columns: [full-width-start] 1fr [extra-wide-start] calc(var(--_show--gutter) / 2) [wide-start] calc(var(--_show--gutter) / 2) [content-start] fit-content(900px) [content-end] calc(var(--_show--gutter) / 2) [wide-end] calc(var(--_show--gutter) / 2) [extra-wide-end] 1fr [full-width-end];
   justify-content: center;
   row-gap: var(--_show--row-gap);
+  max-width: 100vw;
 
   padding-block: var(--_show--padding-y);
 
@@ -18,13 +19,13 @@
   background: linear-gradient(to bottom, var(--_show--bg--color--start) 0%, var(--_show--bg--color--end) 30%);
 
   & ~ & {
-    --show--theme-color: #{$cyan};
+    --show--color: #{$cyan};
     --show-logo--accent--color1: #{$yellow};
     --show-logo--accent--color2: #{$orange};
   }
-  
+
   & ~ & ~ & {
-    --show--theme-color: #{$orange};
+    --show--color: #{$orange};
     --show-logo--accent--color1: #{$yellow};
     --show-logo--accent--color2: #{$cyan};
   }
@@ -135,10 +136,15 @@
   display: grid;
   grid-template-columns: subgrid;
   row-gap: var(--_show--row-gap);
+
+  max-width: 100vw;
 }
 
 .show-mosaic {
-  grid-column: content;
+  grid-column: wide;
+
+  container-name: mosaic;
+  container-type: inline-size;
 }
 
 .show-donor-quote {

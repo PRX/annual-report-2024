@@ -44,10 +44,22 @@ presets:
     dimension_attributes: true
 
   show-featured-image:
-    widths: [200, 300 , 400, 500, 600, 700, 800, 900, 1000, 1200, 1600]
+    widths: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1600]
     fallback_width: 500 # The default is 800, which is probably too big.
     size: 100vw
     sizes:
       wide: 1600px
+    formats:  [webp, original]
+    dimension_attributes: true
+
+  mosaic-image:
+    widths: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1600]
+    fallback_width: 500 # The default is 800, which is probably too big.
+    size: 50vw
+    sizes:
+      mobile: 200px
+      tablet: 325px
+      laptop: 450px
+      desktop: 530px
     formats:  [webp, original]
     dimension_attributes: true
