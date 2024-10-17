@@ -21,15 +21,13 @@
     </div>
   </section>
 
-  {% assign pages = site.pages | where_exp: "page", "page.type contains 'welcome'" | sort: "order" %}
-  {% for page in pages %}
+  {% for page in site.welcome %}
     <section class="container">
       <h2>Kerri's Letter</h2>
     </section>
   {% endfor %}
 
-  {% assign pages = site.pages | where_exp: "page", "page.type contains 'show'" | sort: "order" %}
-  {% for page in pages %}
+  {% for show in site.shows %}
     {% include page-types/show.html %}
   {% endfor %}
 

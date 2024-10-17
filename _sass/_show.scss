@@ -18,15 +18,15 @@
   background: linear-gradient(to bottom, var(--_show--bg--color--start) 0%, var(--_show--bg--color--end) 30%);
 
   & ~ & {
-    --show--theme-color: #{$orange};
-    --show-logo--accent--color1: #{$yellow};
-    --show-logo--accent--color2: #{$cyan};
-  }
-
-  & ~ & ~ & {
     --show--theme-color: #{$cyan};
     --show-logo--accent--color1: #{$yellow};
     --show-logo--accent--color2: #{$orange};
+  }
+  
+  & ~ & ~ & {
+    --show--theme-color: #{$orange};
+    --show-logo--accent--color1: #{$yellow};
+    --show-logo--accent--color2: #{$cyan};
   }
 
   @media (min-width: 768px) {
@@ -143,6 +143,15 @@
 
 .show-donor-quote {
   grid-column: wide;
+
+  .quote-text {
+    &::before {
+      content: open-quote;
+    }
+    &::after {
+      content: close-quote;
+    }
+  }
 }
 
 .show-featured-image {

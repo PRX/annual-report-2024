@@ -1,14 +1,14 @@
 <div class="mosaic-container">
-  {% for image in page.mosaic-images %}
+  {% for image in show.mosaic-images %}
     <div class="mosaic-item" data-index="{{ forloop.index }}">
       {% picture {{ image.image }} --alt {{ image.alt }}  %}
     </div>		
   {% endfor %}
 
   
-  {%- if page.logo -%}
+  {%- if show.logo -%}
     <div class="mosaic-item item5 logo">
-      {% picture {{ page.logo.url }} --alt {{ page.logo.alt }}  %}
+      {% picture {{ show.logo.url }} --alt {{ show.logo.alt }}  %}
     </div>
   {%- endif -%}
 
