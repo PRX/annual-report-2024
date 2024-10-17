@@ -1,14 +1,17 @@
-@import 'functions.scss';
-@import 'reset.scss';
+@import 'functions';
+@import 'mixins';
+@import 'reset';
 
-@import 'fonts.scss';
-@import 'colors.scss';
-@import 'layout.scss';
+@import 'fonts';
+@import 'colors';
+@import 'layout';
 
-@import 'buttons.scss';
-@import 'hero.scss';
-@import 'footer.scss';
-@import 'menu-item.scss';
-@import 'navbar.scss';
-@import 'section.scss';
-@import 'show-tiles.scss';
+@import 'buttons';
+@import 'hero';
+@import 'footer';
+@import 'menu-item';
+@import 'mosaic';
+@import 'navbar';
+@import 'section';
+@import 'show';
+@import 'show-tiles';
