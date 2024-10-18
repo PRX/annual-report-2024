@@ -19,7 +19,7 @@ $hero--card-count: $hero--columns * $hero--rows;
     display: grid;
     place-content: center;
 
-    font-size: clamp(2.5rem, calc(5vw + 0.5rem), 4rem);
+    font-size: clamp(2.5rem, calc(5vw + 0.5rem), 3rem);
     line-height: 1.15;
     text-align: center;
     text-transform: uppercase;
