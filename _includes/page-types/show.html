@@ -1,0 +1,65 @@
+<section id="{{ show.link.anchor | default: show.slug }}" class="container show">
+  <div class="show-main">
+    <div class="show-main--layout">
+      <h2 class="show-header">{{ show.title }}</h2>
+      
+      <div class="show-sidebar">
+        <div class="show-sidebar--layout">
+          {%- if show.logo -%}
+          <div class="show-logo">
+            {% picture show-logo-featured {{ show.logo.url }} --alt {{ show.logo.alt }}  %}
+          </div>
+          {%- endif -%} 
+        
+          {%- if show.quote -%}
+          <div class="show-quote">
+            {% include components/quote.html 
+              text=show.quote.text 
+              citation=show.quote.citation
+            %}
+          </div>  
+          {%- endif -%}
+
+          {%- if show.audio -%}
+          <div class="show-audio">
+            {% include components/audio-inline.html 
+              url=show.audio.url
+              title=show.audio.title
+            %}
+          </div>  
+          {%- endif -%} 
+        </div>
+      </div>
+      <div class="show-content">
+        {{ show.content }}
+
+        {%- if show.funders -%}
+          <p class="text-sm"><strong>Supported by:</strong> <em>{{ show.funders }}</em></p>
+        {%- endif -%} 
+      </div>
+    </div>
+  </div>
+  <div class="show-footer">
+    {%- if show.mosaic -%}
+    {%- assign mosaic = show.mosaic -%}
+    <div class="show-mosaic">
+      {% include components/show-mosaic.html %}
+    </div>
+    {%- endif -%}
+
+    {%- if show.donor-quote -%}
+    <div class="show-donor-quote">
+      {% include components/quote.html 
+        text=show.donor-quote.text 
+        citation=show.donor-quote.citation
+      %}
+    </div>
+    {%- endif -%}
+
+    {%- if show.featured-image -%}
+    <figure class="show-featured-image">
+      {% picture show-featured-image {{ show.featured-image.url }} --alt {{ show.featured-image.alt }}  %}
+    </figure>
+    {%- endif -%}
+  </div>
+</section>

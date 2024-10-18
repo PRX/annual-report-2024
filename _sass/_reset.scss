@@ -8,13 +8,21 @@ figure {
 
 img, picture, svg, video, canvas{
   max-width: 100%;
-  height: auto; 
+  height: auto;
   vertical-align: middle; 
-  font-style: italic; 
+  font-style: italic;
   background-repeat: no-repeat; 
   background-size: cover;
 }
 
+figure {
+  margin: 0;
+}
+
 input, button, textarea, select{
   font: inherit; 
+}
+
+audio {
+  width: 100%;
 }

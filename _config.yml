@@ -31,7 +31,7 @@ plugins:
 
 sass:
   sass_dir: _sass
-  style: compressed
+  # style: compressed
 
 permalink: pretty
 
@@ -52,7 +52,7 @@ kramdown:
     block:
     line_numbers: false
 
-# Guideline:https://www.digitalocean.com/community/tutorials/jekyll-compress-html0
+# Guideline: https://www.digitalocean.com/community/tutorials/jekyll-compress-html0
 compress_html:
   clippings: all
   comments: all
@@ -63,8 +63,21 @@ compress_html:
   # ignore:
   #   envs: all
 
+# Picture plugin configuration: https://rbuchberger.github.io/jekyll_picture_tag/users/configuration/
 picture:
   source: "assets"
   output: "assets/generated"
   suppress_warnings: true
   ignore_missing_images: true
+
+# Collections: https://jekyllrb.com/docs/collections/
+collections_dir: collections
+collections:
+  welcome:
+    order:
+      - welcome.html
+  shows:
+    order:
+      - the-world.html
+      - test.html
+      - test2.html

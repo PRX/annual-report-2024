@@ -20,14 +20,16 @@
       {{ content }}
     </div>
   </section>
-  
-  <section class="container">
-    <h2>Kerri's Letter</h2>
-  </section>
 
-  <section class="container">
-    <h2>Show name</h2>
-  </section>
+  {% for page in site.welcome %}
+    <section class="container">
+      <h2>Kerri's Letter</h2>
+    </section>
+  {% endfor %}
+
+  {% for show in site.shows %}
+    {% include page-types/show.html %}
+  {% endfor %}
 
   {% include page-types/playlist.html %}
 

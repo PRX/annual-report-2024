@@ -1,22 +1,29 @@
 <nav id="navDrawerPopover" class="nav-drawer" popover>
   <ul class="menu" role="list">
     {% include components/menu-item.html
-      href="#top"
+      href="#intro"
       label="Introduction"
-      color="white"  
+      color="white"
     %}
-    {% include components/menu-item.html
-      href="#"
-      label="CEO Letter"
-      color="white"    
-    %}
+
+    {% for welcome in site.welcome %}
+      {% assign href = welcome.link.anchor | default: welcome.slug | prepend: '#' %}
+      {% assign label = welcome.link.label | default: welcome.title %}
+      {% include components/menu-item.html
+        href=href
+        label=label
+        color="white"    
+      %}
+    {% endfor %}
     
-    <!-- # Todo: Loop through pages once they are created --> 
-    {% include components/menu-item.html
-      href="#"
-      label="Show Name"
-      color="light-blue"    
-    %} 
+    {% for show in site.shows %}
+      {% assign href = show.link.anchor | default: show.slug | prepend: '#' %}
+      {% assign label = show.link.label | default: show.title %}
+      {% include components/menu-item.html
+        href=href
+        label=label
+      %} 
+    {% endfor %}
 
     {% include components/menu-item.html
       href="#playlist"
