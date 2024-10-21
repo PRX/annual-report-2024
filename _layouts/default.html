@@ -27,9 +27,11 @@
     </section>
   {% endfor %}
 
-  {% for show in site.shows %}
-    {% include page-types/show.html %}
-  {% endfor %}
+  <div class="shows">
+    {% for show in site.shows %}
+      {% include page-types/show.html %}
+    {% endfor %}
+  </div>
 
   {% include page-types/playlist.html %}
 
