@@ -78,7 +78,13 @@ collections:
       - welcome.html
   shows:
     order:
-      - ear-hustle.html
       - the-recipe.html
+      - ear-hustle.html
       - the-world.html
-
+      - reveal.html
+      - monumental.html
+      - snap-judgment.html
+      - the-big-dig.html
+      - song-exploder.html
+      - weight-for-it.html
+      - marfa-for-beginners.html
