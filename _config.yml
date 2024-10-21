@@ -78,6 +78,8 @@ collections:
       - welcome.html
   shows:
     order:
-      - the-world.html
       - test.html
       - test2.html
+      - the-recipe.html
+      - the-world.html
+      - ear-hustle.html
