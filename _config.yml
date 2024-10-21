@@ -78,8 +78,7 @@ collections:
       - welcome.html
   shows:
     order:
-      - test.html
-      - test2.html
+      - ear-hustle.html
       - the-recipe.html
       - the-world.html
-      - ear-hustle.html
+

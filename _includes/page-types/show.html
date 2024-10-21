@@ -40,19 +40,19 @@
     </div>
   </div>
   <div class="show-footer">
-    {%- if show.mosaic -%}
-    {%- assign mosaic = show.mosaic -%}
-    <div class="show-mosaic">
-      {% include components/show-mosaic.html %}
-    </div>
-    {%- endif -%}
-
     {%- if show.donor-quote -%}
     <div class="show-donor-quote">
       {% include components/quote.html 
         text=show.donor-quote.text 
         citation=show.donor-quote.citation
       %}
+    </div>
+    {%- endif -%}
+
+    {%- if show.mosaic -%}
+    {%- assign mosaic = show.mosaic -%}
+    <div class="show-mosaic">
+      {% include components/show-mosaic.html %}
     </div>
     {%- endif -%}
 
