@@ -78,6 +78,23 @@ collections:
       - welcome.html
   shows:
     order:
+      - the-recipe.html
+      - ear-hustle.html
       - the-world.html
-      - test.html
-      - test2.html
+      - reveal.html
+      - monumental.html
+      - snap-judgment.html
+      - the-big-dig.html
+      - song-exploder.html
+      - weight-for-it.html
+      - marfa-for-beginners.html
+      - normal-gossip.html
+      - left-right-center.html
+      - second-sunday.html
+  content:
+    order:
+      - vision-for-content.html
+      - donor-list.html
+      - planned-giving.html
+      - awards-press.html
+      - finances.html

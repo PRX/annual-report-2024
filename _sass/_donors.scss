@@ -1,0 +1,49 @@
+.donor-container {
+  --_donor--grid-size: 8;
+  --_donor--gap: clamp(4px, 2cqi, 16px);
+  --_donor--cell-size: calc(100cqi / var(--_donor--grid-size));
+
+  display: grid;
+  grid-template-columns: repeat(8, var(--_donor--cell-size));
+  grid-template-rows: repeat(8, var(--_donor--cell-size));
+  place-content: center;
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  filter: drop-shadow(0 0 20px color-mix(in oklab, var(--show--color) 60%, transparent));
+}
+
+.donor-item {
+  --_donor-item--color: var(--donor-item--color, auto);
+  --_donor-item--position: var(--donor-item--position, auto);
+
+  grid-area: var(--_donor-item--position);
+
+  container-name: donor-item;
+  container-type: inline-size;
+
+  overflow: hidden;
+
+  margin: calc(var(--_donor--gap) / 2);
+
+  background-color: var(--_donor-item--color);
+
+  border-radius: calc(var(--_donor--cell-size) / 4);
+
+  &[data-color="blue"] {
+    --donor-item--color: #{$blue};
+  }
+  &[data-color="navy"] {
+    --donor-item--color: #{$navy};
+  }
+  &[data-color="cyan"] {
+    --donor-item--color: #{$cyan};
+  }
+  &[data-color="orange"] {
+    --donor-item--color: #{$orange};
+  }
+  &[data-color="yellow"] {
+    --donor-item--color: #{$yellow};
+  }
+}

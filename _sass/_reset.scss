@@ -1,5 +1,11 @@
 *, *::before, *::after{
-  box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+body, html {
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 }
 
 figure {
@@ -9,9 +15,9 @@ figure {
 img, picture, svg, video, canvas{
   max-width: 100%;
   height: auto;
-  vertical-align: middle; 
+  vertical-align: middle;
   font-style: italic;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -20,7 +26,7 @@ figure {
 }
 
 input, button, textarea, select{
-  font: inherit; 
+  font: inherit;
 }
 
 audio {

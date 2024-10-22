@@ -128,10 +128,26 @@ blockquote {
   p {
     color: $navy;
     margin-bottom: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
 }
 
 .quote-citation {
   font-size: .875rem;
   font-weight: bold;
+}
+
+.awards-link-list {
+  display: flex;
+  gap: 1rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
 }

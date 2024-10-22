@@ -7,10 +7,11 @@
   overflow: hidden;
 }
 
-.content {
+.content-wrapper {
   position: relative;
   max-width: 800px;
   z-index: 200;
+  text-align: center;
 
   p {
     font-size: 1.1rem;

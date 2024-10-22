@@ -13,10 +13,10 @@
 <body>
   {% include navbar/navbar.html %}
   {% include page-types/hero.html %}
-  
+
   <section class="container section-centered navy">
     {% include components/show-tiles.html %}
-    <div class="content">
+    <div class="content-wrapper">
       {{ content }}
     </div>
   </section>
@@ -27,9 +27,17 @@
     </section>
   {% endfor %}
 
-  {% for show in site.shows %}
-    {% include page-types/show.html %}
-  {% endfor %}
+  <div class="shows">
+    {% for show in site.shows %}
+      {% include page-types/show.html %}
+    {% endfor %}
+  </div>
+
+  <div class="contents">
+    {% for content in site.content %}
+      {% include page-types/content.html %}
+    {% endfor %}
+  </div>
 
   {% include page-types/playlist.html %}
 
