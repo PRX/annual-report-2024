@@ -1,8 +1,8 @@
 .content {
-  --_content--gutter: var(--content--gutter, var(--content--gutter, 4rem));
-  --_content--column-gap: var(--content--column-gap, var(--content---column-gap, 3rem));
-  --_content--row-gap: var(--content--row-gap, var(--content---row-gap, 2rem));
-  --_content--padding-y: var(--content--padding-y, var(--content--padding-y, 3rem));
+  --_content--gutter: var(--content--gutter, 4rem);
+  --_content--column-gap: var(--content---column-gap, 3rem);
+  --_content--row-gap: var(--content--row-gap 2rem);
+  --_content--padding-y: var(--content--padding-y 3rem);
   --_content--color: var(--content--color, #{$orange});
   --_content--bg--color--start: var(--content--bg--color--start, #{$white});
   --_content--bg--color--end: var(--content--bg--color--end, color-mix(in oklab, var(--_content--color) 10%, var(--_content--bg--color--start)));

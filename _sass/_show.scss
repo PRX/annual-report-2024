@@ -68,33 +68,6 @@
   }
 }
 
-.content .show-main--layout {
-  grid-template-areas:
-    "header"
-    "main";
-
-  @container show-main (width >= 900px) {
-    grid-template-columns: auto;
-    grid-template-areas:
-      "header"
-      "main";
-
-      .show:nth-of-type(even) & {
-        grid-template-areas:
-          "header"
-          "main";
-      }
-  }
-}
-
-@container show-main (width >= 900px) {
-  .show.content:nth-of-type(even) .show-main--layout {
-      grid-template-areas:
-      "header"
-      "main";
-  }
-}
-
 .show-header {
   grid-area: header;
   align-self: center;
