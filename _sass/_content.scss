@@ -1,8 +1,8 @@
 .content {
   --_content--gutter: var(--content--gutter, 4rem);
   --_content--column-gap: var(--content---column-gap, 3rem);
-  --_content--row-gap: var(--content--row-gap 2rem);
-  --_content--padding-y: var(--content--padding-y 3rem);
+  --_content--row-gap: var(--content--row-gap, 2rem);
+  --_content--padding-y: var(--content--padding-y, 3rem);
   --_content--color: var(--content--color, #{$orange});
   --_content--bg--color--start: var(--content--bg--color--start, #{$white});
   --_content--bg--color--end: var(--content--bg--color--end, color-mix(in oklab, var(--_content--color) 10%, var(--_content--bg--color--start)));
@@ -55,10 +55,35 @@
 }
 
 .content-header {
-  grid-area: header;
   align-self: center;
 
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+    "title"
+    "quote";
+  max-width: 100vw;
+
+  justify-content: center;
+  align-content: start;
+  column-gap: var(--_content--column-gap);
+  row-gap: var(--_content--row-gap);
+
   margin: 0;
+  text-align: center;
+}
+
+.content-title {
+  grid-area: title;
+  grid-column: wide;
+  justify-self: center;
+  margin-bottom: 0;
+}
+
+.content-quote {
+  grid-area: quote;
 }
 
 .content-content {
@@ -70,6 +95,11 @@
     & + * {
       margin-top: 1.25em;
     }
+  }
+
+  blockquote p {
+    padding: var(--_content--row-gap) 0 var(--_content--row-gap) var(--_content--row-gap);
+    border-left: 3px dotted #{$orange};
   }
 }
 

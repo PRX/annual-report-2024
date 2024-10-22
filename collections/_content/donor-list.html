@@ -1,7 +1,120 @@
---- 
-title: "Donor List" 
-link: 
-  anchor: "donor-list" 
-  label: "Donor List" 
 ---
-<p>TBD</p>
+title: "Donor List"
+link:
+  anchor: "donor-list"
+  label: "Donor List"
+champions:
+  - label: FJC - A Foundation of Philanthropic Funds
+    location: New York, NY
+  - label: Kelson Foundation
+    location: San Francisco, CA
+  - label: Roman Mars
+    location: San Francisco, CA
+transformers:
+  - label: Harold and Colene Brown Family Foundation
+    location: Beverly Hills, CA
+  - label: Gavin/Solmonese LLC
+    location: Wilmington, DE
+  - label: Gruber Family Foundation
+    location: San Francisco, CA
+  - label: The Patchwork Collective
+    location: Sonoma, CA
+  - label: Amy Rao and Harry Plant
+    location: San Francisco, CA
+  - label: Liliane and Ed Schneider
+    location: San Francisco, CA
+changemakers:
+  - label: Alice Shaver Charitable Trust
+    location: Washington, D.C.
+  - label: Betsy Atwater
+    location: Santa Barbara, CA
+  - label: Dodee and Billy Crockett
+    location: Wimberley, TX
+  - label: Katherine Harris and Tom Keyser
+    location: North Oaks, MN
+  - label: Judy Pigott
+    location: Seattle, WA
+  - label: Helen and Russell Pyne
+    location: Atherton, CA
+  - label: Sarlo Family Foundation
+    location: Kentfield, CA
+  - label: Maryanne Tagney
+    location: Seattle, WA
+ambassadors:
+  - label: Anonymous
+  - label: Henry Becton
+    location: Boston, MA
+  - label: Kathy Chan
+    location: San Francisco, CA
+  - label: Cindy Engles
+    location: Naples, FL
+  - label: Epic Systems Corporation
+    location: Verona, WI
+  - label: Firerose Fund of the Roots & Wings Foundation
+    location: Seattle, WA
+  - label: Kerri and Nelson Hoffman
+    location: Northfield, VT
+  - label: Lucy and Ken Lehman Family
+    location: Evanston, IL
+  - label: Dan Shih and Ted MacGovern
+    location: Seattle, WA
+  - label: Cindy and Howard Rachofsky
+    location: Dallas, TX
+  - label: Reis Foundation
+    location: Columbia, MD
+  - label: Rima Hyder and Camilo Villa
+    location: Brookline, MA
+  - label: Amanda Weitman
+    location: San Rafael, CA
+
+---
+
+<div class="donor-list">
+  <h4>Champions—$100,000+</h4>
+  {% for champion in page.champions %}
+  <li>
+    <dl>
+      <dt>{{ champion.label }}</dt>
+      <dd>{{ champion.location }}</dd>
+    </dl>
+  </li>
+  {% endfor %}
+</div>
+
+<div class="donor-list">
+  <h4>Transformers—$50,000-$99,999</h4>
+  {% for transformer in page.transformers %}
+  <li>
+    <dl>
+      <dt>{{ transformer.label }}</dt>
+      <dd>{{ transformer.location }}</dd>
+    </dl>
+  </li>
+  {% endfor %}
+</div>
+
+<div class="donor-list">
+  <h4>Changemakers—$25,000-$49,999</h4>
+  {% for changemaker in page.changemakers %}
+  <li>
+    <dl>
+      <dt>{{ changemaker.label }}</dt>
+      <dd>{{ changemaker.location }}</dd>
+    </dl>
+  </li>
+  {% endfor %}
+</div>
+
+<div class="donor-list">
+  <h4>Ambassadors—$10,000-$24,999</h4>
+  {% for ambassador in page.ambassadors %}
+  <li>
+    <dl>
+      <dt>{{ ambassador.label }}</dt>
+      <dd>{{ ambassador.location }}</dd>
+    </dl>
+  </li>
+  {% endfor %}
+</div>
+
+

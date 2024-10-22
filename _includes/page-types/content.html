@@ -1,13 +1,6 @@
-<section id="{{ content.link.anchor | default: content.slug }}" class="container content content">
-  <div class="content-main">
-    <div class="content-main--layout">
-      <h2 class="content-header">{{ content.title }}</h2>
-      <div class="content-content">
-        {{ content.content }}
-      </div>
-    </div>
-  </div>
-  <div class="content-footer">
+<section id="{{ content.link.anchor | default: content.slug }}" class="container content">
+  <div class="content-header">
+    <h2 class="content-title">{{ content.title }}</h2>
     {%- if content.quote -%}
     <div class="content-donor-quote">
       {% include components/quote.html
@@ -16,7 +9,15 @@
       %}
     </div>
     {%- endif -%}
-
+  </div>
+  <div class="content-main">
+    <div class="content-main--layout">
+      <div class="content-content">
+        {{ content.content }}
+      </div>
+    </div>
+  </div>
+  <div class="content-footer">
     {%- if content.featured-image -%}
     <figure class="content-featured-image">
       {% picture show-featured-image {{ content.featured-image.url }} --alt {{ content.featured-image.alt }}  %}

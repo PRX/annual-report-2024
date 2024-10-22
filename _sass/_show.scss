@@ -48,7 +48,6 @@
 .show-main--layout {
   display: grid;
   grid-template-areas:
-    "header"
     "sidebar"
     "main";
   column-gap: var(--_show--column-gap);
@@ -59,22 +58,45 @@
     grid-template-columns: minmax(auto, 300px) auto minmax(auto, 300px) ;
     grid-template-rows: min-content 1fr;
     grid-template-areas:
-      "header header sidebar"
       "main main sidebar";
 
       .show:nth-of-type(even) & {
         grid-template-areas:
-          "sidebar header header"
           "sidebar main main";
       }
   }
 }
 
 .show-header {
-  grid-area: header;
   align-self: center;
 
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+    "title"
+    "quote";
+  max-width: 100vw;
+
+  justify-content: center;
+  align-content: start;
+  column-gap: var(--_show--column-gap);
+  row-gap: var(--_show--row-gap);
+
   margin: 0;
+  text-align: center;
+}
+
+.show-title {
+  grid-area: title;
+  grid-column: wide;
+  justify-self: center;
+  margin-bottom: 0;
+}
+
+.show-quote {
+  grid-area: quote;
 }
 
 .show-content {
@@ -86,6 +108,11 @@
     & + * {
       margin-top: 1.25em;
     }
+  }
+
+  blockquote p {
+    padding: var(--_show--row-gap) 0 var(--_show--row-gap) var(--_show--row-gap);
+    border-left: 3px dotted #{$orange};
   }
 }
 
@@ -102,21 +129,10 @@
   align-content: start;
   grid-template-areas:
     "logo"
-    "quote"
-    "audio";
+    "audio"
+    "funders";
   column-gap: var(--_show--column-gap);
   row-gap: var(--_show--row-gap);
-
-  text-align: center;
-
-  @container show-sidebar (width >= 700px) {
-    grid-template-columns: auto minmax(auto, 300px) ;
-    grid-template-areas:
-      "quote logo"
-      "audio audio";
-    align-content: center;
-    align-items: center;
-  }
 }
 
 .show-logo {
@@ -134,8 +150,10 @@
   }
 }
 
-.show-quote {
-  grid-area: quote;
+.show-funders {
+  grid-area: funders;
+
+  p {font-size: .875rem;}
 }
 
 .show-audio {
@@ -159,6 +177,7 @@
   container-type: inline-size;
 }
 
+.show-quote,
 .show-donor-quote {
   grid-column: wide;
   justify-self: center;
