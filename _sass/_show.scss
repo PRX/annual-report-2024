@@ -53,9 +53,11 @@
     "main";
   column-gap: var(--_show--column-gap);
   row-gap: var(--_show--row-gap);
+  align-content: start;
 
   @container show-main (width >= 900px) {
     grid-template-columns: minmax(auto, 300px) auto minmax(auto, 300px) ;
+    grid-template-rows: min-content 1fr;
     grid-template-areas:
       "header header sidebar"
       "main main sidebar";
