@@ -135,3 +135,17 @@ blockquote {
   font-size: .875rem;
   font-weight: bold;
 }
+
+.awards-link-list {
+  display: flex;
+  gap: 1rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}

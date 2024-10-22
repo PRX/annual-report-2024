@@ -38,14 +38,6 @@
   }
 }
 
-.show.content-page {
-  background: var(--_show--bg--color--start);
-
-  &:nth-of-type(even) {
-    background: #{$gray};
-  }
-}
-
 .show-main {
   grid-column: content;
 
@@ -93,6 +85,14 @@
           "main";
       } 
   }    
+}
+
+@container show-main (width >= 900px) {
+  .show.content-page:nth-of-type(even) .show-main--layout {
+      grid-template-areas:
+      "header"
+      "main";
+  }
 }
 
 .show-header {
