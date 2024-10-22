@@ -22,6 +22,16 @@
       {% include components/menu-item.html
         href=href
         label=label
+        color=cyan
+      %} 
+    {% endfor %}
+
+    {% for content-page in site.content-pages %}
+      {% assign href = content-page.link.anchor | default: content-page.slug | prepend: '#' %}
+      {% assign label = content-page.link.label | default: content-page.title %}
+      {% include components/menu-item.html
+        href=href
+        label=label
       %} 
     {% endfor %}
 

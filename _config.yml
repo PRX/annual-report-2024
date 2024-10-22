@@ -91,3 +91,10 @@ collections:
       - normal-gossip.html
       - left-right-center.html
       - second-sunday.html
+  content-pages:
+    order:
+      - vision-for-content.html
+      - donor-list.html
+      - planned-giving.html
+      - awards-press.html
+      - finances.html

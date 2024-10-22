@@ -33,6 +33,12 @@
     {% endfor %}
   </div>
 
+  <div class="content-pages">
+    {% for content-page in site.content-pages %}
+      {% include page-types/content-page.html %}
+    {% endfor %}
+  </div>
+
   {% include page-types/playlist.html %}
 
   {% include navbar/navbar-drawer.html %}

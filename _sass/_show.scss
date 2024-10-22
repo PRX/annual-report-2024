@@ -38,6 +38,14 @@
   }
 }
 
+.show.content-page {
+  background: var(--_show--bg--color--start);
+
+  &:nth-of-type(even) {
+    background: #{$gray};
+  }
+}
+
 .show-main {
   grid-column: content;
 
@@ -64,6 +72,25 @@
         grid-template-areas: 
           "sidebar header header"
           "sidebar main main";
+      } 
+  }    
+}
+
+.content-page .show-main--layout {
+  grid-template-areas: 
+    "header"
+    "main";
+
+  @container show-main (width >= 900px) {
+    grid-template-columns: auto;
+    grid-template-areas: 
+      "header"
+      "main";
+
+      .show:nth-of-type(even) & {
+        grid-template-areas: 
+          "header"
+          "main";
       } 
   }    
 }
@@ -159,6 +186,7 @@
 
 .show-donor-quote {
   grid-column: wide;
+  text-align: center;
 
   .quote-text {
     &::before {
