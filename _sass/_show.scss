@@ -68,7 +68,7 @@
   }
 }
 
-.content-page .show-main--layout {
+.content .show-main--layout {
   grid-template-areas:
     "header"
     "main";
@@ -88,7 +88,7 @@
 }
 
 @container show-main (width >= 900px) {
-  .show.content-page:nth-of-type(even) .show-main--layout {
+  .show.content:nth-of-type(even) .show-main--layout {
       grid-template-areas:
       "header"
       "main";

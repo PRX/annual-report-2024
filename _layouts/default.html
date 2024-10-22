@@ -13,10 +13,10 @@
 <body>
   {% include navbar/navbar.html %}
   {% include page-types/hero.html %}
-  
+
   <section class="container section-centered navy">
     {% include components/show-tiles.html %}
-    <div class="content">
+    <div class="content-wrapper">
       {{ content }}
     </div>
   </section>
@@ -33,9 +33,9 @@
     {% endfor %}
   </div>
 
-  <div class="content-pages">
-    {% for content-page in site.content-pages %}
-      {% include page-types/content-page.html %}
+  <div class="contents">
+    {% for content in site.content %}
+      {% include page-types/content.html %}
     {% endfor %}
   </div>
 

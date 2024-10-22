@@ -91,7 +91,7 @@ collections:
       - normal-gossip.html
       - left-right-center.html
       - second-sunday.html
-  content-pages:
+  content:
     order:
       - vision-for-content.html
       - donor-list.html

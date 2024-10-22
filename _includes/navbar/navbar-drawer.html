@@ -12,27 +12,26 @@
       {% include components/menu-item.html
         href=href
         label=label
-        color="white"    
+        color="white"
       %}
     {% endfor %}
-    
+
     {% for show in site.shows %}
       {% assign href = show.link.anchor | default: show.slug | prepend: '#' %}
       {% assign label = show.link.label | default: show.title %}
       {% include components/menu-item.html
         href=href
         label=label
-        color=cyan
-      %} 
+      %}
     {% endfor %}
 
-    {% for content-page in site.content-pages %}
-      {% assign href = content-page.link.anchor | default: content-page.slug | prepend: '#' %}
-      {% assign label = content-page.link.label | default: content-page.title %}
+    {% for content in site.content %}
+      {% assign href = content.link.anchor | default: content.slug | prepend: '#' %}
+      {% assign label = content.link.label | default: content.title %}
       {% include components/menu-item.html
         href=href
         label=label
-      %} 
+      %}
     {% endfor %}
 
     {% include components/menu-item.html
@@ -47,9 +46,9 @@
       href="https://give.prx.org/give/529551/#!/donation/checkout"
       color="cyan"
       campaign-id="529551"
-      icon="favorite" 
+      icon="favorite"
       aria-label="hidden"
-      label="Donate" 
+      label="Donate"
     %}
-  </ul>  
+  </ul>
 </nav>
