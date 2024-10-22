@@ -105,6 +105,9 @@
 
 .content-quote {
   grid-area: quote;
+  grid-column: wide;
+  justify-self: center;
+  text-align: center;
 }
 
 .content-footer {
