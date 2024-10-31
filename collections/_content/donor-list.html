@@ -276,8 +276,8 @@ institutions-25k:
 ---
 <div class="donor-container">
   <div class="donor-item">
+    <h4>Champions—$100,000+</h4>
     <ul class="donor-list">
-      <h4>Champions—$100,000+</h4>
       {% for champion in page.champions %}
         {% include components/donor-list.html
           label=champion.label
@@ -287,26 +287,31 @@ institutions-25k:
     </ul>
   </div>
 
-  <ul class="donor-list">
+  <div class="donor-item">
     <h4>Transformers—$50,000-$99,999</h4>
-    {% for transformer in page.transformers %}
-      {% include components/donor-list.html
-        label=transformer.label
-        location=transformer.location
-      %}
-    {% endfor %}
-  </ul>
+    <ul class="donor-list">
+      {% for transformer in page.transformers %}
+        {% include components/donor-list.html
+          label=transformer.label
+          location=transformer.location
+        %}
+      {% endfor %}
+    </ul>
+  </div>
 
-  <ul class="donor-list">
+  <div class="donor-item">
     <h4>Changemakers—$25,000-$49,999</h4>
-    {% for changemaker in page.changemakers %}
-      {% include components/donor-list.html
-        label=changemaker.label
-        location=changemaker.location
-      %}
-    {% endfor %}
-  </ul>
+    <ul class="donor-list">
+      {% for changemaker in page.changemakers %}
+        {% include components/donor-list.html
+          label=changemaker.label
+          location=changemaker.location
+        %}
+      {% endfor %}
+    </ul>
+  </div>
 
+  <div class="donor-item">
   <ul class="donor-list">
     <h4>Ambassadors—$10,000-$24,999</h4>
     {% for ambassador in page.ambassador %}
@@ -316,70 +321,86 @@ institutions-25k:
       %}
     {% endfor %}
   </ul>
+  </div>
 
-  <ul class="donor-list">
+  <div class="donor-item">
     <h4>Leaders—$5,000-$9,999</h4>
-    {% for leader in page.leaders %}
-      {% include components/donor-list.html
-        label=leader.label
-        location=leader.location
-      %}
-    {% endfor %}
-  </ul>
+    <ul class="donor-list">
+      {% for leader in page.leaders %}
+        {% include components/donor-list.html
+          label=leader.label
+          location=leader.location
+        %}
+      {% endfor %}
+    </ul>
+  </div>
 
-  <ul class="donor-list">
+  <div class="donor-item">
     <h4>Creators—$2,500 - $4,999</h4>
-    {% for creator in page.creators %}
-      {% include components/donor-list.html
-        label=creator.label
-        location=creator.location
-      %}
-    {% endfor %}
-  </ul>
+    <ul class="donor-list">
+      {% for creator in page.creators %}
+        {% include components/donor-list.html
+          label=creator.label
+          location=creator.location
+        %}
+      {% endfor %}
+    </ul>
+  </div>
 
-  <ul class="donor-list">
+  <div class="donor-item">
     <h4>Advocates—$1,000-$2,4999</h4>
-    {% for advocate in page.advocates %}
-      {% include components/donor-list.html
-        label=advocate.label
-        location=advocate.location
-      %}
-    {% endfor %}
-  </ul>
+    <ul class="donor-list">
+      {% for advocate in page.advocates %}
+        {% include components/donor-list.html
+          label=advocate.label
+          location=advocate.location
+        %}
+      {% endfor %}
+    </ul>
+  </div>
 
-  <ul class="donor-list">
+  <div class="donor-item">
     <h4>Institutions: $1,000,000+</h4>
-    {% for institution in page.institutions-1mil %}
-      {% include components/donor-list.html
-        label=institution.label
-      %}
-    {% endfor %}
-  </ul>
+    <ul class="donor-list">
+      {% for institution in page.institutions-1mil %}
+        {% include components/donor-list.html
+          label=institution.label
+        %}
+      {% endfor %}
+    </ul>
+  </div>
 
-  <ul class="donor-list">
+  <div class="donor-item">
     <h4>Institutions: $250,000 - $999,000</h4>
-    {% for institution in page.institutions-250k %}
-      {% include components/donor-list.html
-        label=institution.label
-      %}
-    {% endfor %}
-  </ul>
+    <ul class="donor-list">
 
-  <ul class="donor-list">
+      {% for institution in page.institutions-250k %}
+        {% include components/donor-list.html
+          label=institution.label
+        %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="donor-item">
     <h4>Institutions: $100,000 - $249,999</h4>
-    {% for institution in page.institutions-100k %}
-      {% include components/donor-list.html
-        label=institution.label
-      %}
-    {% endfor %}
-  </ul>
+    <ul class="donor-list">
+      {% for institution in page.institutions-100k %}
+        {% include components/donor-list.html
+          label=institution.label
+        %}
+      {% endfor %}
+    </ul>
+  </div>
 
-  <ul class="donor-list">
+  <div class="donor-item">
     <h4>Institutions: $25,000 - $99,999</h4>
-    {% for institution in page.institutions-25k %}
-      {% include components/donor-list.html
-        label=institution.label
-      %}
-    {% endfor %}
-  </ul>
+    <ul class="donor-list">
+      {% for institution in page.institutions-25k %}
+        {% include components/donor-list.html
+          label=institution.label
+        %}
+      {% endfor %}
+    </ul>
+  </div>
 </div>

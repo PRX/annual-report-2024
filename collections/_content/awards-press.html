@@ -1,12 +1,12 @@
---- 
-title: "Awards &amp; Press" 
-link: 
-  anchor: "awards-press" 
+---
+title: "Awards &amp; Press"
+link:
+  anchor: "awards-press"
   label: "Awards &amp; Press"
 awards:
   - link: https://peabodyawards.com/stories/nominees-in-docs-news-public-service-podcast-announced/
     label: Peabody Awards
-  - link: https://www.asme.media/american-society-of-magazine-editors-announces-national-magazine-awards-2024-nominees  
+  - link: https://www.asme.media/american-society-of-magazine-editors-announces-national-magazine-awards-2024-nominees
     label: National Magazine Awards
   - link: https://www.rtdna.org/2023-national-edward-r-murrow-award-winners
     label: Edward R. Murrow Awards
@@ -39,7 +39,7 @@ awards:
 press:
   - link: https://www.nytimes.com/2023/08/03/opinion/prison-music-redemption.html
     label: The New York Times
-  - link: https://www.newyorker.com/culture/2023-in-review/the-best-podcasts-of-2023	
+  - link: https://www.newyorker.com/culture/2023-in-review/the-best-podcasts-of-2023
     label: The New Yorker
   - link: https://www.theatlantic.com/culture/archive/2023/12/25-best-podcasts-2023/676935/
     label: The Atlantic
@@ -81,19 +81,19 @@ press:
     label: The Great Discontent
   - link: https://deadline.com/2024/03/ear-hustle-docuseries-morgan-freeman-revelations-entertainment-1235865330/
     label: DEADLINE
-  - link: https://current.org/2023/12/prx-nepm-partner-with-nonprofit-to-elevate-community-stories-in-massachusetts/	
+  - link: https://current.org/2023/12/prx-nepm-partner-with-nonprofit-to-elevate-community-stories-in-massachusetts/
     label: Current
   - link: https://www.commonsensemedia.org/articles/the-best-kids-everything-from-2023
     label: Common Sense Media
   - link: https://www.youtube.com/watch?v=0MevpDJrwO4&t=1636s
     label: Aspen Ideas Festival
-  - link: https://tribecafilm.com/press-center/festival/press-releases/tribeca-x-announces-2024-speaker-lineup-for-expanded-two-day-event-official-selections-for-tribeca-x-award	
+  - link: https://tribecafilm.com/press-center/festival/press-releases/tribeca-x-announces-2024-speaker-lineup-for-expanded-two-day-event-official-selections-for-tribeca-x-award
     label: Tribeca Festival
 ---
 
 <div class="awards-link-list">
+  <h4>Awards</h4>
   <ul class="link-list">
-    <h4>Awards</h4>
     {% for award in page.awards %}
     <li>
       <a target="_blank" href="{{ award.link }}">{{ award.label }}</a>
@@ -101,8 +101,8 @@ press:
     {% endfor %}
   </ul>
 
+  <h4>Press</h4>
   <ul class="link-list">
-    <h4>Press</h4>
     {% for press in page.press %}
     <li>
       <a target="_blank" href="{{ press.link }}">{{ press.label }}</a>
