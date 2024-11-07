@@ -1,0 +1,29 @@
+# TODO Look into using a more native workflow
+# https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
+name: Build and deploy Jekyll site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+      - run: sudo apt-get update && sudo apt-get install -y libvips42 ruby-vips libvips-dev
+      - uses: limjh16/jekyll-action-ts@v2
+        with:
+          enable_cache: true
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
