@@ -1,5 +1,5 @@
 # Annual Report 2024
-Jekyll site for the single page PRX 2024 Annual Report
+Jekyll site for the single page PRX 2024 Annual Report. Some CSS magic.
 
 ## Local Development
 
