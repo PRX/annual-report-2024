@@ -9,4 +9,15 @@ quote:
 ---
 
 <!-- TODO ADD IN DONOR GRID USING data/donor_list.json data/donor_levels -->
+<ul>
+  {% for donor in site.data.donor_list %}
+  <li>
+    <dl>
+      <dt>{{ donor.name }}</dt>
+      <dd>{{ donor.location }}</dd>
+      <dd>{{ donor.level }}</dd>
+    </dl>
+  </li>
+  {% endfor %}
+</ul>
 
