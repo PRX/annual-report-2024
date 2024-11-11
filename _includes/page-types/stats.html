@@ -1,6 +1,8 @@
 <div class="stats-grid">
   {% for stat in site.data.stats %}
-    {{ stat.number }}
-    {{ stat.description }}
+  <div class="stats-item">
+    <h3>{{ stat.number }}</h3>
+    <p>{{ stat.description }}</p>
+  </div>
   {% endfor %}
 </div>
