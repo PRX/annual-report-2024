@@ -18,6 +18,15 @@
     </div>
   </div>
   <div class="content-footer">
+    {%- if content.donor-quote -%}
+    <div class="content-donor-quote">
+      {% include components/quote.html
+        text=content.donor-quote.text
+        citation=content.donor-quote.citation
+      %}
+    </div>
+    {%- endif -%}
+
     {%- if content.featured-image -%}
     <figure class="content-featured-image">
       {% picture show-featured-image {{ content.featured-image.url }} --alt {{ content.featured-image.alt }}  %}
