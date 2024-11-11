@@ -21,11 +21,14 @@
     </div>
   </section>
 
-  {% for page in site.welcome %}
-    <section class="container">
-      <h2>Kerri's Letter</h2>
-    </section>
-  {% endfor %}
+  <div class="welcomes">
+    <h2>Welcome from our CEO</h2>
+    <p>TBD</p>
+  </div>
+
+  <div class="stats">
+    {% include page-types/stats.html %}
+  </div>
 
   <div class="shows">
     {% for show in site.shows %}
