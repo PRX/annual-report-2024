@@ -1,0 +1,47 @@
+[
+  {
+    "number": "10,514,187",
+    "description": "Underwriting",
+    "type": "revenue"
+  },
+  {
+    "number": "8,556,348",
+    "description": "Operating Activities",
+    "type": "revenue"
+  },
+  {
+    "number": "1,815,549",
+    "description": "Grants",
+    "type": "revenue"
+  },
+  {
+    "number": "1,474,295",
+    "description": "Individual Gifts",
+    "type": "revenue"
+  },
+  {
+    "number": "3,808,453",
+    "description": "Other",
+    "type": "revenue"
+  },
+  {
+    "number": "16,531,024",
+    "description": "Support for Creators",
+    "type": "expense"
+  },
+  {
+    "number": "16,056,516",
+    "description": "Content Production and Distribution",
+    "type": "expense"
+  },
+  {
+    "number": "1,815,549",
+    "description": "Administrative",
+    "type": "expense"
+  },
+  {
+    "number": "1,474,295",
+    "description": "Fundraising",
+    "type": "expense"
+  }
+]
