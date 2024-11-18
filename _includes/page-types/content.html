@@ -17,6 +17,7 @@
       </div>
     </div>
   </div>
+  {%- if content.donor-quote or content.featured-image -%}
   <div class="content-footer">
     {%- if content.donor-quote -%}
     <div class="content-donor-quote">
@@ -33,4 +34,5 @@
     </figure>
     {%- endif -%}
   </div>
+  {%- endif -%}
 </section>

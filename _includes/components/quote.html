@@ -1,4 +1,6 @@
 <blockquote>
   <p class="quote-text">{{ include.text }}</p>
-  <p class="quote-citation"><cite>{{ include.citation }}</cite></p>
+  {%- if include.citation -%}
+  <cite class="quote-citation">{{ include.citation }}</cite>
+  {%- endif -%}
 </blockquote>

@@ -6,16 +6,20 @@
 @import 'colors';
 @import 'layout';
 
+// Component Styles.
 @import 'buttons';
-@import 'content';
-@import 'donors';
 @import 'hero';
-@import 'finances';
 @import 'footer';
 @import 'menu-item';
 @import 'mosaic';
 @import 'navbar';
 @import 'section';
+
+// Section Styles.
+@import 'content';
+@import 'finances';
 @import 'show';
 @import 'show-tiles';
 @import 'stats';
+@import 'awards-press';
+@import 'donors';

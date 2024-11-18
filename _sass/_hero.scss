@@ -26,19 +26,19 @@ $hero--card-count: $hero--columns * $hero--rows;
     font-weight: 900;
 
     margin: 3rem 0;
-  
-    span {    
+
+    span {
       display: block;
       color: var(--header-text-color);
-  
+
       &.cyan {
         --header-text-color: #{$cyan};
       }
-    
+
       &.orange {
         --header-text-color: #{$orange};
       }
-    
+
       &.yellow {
         --header-text-color: #{$yellow};
       }
@@ -59,7 +59,7 @@ $hero--card-count: $hero--columns * $hero--rows;
   $bg-colors: $yellow, $navy, $orange, $cyan, $blue;
 
   --_hero-card--bg--color: #{$gray};
-  
+
   grid-column: var(--_hero-card--column, 1);
   grid-row-start: var(--_hero-card--row, 1);
 
@@ -151,7 +151,7 @@ $hero--card-count: $hero--columns * $hero--rows;
   @for $edge-offset from 1 through $max-edge-offset {
     // Left edge cards.
     &:nth-of-type(#{$hero--columns}n - #{$hero--columns - $edge-offset}),
-    // Right edge cards. 
+    // Right edge cards.
     &:nth-of-type(#{$hero--columns}n - #{$edge-offset - 1})
     {
       //// Taper edge columns to add interest to layout.

@@ -2,6 +2,7 @@
   --_content--gutter: var(--content--gutter, 4rem);
   --_content--column-gap: var(--content---column-gap, 3rem);
   --_content--row-gap: var(--content--row-gap, 2rem);
+  --_content--padding-x: var(--content--padding-x, 0);
   --_content--padding-y: var(--content--padding-y, 3rem);
   --_content--color: var(--content--color, #{$orange});
   --_content--bg--color--start: var(--content--bg--color--start, #{$white});
@@ -12,6 +13,7 @@
   row-gap: var(--_content--row-gap);
   max-width: 100vw;
 
+  padding-inline: var(--_content--padding-x);
   padding-block: var(--_content--padding-y);
 
   background: var(--_content--bg--color--start);
@@ -97,7 +99,7 @@
     }
   }
 
-  blockquote p {
+   & > blockquote p {
     padding: var(--_content--row-gap) 0 var(--_content--row-gap) var(--_content--row-gap);
     border-left: 3px dotted #{$orange};
   }

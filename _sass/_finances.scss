@@ -1,5 +1,6 @@
 .financials {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-gap: 36px;
