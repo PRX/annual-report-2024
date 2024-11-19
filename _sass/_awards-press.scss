@@ -25,21 +25,32 @@
 }
 
 .awards-press--grid {
+  --_item-line-height: 2;
+
   display: grid;
-  justify-content: space-around;
   gap: 3rem;
 
-  line-height: 1.5rem;
+  line-height: var(--_item-line-height);
 
-  :where(ul) {
+  [data-link-type] {
+    --_bubble-wrap--color: var(--bubble-wrap--color, #{$orange});
+
+    isolation: isolate;
+  }
+
+  [data-link-type="press"] {
+    --bubble-wrap--color: #{$yellow};
+  }
+
+  ul {
     --_item-scale: calc(max(1, (var(--max-item-count) - 1) / (var(--item-count) - 1)));
-    --_item-height: calc(var(--_item-scale) * 1.5rem);
+    --_item-height: var(--item-height, calc(var(--_item-line-height) * 1rem));
 
     position: relative;
-    z-index: 1;
 
     margin: 0;
     padding: 0;
+    padding-inline: 1rem;
 
     list-style: none;
 
@@ -51,42 +62,55 @@
       margin: 0;
 
       & + li {
-        margin-top: calc(var(--_item-height) - 1.5rem);
+        margin-top: calc(var(--_item-height) - var(--_item-line-height) * 1rem);
       }
 
       a {
-        color: $orange;
+        --_link-color: #{$orange};
+
+        box-decoration-break: clone;
+
+        padding: 0 0.5em;
+
+        border-radius: 0.25em;
+
+        color: var(--_link-color);
         text-decoration: none;
 
         line-height: 1;
 
         &:where(:hover, :focus-visible) {
-          opacity: 0.7;
+          color: var(--content--bg--color--start);
+          background-color: var(--_link-color);
         }
       }
 
       &:nth-of-type(2n) {
         a {
-          color: $cyan;
+          --_link-color: #{$cyan};
         }
       }
 
       &:nth-of-type(3n) {
         a {
-          color: $yellow;
+          --_link-color: #{$yellow};
         }
       }
     }
   }
 
   @container (width > 900px) {
+    ul {
+      --item-height: calc(var(--_item-scale) * var(--_item-line-height) * 1rem);
+    }
+
     grid-template-columns: repeat(auto-fit, minmax(30cqi, 1fr));
     justify-content: space-between;
   }
 }
 
 .bubble-wrap {
-  --_bubble-wrap--width: var(--donor-list--header-width, 15ch);
+  --_bubble-wrap--width: var(--bubble-wrap--width, clamp(10ch, 20vw, 15ch));
   --_bubble-wrap--side: var(--bubble-wrap--side, left);
 
   position: relative;
@@ -96,7 +120,7 @@
   align-content: center;
   width: var(--_bubble-wrap--width);
   height: 100%;
-  min-height: calc(var(--max-item-count) * 1.5rem);
+  min-height: calc(var(--item-count) * var(--_item-line-height) * 1rem);
   float: var(--_bubble-wrap--side);
   shape-outside: circle(0 at 0 50%);
   shape-margin: calc(var(--_bubble-wrap--width));
@@ -105,19 +129,41 @@
 
   color: var(--content--bg--color--start);
 
+  & + * {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 0.25rem;
+      height: 100%;
+      z-index: -2;
+      translate: -50% 0;
+
+      border-radius: 999vw;
+
+      background-color: var(--_bubble-wrap--color);
+    }
+  }
+
+  &::before,
   &::after {
     content: '';
     position: absolute;
+
+    border-radius: 999vw;
+
+    background-color: var(--_bubble-wrap--color);
+  }
+
+  &::after {
     top: 50%;
     left: 0;
     translate: -50% -50%;
     width: calc(200% - 2em);
     aspect-ratio: 1;
     z-index: -1;
-
-    border-radius: 999vw;
-
-    background-color: $orange;
   }
 
   & > * {
@@ -125,28 +171,38 @@
   }
 
   :where(h3) {
-    font-size: 2em;
+    font-size: clamp(1.5rem, 5vw, 2em);
   }
 
-  &.right {
-    --bubble-wrap--side: right;
+  @container (width > 900px) {
+    min-height: calc((var(--max-item-count) - 1) * var(--_item-line-height) * 1rem);
 
-    shape-outside: circle(0 at 100% 50%);
+    &.right {
+      --bubble-wrap--side: right;
 
-    padding-inline: 2em 0;
+      shape-outside: circle(0 at 100% 50%);
 
-    &::after {
-      left: 100%;
-      translate: -50% -50%;
-      background-color: $yellow;
-    }
+      padding-inline: 2em 0;
 
-    & > * {
-      margin-inline: 0 calc(var(--content--padding-x) / 2 * -1);
-    }
+      & + * {
+        &::before {
+          left: 100%;
+        }
+      }
 
-    :has(> &) {
-      text-align: right;
+      &::after {
+        left: 100%;
+        translate: -50% -50%;
+        background-color: $yellow;
+      }
+
+      & > * {
+        margin-inline: 0 calc(var(--content--padding-x) / 2 * -1);
+      }
+
+      :has(> &) {
+        text-align: right;
+      }
     }
   }
 }
