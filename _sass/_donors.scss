@@ -47,8 +47,6 @@
 
   @media (min-width: 1400px) {
     width: calc(var(--_donor-list--header--width) - var(--_offset));
-    // height: auto;
-    // aspect-ratio: 1;
 
     margin-left: var(--_offset);
     padding-inline: 4rem;
@@ -75,7 +73,11 @@
   }
 }
 
-.donor-list--range {
+.donor-list--level-label {
+  font-size: 1em;
+}
+
+.donor-list--level-range {
   &::before {
     content: '—';
   }

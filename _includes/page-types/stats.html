@@ -1,8 +1,22 @@
-<div class="stats-grid">
-  {% for stat in site.data.stats %}
-  <div class="stat-item">
+<div class="info-tile-grid">
+{%- for stat in site.data.stats -%}
+  {%- assign styles = nil -%}
+  {%- for position in stat.positions -%}
+    {%- if position.breakpoint -%}
+      {%- capture styles %}{{ styles }}--info-tile--position--{{- position.breakpoint -}}: {{ position.value }};{% endcapture -%}
+    {%- else -%}
+      {%- capture styles %}{{ styles }}--info-tile--position: {{ position.value }};{% endcapture -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if styles -%}
+    {%- capture attrs %} style="{{- styles -}}"{% endcapture -%}
+  {%- endif -%}
+  {%- if stat.color -%}
+    {%- capture attrs %}{{ attrs }} data-color="{{- stat.color -}}"{% endcapture -%}
+  {%- endif -%}
+  <div class="info-tile"{{ attrs }}>
     <h3>{{ stat.number }}</h3>
     <p>{{ stat.description }}</p>
   </div>
-  {% endfor %}
+{%- endfor -%}
 </div>

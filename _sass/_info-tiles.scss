@@ -1,0 +1,85 @@
+$info-tile-grid-breakpoints: (
+  'xs': '320px',
+  'sm': '600px',
+  'md': '768px',
+  'lg': '1024px',
+  'xl': '1440px'
+);
+
+$info-tile-grid-columns: 12;
+
+.info-tile-grid {
+  container-name: info-tile-grid;
+  container-type: inline-size;
+
+  display: grid;
+  grid-template-columns: repeat(#{$info-tile-grid-columns}, 1fr);
+  gap: 16px;
+}
+
+.info-tile {
+  $default-position: var(--info-tile--position, auto / 1 / auto / -1);
+
+  --_info-tile--color: var(--info-tile--color, #{$navy});
+  --_info-tile--bg-color: var(--info-tile--bg-color, #{$cyan});
+  --_info-tile--position: #{$default-position};
+
+  $previous_fallback: --_info-tile--position;
+  @each $bp_name, $bp in $info-tile-grid-breakpoints {
+    $_bp_var_name: --_info-tile--position--#{$bp_name};
+    $bp_var_name: --info-tile--position--#{$bp_name};
+    #{$_bp_var_name}: var(#{$bp_var_name}, var(#{$previous_fallback}));
+
+    @container info-tile-grid (width >= #{$bp}) {
+      grid-area: var(#{$_bp_var_name});
+    }
+
+    $previous_fallback: #{$_bp_var_name};
+  }
+
+  grid-area: var(--_info-tile--position);
+
+  padding: 1rem;
+  align-content: end;
+
+  background-color: var(--_info-tile--bg-color);
+
+  border-radius: 20px;
+
+  color: var(--_info-tile--color);
+  font-size: clamp(0.725rem, 3.4vw, 1rem);
+  font-weight: 700;
+
+  > * {
+    margin: 0;
+
+    color: inherit;
+
+    & + * {
+      margin-top: 0.5em;
+    }
+  }
+
+  h3 {
+    margin-block-start: 2em;
+    font-size: clamp(2em, 3.4vw, 3em);
+  }
+
+  &[data-color="blue"] {
+    --info-tile--bg-color: #{$blue};
+    --info-tile--color: #{$white};
+  }
+  &[data-color="navy"] {
+    --info-tile--bg-color: #{$navy};
+    --info-tile--color: #{$white};
+  }
+  &[data-color="cyan"] {
+    --info-tile--bg-color: #{$cyan};
+  }
+  &[data-color="orange"] {
+    --info-tile--bg-color: #{$orange};
+  }
+  &[data-color="yellow"] {
+    --info-tile--bg-color: #{$yellow};
+  }
+}

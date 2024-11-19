@@ -22,9 +22,9 @@ quote:
 {%- for donor_level in site.data.donor_levels -%}
 {%- assign donors = site.data.donor_list | where: 'level', donor_level.level -%}
 <section class="donor-list--level">
-  <h3 class="donor-list--title">
+  <h3 class="donor-list--level-label">
     {{ donor_level.label }}
-    <span class="donor-list--range">
+    <span class="donor-list--level-range">
       <span class="min">${{ donor_level.range_min }}</span>
       {%- if donor_level.range_max -%}
         <span class="max">${{ donor_level.range_max }}</span>
