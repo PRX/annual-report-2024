@@ -126,6 +126,7 @@
 .show-sidebar--layout {
   display: grid;
   justify-content: center;
+  justify-items: center;
   align-content: start;
   grid-template-areas:
     "logo"
@@ -158,6 +159,7 @@
 
 .show-audio {
   grid-area: audio;
+  aspect-ratio: 3 / 1;
 }
 
 .show-footer {
