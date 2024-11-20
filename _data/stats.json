@@ -1,7 +1,7 @@
 [
   {
     "number": "$16,531,024",
-    "description": "PRX put more than $14 million into the hands of independent audio creators",
+    "description": "PRX put more than $16 million into the hands of independent audio creators",
     "color": "blue",
     "positions": [
       {
@@ -82,7 +82,7 @@
   {
     "number": "426/124/33",
     "description": "PRX Dovetail podcast publishing technology supported 426 shows from 124 organizations and 33 public media stations.",
-    "color": "navy",
+    "color": "blue",
     "positions": [
       {
         "breakpoint": "xs",
