@@ -5,21 +5,14 @@ link:
   label: "Finances"
 ---
 <div class="financials">
-  <div class="financials-section">
-    <h2>Revenue</h2>
-    {% for financial in site.data.financials %}
-      {% if financial.type == "revenue" %}
-        {% include components/financial-item.html %}
-      {% endif %}
-    {% endfor %}
-  </div>
+  {% assign info_tiles = site.data.financials | where: 'type', 'revenue' %}
+  {% if info_tiles %}
+    {% include components/info-tiles.html heading="Revenue" class="financial-section" %}
+  {% endif %}
 
-  <div class="financials-section">
-    <h2>Expenses</h2>
-    {% for financial in site.data.financials %}
-      {% if financial.type == "expense" %}
-        {% include components/financial-item.html %}
-      {% endif %}
-    {% endfor %}
-  </div>
+
+  {% assign info_tiles = site.data.financials | where: 'type', 'expense' %}
+  {% if info_tiles %}
+    {% include components/info-tiles.html heading="Expenses" class="financial-section" %}
+  {% endif %}
 </div>

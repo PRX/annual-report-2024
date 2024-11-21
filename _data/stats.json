@@ -1,6 +1,6 @@
 [
   {
-    "number": "$16,531,024",
+    "heading": "$16,531,024",
     "description": "PRX put more than $16 million into the hands of independent audio creators",
     "color": "blue",
     "positions": [
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "number": "844",
+    "heading": "844",
     "description": "PRX programming aired on 844 public radio stations nationwide, reaching listeners in more than 99.4% of the US.",
     "color": "orange",
     "positions": [
@@ -38,7 +38,7 @@
     ]
   },
   {
-    "number": "1,500",
+    "heading": "1,500",
     "description": "More than 1,500 creators attended PRX training and networking events.",
     "color": "cyan",
     "positions": [
@@ -61,7 +61,7 @@
     ]
   },
   {
-    "number": "12,218",
+    "heading": "12,218",
     "description": "individual donors gave to PRX and our programming.",
     "color": "yellow",
     "positions": [
@@ -71,7 +71,7 @@
       },
       {
         "breakpoint": "sm",
-        "value": "4 / 5 / span 1 / -1"
+        "value": "4 / 6 / span 1 / -1"
       },
       {
         "breakpoint": "lg",
@@ -80,7 +80,7 @@
     ]
   },
   {
-    "number": "426/124/33",
+    "heading": "426/124/33",
     "description": "PRX Dovetail podcast publishing technology supported 426 shows from 124 organizations and 33 public media stations.",
     "color": "blue",
     "positions": [
@@ -99,7 +99,7 @@
     ]
   },
   {
-    "number": "100%",
+    "heading": "100%",
     "description": "PRX launched 100% of the year's new weekly broadcast programs available to public radio stations nationwide.",
     "color": "cyan",
     "positions": [
@@ -109,7 +109,7 @@
       },
       {
         "breakpoint": "sm",
-        "value": "4 / 1 / span 2 / span 4"
+        "value": "4 / 1 / span 2 / span 5"
       },
       {
         "breakpoint": "md",
@@ -122,7 +122,7 @@
     ]
   },
   {
-    "number": "550,000,000",
+    "heading": "550,000,000",
     "description": "PRX podcasts were downloaded more than 550 million times",
     "color": "yellow",
     "positions": [
@@ -136,7 +136,7 @@
     ]
   },
   {
-    "number": "194/7",
+    "heading": "194/7",
     "description": "PRX Productions produced 194 podcast episodes and supported 7 award-winning podcasts",
     "color": "orange",
     "positions": [
@@ -146,7 +146,7 @@
       },
       {
         "breakpoint": "sm",
-        "value": "5 / 5 / span 1 / -1"
+        "value": "5 / 6 / span 1 / -1"
       },
       {
         "breakpoint": "lg",

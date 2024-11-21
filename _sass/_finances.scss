@@ -1,15 +1,36 @@
-.financials {
-  display: flex;
-  flex-wrap: wrap;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 36px;
+#finances {
+  --info-tile-grid--row-height: 1fr;
+
+  .content-main {
+    grid-column: full-width;
+  }
 }
 
-.financials-section {
+.financials {
+  /**
+   * User input values.
+   */
+  $gap: 4rem;
+  $columns: 2;
+  $min-width: 500px;
+
+  /**
+   * Calculated values.
+   */
+  $gap-count: $columns - 1;
+  $total-gap-width: $gap-count * $gap;
+  $max-width: calc((100% - #{$total-gap-width}) / #{$columns});
+
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  column-gap: $gap;
+  row-gap: 4rem;
+
+  max-width: 1600px;
+
+  padding-inline: 2rem;
+  margin-inline: auto;
+
+  @container (width > #{$min-width}) {
+    grid-template-columns: repeat(auto-fill, minmax(#{"max("}#{$min-width}, #{$max-width}#{")"}, 1fr));
+  }
 }
