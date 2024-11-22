@@ -1,19 +1,22 @@
 <li class="menu-item">
   {%- if include.icon -%}
-    <a 
+    <a
       href="{{ include.href }}"
-      class="menu-link icon {{ include.color }}" 
+      class="menu-link icon {{ include.color }}"
       {%- if include.target -%}
         target="{{ include-target }}"
       {%- endif -%}
-      {%- if include.campaign-id -%}  
+      {%- if include.campaign-id -%}
         data-donate-campaign-id="{{ include.campaign-id }}"
-      {%- endif -%}  
-    >  
+      {%- endif -%}
+    >
       <span class="material-icons" aria-label="{{ include.aria-label }}">{{ include.icon }}</span>
       <span>{{ include.label }}</span>
     </a>
-  {%- else -%} 
-    <a href="{{ include.href }}" class="menu-link {{ include.color }}" >{{ include.label }}</a>
+  {%- else -%}
+    <a
+      href="{{ include.href }}"
+      class="menu-link {{ include.color }}"
+    >{{ include.label }}</a>
   {%- endif -%}
 </li>
