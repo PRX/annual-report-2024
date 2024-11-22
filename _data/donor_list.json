@@ -1,0 +1,682 @@
+[
+  {
+    "label": "FJC - A Foundation of Philanthropic Funds",
+    "level": "champion",
+    "location": "New York, NY"
+  },
+  {
+    "label": "Kelson Foundation",
+    "level": "champion",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Roman Mars",
+    "level": "champion",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Harold and Colene Brown Family Foundation",
+    "level": "transformer",
+    "location": "Beverly Hills, CA"
+  },
+  {
+    "label": "Gavin/Solmonese LLC",
+    "level": "transformer",
+    "location": "Wilmington, DE"
+  },
+  {
+    "label": "Gruber Family Foundation",
+    "level": "transformer",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "The Patchwork Collective",
+    "level": "transformer",
+    "location": "Sonoma, CA"
+  },
+  {
+    "label": "Amy Rao and Harry Plant",
+    "level": "transformer",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Liliane and Ed Schneider",
+    "level": "transformer",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Alice Shaver Charitable Trust",
+    "level": "changemaker",
+    "location": "Washington, D.C."
+  },
+  {
+    "label": "Betsy Atwater",
+    "level": "changemaker",
+    "location": "Santa Barbara, CA"
+  },
+  {
+    "label": "Dodee and Billy Crockett",
+    "level": "changemaker",
+    "location": "Wimberley, TX"
+  },
+  {
+    "label": "Katherine Harris and Tom Keyser",
+    "level": "changemaker",
+    "location": "North Oaks, MN"
+  },
+  {
+    "label": "Judy Pigott",
+    "level": "changemaker",
+    "location": "Seattle, WA"
+  },
+  {
+    "label": "Helen and Russell Pyne",
+    "level": "changemaker",
+    "location": "Atherton, CA"
+  },
+  {
+    "label": "Sarlo Family Foundation",
+    "level": "changemaker",
+    "location": "Kentfield, CA"
+  },
+  {
+    "label": "Maryanne Tagney",
+    "level": "changemaker",
+    "location": "Seattle, WA"
+  },
+  {
+    "label": "Anonymous",
+    "level": "ambassador"
+  },
+  {
+    "label": "Henry Becton",
+    "level": "ambassador",
+    "location": "Boston, MA"
+  },
+  {
+    "label": "Kathy Chan",
+    "level": "ambassador",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Cindy Engles",
+    "level": "ambassador",
+    "location": "Naples, FL"
+  },
+  {
+    "label": "Epic Systems Corporation",
+    "level": "ambassador",
+    "location": "Verona, WI"
+  },
+  {
+    "label": "Firerose Fund of the Roots & Wings Foundation",
+    "level": "ambassador",
+    "location": "Seattle, WA"
+  },
+  {
+    "label": "Kerri and Nelson Hoffman",
+    "level": "ambassador",
+    "location": "Northfield, VT"
+  },
+  {
+    "label": "Lucy and Ken Lehman Family",
+    "level": "ambassador",
+    "location": "Evanston, IL"
+  },
+  {
+    "label": "Dan Shih and Ted MacGovern",
+    "level": "ambassador",
+    "location": "Seattle, WA"
+  },
+  {
+    "label": "Cindy and Howard Rachofsky",
+    "level": "ambassador",
+    "location": "Dallas, TX"
+  },
+  {
+    "label": "Reis Foundation",
+    "level": "ambassador",
+    "location": "Columbia, MD"
+  },
+  {
+    "label": "Rima Hyder and Camilo Villa",
+    "level": "ambassador",
+    "location": "Brookline, MA"
+  },
+  {
+    "label": "Amanda Weitman",
+    "level": "ambassador",
+    "location": "San Rafael, CA"
+  },
+  {
+    "label": "Anonymous (4)",
+    "level": "leader"
+  },
+  {
+    "label": "Stephanie Fox and Drew Britcher",
+    "level": "leader",
+    "location": "Saint Paul, MN"
+  },
+  {
+    "label": "Richard Gingras",
+    "level": "leader",
+    "location": "Los Altos, CA"
+  },
+  {
+    "label": "Nor Hall and Roger Hale",
+    "level": "leader",
+    "location": "Minneapolis, MN"
+  },
+  {
+    "label": "Dan Kletter",
+    "level": "leader",
+    "location": "Mountain View, CA"
+  },
+  {
+    "label": "Lisa and Peter Kraus",
+    "level": "leader",
+    "location": "Dallas, TX"
+  },
+  {
+    "label": "Mailman Foundation",
+    "level": "leader",
+    "location": "New York, NY"
+  },
+  {
+    "label": "Karla Martin",
+    "level": "leader",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Katherine Wolf and Ashton Peery",
+    "level": "leader",
+    "location": "Lincoln, MA"
+  },
+  {
+    "label": "Lizzie and Daniel Routman",
+    "level": "leader",
+    "location": "Dallas, TX"
+  },
+  {
+    "label": "Betsy Gardella and Jim Smith",
+    "level": "leader",
+    "location": "Concord, MA"
+  },
+  {
+    "label": "Frank Washington",
+    "level": "leader",
+    "location": "Sacramento, CA"
+  },
+  {
+    "label": "Lawrence Wilkinson",
+    "level": "leader",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "The Robert Wood Johnson Foundation",
+    "level": "leader",
+    "location": "Princeton, NJ"
+  },
+  {
+    "label": "Elizabeth Yoakum",
+    "level": "leader",
+    "location": "Sarasota, FL"
+  },
+  {
+    "label": "Anonymous (3)",
+    "level": "creator"
+  },
+  {
+    "label": "Shari Malyn and Jonathan Abbott",
+    "level": "creator",
+    "location": "Newton, MA"
+  },
+  {
+    "label": "Steven Bercu",
+    "level": "creator",
+    "location": "Boston, MA"
+  },
+  {
+    "label": "Carol Bouska",
+    "level": "creator",
+    "location": "Minneapolis, MN"
+  },
+  {
+    "label": "Susan and David Coulter",
+    "level": "creator",
+    "location": "Darien, CT"
+  },
+  {
+    "label": "Lynn and Bruce Dayton",
+    "level": "creator",
+    "location": "Boston, MA"
+  },
+  {
+    "label": "Jené Elzie",
+    "level": "creator",
+    "location": "Wappingers Falls, NY"
+  },
+  {
+    "label": "Jenji Kohan",
+    "level": "creator",
+    "location": "Los Angeles, CA"
+  },
+  {
+    "label": "Cindy and Dan Lothian",
+    "level": "creator",
+    "location": "Boston, MA"
+  },
+  {
+    "label": "Kyra and Peter McGrath",
+    "level": "creator",
+    "location": "Bala Cynwyd, PA"
+  },
+  {
+    "label": "Dete and Paul Meserve",
+    "level": "creator",
+    "location": "Los Angeles, CA"
+  },
+  {
+    "label": "The Miami Foundation",
+    "level": "creator",
+    "location": "Miami, FL"
+  },
+  {
+    "label": "Oregon Community Foundation",
+    "level": "creator",
+    "location": "Portland, OR"
+  },
+  {
+    "label": "Patagonia",
+    "level": "creator",
+    "location": "Ventura, CA"
+  },
+  {
+    "label": "Jane Schmitz",
+    "level": "creator",
+    "location": "Los Angeles, CA"
+  },
+  {
+    "label": "The Sternlicht Family Foundation",
+    "level": "creator",
+    "location": "Greenwich, CT"
+  },
+  {
+    "label": "Cory Zanin",
+    "level": "creator",
+    "location": "Minneapolis, MN"
+  },
+  {
+    "label": "Anonymous (16)",
+    "level": "advocate"
+  },
+  {
+    "label": "Mary Elizabeth Alexander",
+    "level": "advocate",
+    "location": "Lake Placid, NY"
+  },
+  {
+    "label": "Serena Altschul",
+    "level": "advocate",
+    "location": "New York, NY"
+  },
+  {
+    "label": "Sara and Steven Bass",
+    "level": "advocate",
+    "location": "Lake Oswego, OR"
+  },
+  {
+    "label": "Rebecca Norlander",
+    "level": "advocate",
+    "location": "Seattle, WA"
+  },
+  {
+    "label": "Nicole and David Berger",
+    "level": "advocate",
+    "location": "Evanston, IL"
+  },
+  {
+    "label": "Michael Bien",
+    "level": "advocate",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Cindy and Peter Burnim",
+    "level": "advocate",
+    "location": "Fairfield, CT"
+  },
+  {
+    "label": "Pat Castaldo",
+    "level": "advocate",
+    "location": "Portland, OR"
+  },
+  {
+    "label": "Michael Choy",
+    "level": "advocate",
+    "location": "Maplewood, NJ"
+  },
+  {
+    "label": "Peggy Dear",
+    "level": "advocate",
+    "location": "Dallas, TX"
+  },
+  {
+    "label": "Paula and Cy DeCosse",
+    "level": "advocate",
+    "location": "Minneapolis, MN"
+  },
+  {
+    "label": "Catherine Dee",
+    "level": "advocate",
+    "location": "Marblehead, MA"
+  },
+  {
+    "label": "Rickie Eatherly",
+    "level": "advocate",
+    "location": "Washington, DC"
+  },
+  {
+    "label": "Jan Elizabeth",
+    "level": "advocate"
+  },
+  {
+    "label": "Rachel and Don Felix",
+    "level": "advocate",
+    "location": "Boston, MA"
+  },
+  {
+    "label": "Marion T. Flores",
+    "level": "advocate",
+    "location": "Dallas, TX"
+  },
+  {
+    "label": "Jacob Frank",
+    "level": "advocate",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Chris Gillis",
+    "level": "advocate",
+    "location": "Ipswich, MA"
+  },
+  {
+    "label": "Glasscock Heritage Trust",
+    "level": "advocate",
+    "location": "Mount Pleasant, UT"
+  },
+  {
+    "label": "Rich Gorelick",
+    "level": "advocate",
+    "location": "Yardley, PA"
+  },
+  {
+    "label": "Dan Hadley",
+    "level": "advocate",
+    "location": "Los Angeles, CA"
+  },
+  {
+    "label": "Leigh Ann Hahn",
+    "level": "advocate",
+    "location": "Los Angeles, CA"
+  },
+  {
+    "label": "Nancy Lundeen and Richard N. Hill",
+    "level": "advocate",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Steve Henn",
+    "level": "advocate",
+    "location": "Palo Alto, CA"
+  },
+  {
+    "label": "Judy Woodruff and Albert Hunt",
+    "level": "advocate",
+    "location": "Washington, D.C."
+  },
+  {
+    "label": "Vicki and Michael Isip",
+    "level": "advocate",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Patrice F. and Cameron J.",
+    "level": "advocate",
+    "location": "Chicago, IL"
+  },
+  {
+    "label": "Jane Johnson",
+    "level": "advocate",
+    "location": "San Mateo, CA"
+  },
+  {
+    "label": "Joelle Chase and Peter Knipper",
+    "level": "advocate",
+    "location": "Albuquerque, NM"
+  },
+  {
+    "label": "The KRPL Family",
+    "level": "advocate",
+    "location": "Singapore"
+  },
+  {
+    "label": "Craig Landon",
+    "level": "advocate",
+    "location": "Jerseyville, IL"
+  },
+  {
+    "label": "Robert Lang",
+    "level": "advocate",
+    "location": "Kensington, MD"
+  },
+  {
+    "label": "Tina Cole and Mark Larson",
+    "level": "advocate",
+    "location": "San Carlos, CA"
+  },
+  {
+    "label": "Ronna Stamm and Paul Lehman",
+    "level": "advocate",
+    "location": "Evanston, IL"
+  },
+  {
+    "label": "Bia Lowe",
+    "level": "advocate",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Susan Harmon and Richard Meyer",
+    "level": "advocate",
+    "location": "Seattle, WA"
+  },
+  {
+    "label": "Kamrudin Mithani",
+    "level": "advocate",
+    "location": "Richmond, TX"
+  },
+  {
+    "label": "Ravi Mohan",
+    "level": "advocate",
+    "location": "Larkspur, CA"
+  },
+  {
+    "label": "Ann and John Newman",
+    "level": "advocate",
+    "location": "San Antonio, TX"
+  },
+  {
+    "label": "Eugene G. Park",
+    "level": "advocate",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Janet Tiampo and David Parker",
+    "level": "advocate",
+    "location": "Boston, MA"
+  },
+  {
+    "label": "Michelle Pepitone",
+    "level": "advocate",
+    "location": "San Francisco, CA"
+  },
+  {
+    "label": "Wendy Pollock",
+    "level": "advocate",
+    "location": "Evanston, IL"
+  },
+  {
+    "label": "William Raynolds",
+    "level": "advocate",
+    "location": "Longmont, CO"
+  },
+  {
+    "label": "Sharon G. and Robert L. Ryan",
+    "level": "advocate",
+    "location": "Minneapolis, MN"
+  },
+  {
+    "label": "Stephen Salyer",
+    "level": "advocate",
+    "location": "Washington, DC"
+  },
+  {
+    "label": "Curtis L. Scribner",
+    "level": "advocate",
+    "location": "Oakland, CA"
+  },
+  {
+    "label": "The Serendipitous Leverage Fund",
+    "level": "advocate",
+    "location": "Minneapolis, MN"
+  },
+  {
+    "label": "Elizabeth Hansen and Jake Shapiro",
+    "level": "advocate",
+    "location": "Lexington, MA"
+  },
+  {
+    "label": "Wendy Weiss and Stephen Shay",
+    "level": "advocate",
+    "location": "Cambridge, MA"
+  },
+  {
+    "label": "Fredericka and Howard Stevenson",
+    "level": "advocate",
+    "location": "Boston, MA"
+  },
+  {
+    "label": "Sherry and Tyler Steward",
+    "level": "advocate",
+    "location": "Wauwatosa, WI"
+  },
+  {
+    "label": "Lisa Schaures and Chris Stremlau",
+    "level": "advocate",
+    "location": "Kirkland, WA"
+  },
+  {
+    "label": "Carolyn Talcott",
+    "level": "advocate",
+    "location": "Stanford, CA"
+  },
+  {
+    "label": "Robin Torres",
+    "level": "advocate",
+    "location": "United Arab Emirates"
+  },
+  {
+    "label": "Alisa and Mike Wilson",
+    "level": "advocate",
+    "location": "New York, NY"
+  },
+  {
+    "label": "Jennifer Woodruff",
+    "level": "advocate",
+    "location": "New York, NY"
+  },
+  {
+    "label": "Irene Yen",
+    "level": "advocate"
+  },
+  {
+    "label": "Merle Kurzrock and George Zimmerman",
+    "level": "advocate",
+    "location": "Riverside, CA"
+  },
+  {
+    "label": "Barr Foundation",
+    "level": "institution-1mil"
+  },
+  {
+    "label": "The Corporation for Public Broadcasting",
+    "level": "institution-1mil"
+  },
+  {
+    "label": "Meadow Fund",
+    "level": "institution-1mil"
+  },
+  {
+    "label": "Mellon Foundation",
+    "level": "institution-1mil"
+  },
+  {
+    "label": "John Templeton Foundation",
+    "level": "institution-1mil"
+  },
+  {
+    "label": "Carnegie Corporation of New York",
+    "level": "institution-250"
+  },
+  {
+    "label": "The Just Trust",
+    "level": "institution-250"
+  },
+  {
+    "label": "The John S. & James L. Knight Foundation",
+    "level": "institution-250"
+  },
+  {
+    "label": "The Henry Luce Foundation",
+    "level": "institution-250"
+  },
+  {
+    "label": "Lumina Foundation",
+    "level": "institution-250"
+  },
+  {
+    "label": "John D. & Catherine T. MacArthur Foundation",
+    "level": "institution-250"
+  },
+  {
+    "label": "Arthur Vining Davis Foundations",
+    "level": "institution-100"
+  },
+  {
+    "label": "Ford Foundation",
+    "level": "institution-100"
+  },
+  {
+    "label": "National Endowment for the Arts",
+    "level": "institution-100"
+  },
+  {
+    "label": "National Endowment for the Humanities",
+    "level": "institution-100"
+  },
+  {
+    "label": "Anonymous",
+    "level": "institution-25"
+  },
+  {
+    "label": "Ardmore Institute of Health",
+    "level": "institution-25"
+  },
+  {
+    "label": "The Schmidt Family Foundation",
+    "level": "institution-25"
+  },
+  {
+    "label": "United States - Japan Foundation",
+    "level": "institution-25"
+  }
+]

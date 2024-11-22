@@ -1,0 +1,36 @@
+#finances {
+  --info-tile-grid--row-height: 1fr;
+
+  .content-main {
+    grid-column: full-width;
+  }
+}
+
+.financials {
+  /**
+   * User input values.
+   */
+  $gap: 4rem;
+  $columns: 2;
+  $min-width: 500px;
+
+  /**
+   * Calculated values.
+   */
+  $gap-count: $columns - 1;
+  $total-gap-width: $gap-count * $gap;
+  $max-width: calc((100% - #{$total-gap-width}) / #{$columns});
+
+  display: grid;
+  column-gap: $gap;
+  row-gap: 4rem;
+
+  max-width: 1600px;
+
+  padding-inline: 2rem;
+  margin-inline: auto;
+
+  @container (width > #{$min-width}) {
+    grid-template-columns: repeat(auto-fill, minmax(#{"max("}#{$min-width}, #{$max-width}#{")"}, 1fr));
+  }
+}

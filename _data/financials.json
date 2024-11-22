@@ -1,0 +1,125 @@
+[
+  {
+    "heading": "$10,514,187",
+    "description": "Underwriting",
+    "type": "revenue",
+    "color": "orange",
+    "positions": [
+      {
+        "value": "auto / 1 / span 4 / -1"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "1 / 7 / span 4 / -1"
+      }
+    ]
+  },
+  {
+    "heading": "$8,556,348",
+    "description": "Operating Activities",
+    "type": "revenue",
+    "color": "cyan",
+    "positions": [
+      {
+        "value": "auto / 1 / span 3 / -1"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "2 / 1 / span 3 / span 6"
+      }
+    ]
+  },
+  {
+    "heading": "$1,815,549",
+    "description": "Grants",
+    "type": "revenue",
+    "color": "yellow",
+    "positions": [
+      {
+        "breakpoint": "sm",
+        "value": "auto / 1 / span 1 / span 3"
+      }
+    ]
+  },
+  {
+    "heading": "$1,474,295",
+    "description": "Individual Gifts",
+    "type": "revenue",
+    "color": "blue",
+    "positions": [
+      {
+        "breakpoint": "sm",
+        "value": "auto / 4 / span 1 / span 3"
+      }
+    ]
+  },
+  {
+    "heading": "$3,808,453",
+    "description": "Other",
+    "type": "revenue",
+    "color": "navy",
+    "positions": [
+      {
+        "value": "auto / 1 / span 2 / -1"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "auto / 7 / span 1 / -1"
+      }
+    ]
+  },
+  {
+    "heading": "$16,531,024",
+    "description": "Support for Creators",
+    "type": "expense",
+    "color": "orange",
+    "positions": [
+      {
+        "value": "auto / 1 / span 3 / -1"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "1 / 7 / span 3 / -1"
+      }
+    ]
+  },
+  {
+    "heading": "$16,056,516",
+    "description": "Content Production and Distribution",
+    "type": "expense",
+    "color": "cyan",
+    "positions": [
+      {
+        "value": "auto / 1 / span 3 / -1"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "2 / 1 / span 3 / span 6"
+      }
+    ]
+  },
+  {
+    "heading": "$1,474,295",
+    "description": "Fundraising",
+    "type": "expense",
+    "color": "blue",
+    "positions": [
+      {
+        "breakpoint": "sm",
+        "value": "auto / 7 / span 1 / -1"
+      }
+    ]
+  },
+  {
+    "heading": "$1,815,549",
+    "description": "Administrative",
+    "type": "expense",
+    "color": "yellow",
+    "positions": [
+      {
+        "breakpoint": "sm",
+        "value": "auto / 1 / span 1 / -1"
+      }
+    ]
+  }
+]

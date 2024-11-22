@@ -1,0 +1,116 @@
+#donor-list {
+  --content--bg--color--start: #{$navy};
+  --content--bg--color--end: #{$navy};
+  --content--column-gap: 0;
+  --content--row-gap: 0;
+  --content--padding-x: 3rem;
+  --content--padding-y: 2.25rem;
+
+  color: $white;
+  line-height: 1.5;
+
+  :where(h2, h3, blockquote) {
+    color: inherit;
+  }
+
+  .content-main {
+    grid-column: extra-wide;
+    grid-row: 1 / -1;
+  }
+
+  .content-header {
+    display: none;
+  }
+
+  .content-content {
+    --_donor-list--header--width: var(--donor-list--header-width, calc(min(100cqi, 30ch)));
+
+    text-align: justify;
+  }
+}
+
+.donor-list--header {
+  --_offset: calc(var(--_donor-list--header--width) / -2);
+  display: grid;
+  place-content: center;
+  width: var(--_donor-list--header--width);
+  height: 100%; //  1192 - 845
+  min-height: calc(845 / 16 * 1em);
+  float: left;
+  clear: left;
+  shape-outside: circle(0 at 0 50%);
+  shape-margin: calc(var(--_donor-list--header--width));
+
+  padding-inline-end: 3rem;
+
+  text-align: start;
+
+  @media (min-width: 1400px) {
+    width: calc(var(--_donor-list--header--width) - var(--_offset));
+
+    margin-left: var(--_offset);
+    padding-inline: 4rem;
+  }
+}
+
+.donor-list--title {
+  text-transform: capitalize;
+}
+
+.donor-list--level {
+  display: contents;
+
+  :where(ul, dl, dd, dt) {
+    appearance: none;
+    display: contents;
+  }
+
+  :where(h3, li) {
+    display: inline;
+    margin-inline: 0;
+    padding-inline: 0;
+    line-height: inherit;
+  }
+}
+
+.donor-list--level-label {
+  font-size: 1em;
+}
+
+.donor-list--level-range {
+  &::before {
+    content: '—';
+  }
+
+  .min:only-child {
+    &::after {
+      content: '+';
+    }
+  }
+
+  .max {
+    &::before {
+      content: '-';
+    }
+  }
+}
+
+.donor {
+  --_donor--color: var(--donor--color, #{$orange});
+
+  color: var(--_donor--color);
+
+  .donor--location {
+    &::before {
+      content: ' of ';
+    }
+  }
+
+  &:nth-of-type(2n) {
+    --donor--color: #{$cyan};
+  }
+
+  &:nth-of-type(3n) {
+    --donor--color: #{$yellow};
+  }
+}

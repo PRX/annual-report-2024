@@ -1,0 +1,159 @@
+[
+  {
+    "heading": "$16,531,024",
+    "description": "PRX put more than $16 million into the hands of independent audio creators",
+    "color": "blue",
+    "positions": [
+      {
+        "breakpoint": "xs",
+        "value": "1 / 1 / span 1 / -1"
+      },
+      {
+        "breakpoint": "md",
+        "value": "1 / 1 / span 1 / span 8"
+      },
+      {
+        "breakpoint": "lg",
+        "value": "1 / 1 / span 1 / span 6"
+      }
+    ]
+  },
+  {
+    "heading": "844",
+    "description": "PRX programming aired on 844 public radio stations nationwide, reaching listeners in more than 99.4% of the US.",
+    "color": "orange",
+    "positions": [
+      {
+        "breakpoint": "xs",
+        "value": "2 / 1 / span 1 / span 6"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "2 / 1 / span 1 / span 8"
+      },
+      {
+        "breakpoint": "lg",
+        "value": "2 / 1 / span 1 / span 6"
+      }
+    ]
+  },
+  {
+    "heading": "1,500",
+    "description": "More than 1,500 creators attended PRX training and networking events.",
+    "color": "cyan",
+    "positions": [
+      {
+        "breakpoint": "xs",
+        "value": "2 / 7 / span 1 / -1"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "2 / 9 / span 1 / -1"
+      },
+      {
+        "breakpoint": "md",
+        "value": "1 / 9 / span 2 / -1"
+      },
+      {
+        "breakpoint": "lg",
+        "value": "1 / 7 / span 2 / span 3"
+      }
+    ]
+  },
+  {
+    "heading": "12,218",
+    "description": "individual donors gave to PRX and our programming.",
+    "color": "yellow",
+    "positions": [
+      {
+        "breakpoint": "xs",
+        "value": "4 / 7 / span 1 / span 6"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "4 / 6 / span 1 / -1"
+      },
+      {
+        "breakpoint": "lg",
+        "value": "1 / 10 / span 1 / -1"
+      }
+    ]
+  },
+  {
+    "heading": "426/124/33",
+    "description": "PRX Dovetail podcast publishing technology supported 426 shows from 124 organizations and 33 public media stations.",
+    "color": "blue",
+    "positions": [
+      {
+        "breakpoint": "xs",
+        "value": "3 / 1 / span 1 / -1"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "3 / 1 / span 1 / -1"
+      },
+      {
+        "breakpoint": "lg",
+        "value": "2 / 10 / span 1 / -1"
+      }
+    ]
+  },
+  {
+    "heading": "100%",
+    "description": "PRX launched 100% of the year's new weekly broadcast programs available to public radio stations nationwide.",
+    "color": "cyan",
+    "positions": [
+      {
+        "breakpoint": "xs",
+        "value": "4 / 1 / span 2 / span 6"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "4 / 1 / span 2 / span 5"
+      },
+      {
+        "breakpoint": "md",
+        "value": "4 / 1 / span 2 / span 4"
+      },
+      {
+        "breakpoint": "lg",
+        "value": "3 / 1 / span 1 / span 4"
+      }
+    ]
+  },
+  {
+    "heading": "550,000,000",
+    "description": "PRX podcasts were downloaded more than 550 million times",
+    "color": "yellow",
+    "positions": [
+      {
+        "value": "auto / 1 / span 1 / -1"
+      },
+      {
+        "breakpoint": "lg",
+        "value": "3 / 5 / span 1 / span 4"
+      }
+    ]
+  },
+  {
+    "heading": "194/7",
+    "description": "PRX Productions produced 194 podcast episodes and supported 7 award-winning podcasts",
+    "color": "orange",
+    "positions": [
+      {
+        "breakpoint": "xs",
+        "value": "5 / 7 / span 1 / -1"
+      },
+      {
+        "breakpoint": "sm",
+        "value": "5 / 6 / span 1 / -1"
+      },
+      {
+        "breakpoint": "lg",
+        "value": "3 / 9 / span 1 / -1"
+      }
+    ]
+  }
+]
+
+

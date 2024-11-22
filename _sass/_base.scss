@@ -6,12 +6,21 @@
 @import 'colors';
 @import 'layout';
 
+// Component Styles.
 @import 'buttons';
-@import 'hero';
 @import 'footer';
+@import 'info-tiles';
+@import 'hero';
 @import 'menu-item';
 @import 'mosaic';
 @import 'navbar';
 @import 'section';
+
+// Section Styles.
+@import 'content';
+@import 'finances';
 @import 'show';
 @import 'show-tiles';
+@import 'stats';
+@import 'awards-press';
+@import 'donors';

@@ -1,18 +1,18 @@
 .footer {
   --_text-color: var(--text-color, #{$gray});
-  
+
   padding: 1rem;
   background-color: $black;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .content {    
+  .footer-content {
     width: 100%;
     max-width: 800px;
     color: $gray;
     text-align: center;
-    
+
     p {
       font-size: .875rem;
       margin-bottom: 1rem;

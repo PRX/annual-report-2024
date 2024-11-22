@@ -1,0 +1,38 @@
+<section id="{{ content.link.anchor | default: content.slug }}" class="container content">
+  <div class="content-header">
+    <h2 class="content-title">{{ content.title }}</h2>
+    {%- if content.quote -%}
+    <div class="content-quote">
+      {% include components/quote.html
+        text=content.quote.text
+        citation=content.quote.citation
+      %}
+    </div>
+    {%- endif -%}
+  </div>
+  <div class="content-main">
+    <div class="content-main--layout">
+      <div class="content-content">
+        {{ content.content }}
+      </div>
+    </div>
+  </div>
+  {%- if content.donor-quote or content.featured-image -%}
+  <div class="content-footer">
+    {%- if content.donor-quote -%}
+    <div class="content-donor-quote">
+      {% include components/quote.html
+        text=content.donor-quote.text
+        citation=content.donor-quote.citation
+      %}
+    </div>
+    {%- endif -%}
+
+    {%- if content.featured-image -%}
+    <figure class="content-featured-image">
+      {% picture show-featured-image {{ content.featured-image.url }} --alt {{ content.featured-image.alt }}  %}
+    </figure>
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+</section>

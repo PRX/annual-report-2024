@@ -1,0 +1,209 @@
+#awards-press {
+  --content--bg--color--start: #{$navy};
+  --content--bg--color--end: #{$navy};
+  --content--column-gap: 0;
+  --content--row-gap: 0;
+  --content--padding-x: 3rem;
+  --content--padding-y: 2.25rem;
+
+  min-height: fit-content;
+
+  color: $white;
+  line-height: 1.5;
+
+  :where(h2, h3, blockquote) {
+    color: inherit;
+  }
+
+  .content-header {
+    display: none;
+  }
+
+  .content-main {
+    grid-column: extra-wide;
+  }
+}
+
+.awards-press--grid {
+  --_item-line-height: 2;
+
+  display: grid;
+  gap: 3rem;
+
+  line-height: var(--_item-line-height);
+
+  [data-link-type] {
+    --_bubble-wrap--color: var(--bubble-wrap--color, #{$orange});
+
+    isolation: isolate;
+  }
+
+  [data-link-type="press"] {
+    --bubble-wrap--color: #{$yellow};
+  }
+
+  ul {
+    --_item-scale: calc(max(1, (var(--max-item-count) - 1) / (var(--item-count) - 1)));
+    --_item-height: var(--item-height, calc(var(--_item-line-height) * 1rem));
+
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+    padding-inline: 1rem;
+
+    list-style: none;
+
+    font-weight: 700;
+
+    li {
+      padding: 0;
+
+      margin: 0;
+
+      & + li {
+        margin-top: calc(var(--_item-height) - var(--_item-line-height) * 1rem);
+      }
+
+      a {
+        --_link-color: #{$orange};
+
+        box-decoration-break: clone;
+
+        padding: 0.125em 0.25em;
+
+        border-radius: 0.25em;
+
+        color: var(--_link-color);
+        text-decoration: none;
+
+        line-height: 1;
+
+        &:where(:hover, :focus-visible) {
+          color: var(--content--bg--color--start);
+          background-color: var(--_link-color);
+        }
+      }
+
+      &:nth-of-type(2n) {
+        a {
+          --_link-color: #{$cyan};
+        }
+      }
+
+      &:nth-of-type(3n) {
+        a {
+          --_link-color: #{$yellow};
+        }
+      }
+    }
+  }
+
+  @container (width > 900px) {
+    ul {
+      --item-height: calc(var(--_item-scale) * var(--_item-line-height) * 1rem);
+    }
+
+    grid-template-columns: repeat(auto-fit, minmax(30cqi, 1fr));
+    justify-content: space-between;
+  }
+}
+
+.bubble-wrap {
+  --_bubble-wrap--width: var(--bubble-wrap--width, clamp(10ch, 20vw, 15ch));
+  --_bubble-wrap--side: var(--bubble-wrap--side, left);
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  justify-content: stretch;
+  align-content: center;
+  width: var(--_bubble-wrap--width);
+  height: 100%;
+  min-height: calc(var(--item-count) * var(--_item-line-height) * 1rem);
+  float: var(--_bubble-wrap--side);
+  shape-outside: circle(0 at 0 50%);
+  shape-margin: calc(var(--_bubble-wrap--width));
+
+  padding-inline: 0 2em;
+
+  color: var(--content--bg--color--start);
+
+  & + * {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 0.25rem;
+      height: 100%;
+      z-index: -2;
+      translate: -50% 0;
+
+      border-radius: 999vw;
+
+      background-color: var(--_bubble-wrap--color);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+
+    border-radius: 999vw;
+
+    background-color: var(--_bubble-wrap--color);
+  }
+
+  &::after {
+    top: 50%;
+    left: 0;
+    translate: -50% -50%;
+    width: calc(200% - 2em);
+    aspect-ratio: 1;
+    z-index: -1;
+  }
+
+  & > * {
+    margin-inline: calc(var(--content--padding-x) / 2 * -1) 0;
+  }
+
+  :where(h3) {
+    font-size: clamp(1.5rem, 5vw, 2em);
+  }
+
+  @container (width > 900px) {
+    min-height: calc((var(--max-item-count) - 1) * var(--_item-line-height) * 1rem);
+
+    &.right {
+      --bubble-wrap--side: right;
+
+      shape-outside: circle(0 at 100% 50%);
+
+      padding-inline: 2em 0;
+
+      & + * {
+        &::before {
+          left: 100%;
+        }
+      }
+
+      &::after {
+        left: 100%;
+        translate: -50% -50%;
+        background-color: $yellow;
+      }
+
+      & > * {
+        margin-inline: 0 calc(var(--content--padding-x) / 2 * -1);
+      }
+
+      :has(> &) {
+        text-align: right;
+      }
+    }
+  }
+}
+

@@ -126,8 +126,10 @@ blockquote {
   // text-align: center;
 
   p {
-    color: $navy;
+    color: inherit;
     margin-bottom: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
 }
 

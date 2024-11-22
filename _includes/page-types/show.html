@@ -1,58 +1,69 @@
 <section id="{{ show.link.anchor | default: show.slug }}" class="container show">
+  <div class="show-header">
+    <h2 class="show-title">{{ show.title }}</h2>
+
+    {%- if show.quote -%}
+    <div class="show-quote">
+      {% include components/quote.html
+        text=show.quote.text
+        citation=show.quote.citation
+      %}
+    </div>
+    {%- endif -%}
+  </div>
   <div class="show-main">
     <div class="show-main--layout">
-      <h2 class="show-header">{{ show.title }}</h2>
-      
       <div class="show-sidebar">
         <div class="show-sidebar--layout">
           {%- if show.logo -%}
           <div class="show-logo">
             {% picture show-logo-featured {{ show.logo.url }} --alt {{ show.logo.alt }}  %}
           </div>
-          {%- endif -%} 
-        
-          {%- if show.quote -%}
-          <div class="show-quote">
-            {% include components/quote.html 
-              text=show.quote.text 
-              citation=show.quote.citation
-            %}
-          </div>  
           {%- endif -%}
-
           {%- if show.audio -%}
           <div class="show-audio">
-            {% include components/audio-inline.html 
+            {% include components/audio-inline.html
               url=show.audio.url
               title=show.audio.title
             %}
-          </div>  
-          {%- endif -%} 
+            <button type="button" class="show-audio--button">
+              <span class="play-icon" aria-label="Play"></span>
+              <span class="show-audio--button--label">Featured Episode</span>
+              <span class="show-audio--button--title">{{show.audio.title}}</span>
+            </button>
+            <div class="show-audio--controls">
+              <span class="show-audio--slider">
+                <input type="range" defaultValue="0" min="0" max="1" step="0.01" />
+              </span>
+            </div>
+          </div>
+          {%- endif -%}
+          {%- if show.funders -%}
+          <div class="show-funders">
+            <p class="text-sm"><strong>Supported by:</strong> <em>{{ show.funders }}</em></p>
+          </div>
+          {%- endif -%}
         </div>
       </div>
       <div class="show-content">
         {{ show.content }}
-
-        {%- if show.funders -%}
-          <p class="text-sm"><strong>Supported by:</strong> <em>{{ show.funders }}</em></p>
-        {%- endif -%} 
       </div>
     </div>
   </div>
   <div class="show-footer">
+    {%- if show.donor-quote -%}
+    <div class="show-donor-quote">
+      {% include components/quote.html
+        text=show.donor-quote.text
+        citation=show.donor-quote.citation
+      %}
+    </div>
+    {%- endif -%}
+
     {%- if show.mosaic -%}
     {%- assign mosaic = show.mosaic -%}
     <div class="show-mosaic">
       {% include components/show-mosaic.html %}
-    </div>
-    {%- endif -%}
-
-    {%- if show.donor-quote -%}
-    <div class="show-donor-quote">
-      {% include components/quote.html 
-        text=show.donor-quote.text 
-        citation=show.donor-quote.citation
-      %}
     </div>
     {%- endif -%}
 
