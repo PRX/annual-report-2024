@@ -762,4 +762,8 @@ blockquote p { color: inherit; margin-bottom: 1rem; font-size: 1.25rem; line-hei
 
 .donor:nth-of-type(3n) { --donor--color: #FEC400; }
 
+.playlist-wrapper { overflow: hidden; }
+
+.playlist-wrapper iframe { border-radius: 20px; }
+
 /*# sourceMappingURL=style.css.map */
