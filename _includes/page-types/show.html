@@ -26,6 +26,16 @@
               url=show.audio.url
               title=show.audio.title
             %}
+            <button type="button" class="show-audio--button">
+              <span class="play-icon" aria-label="Play"></span>
+              <span class="show-audio--button--label">Featured Episode</span>
+              <span class="show-audio--button--title">{{show.audio.title}}</span>
+            </button>
+            <div class="show-audio--controls">
+              <span class="show-audio--slider">
+                <input type="range" defaultValue="0" min="0" max="1" step="0.01" />
+              </span>
+            </div>
           </div>
           {%- endif -%}
           {%- if show.funders -%}
