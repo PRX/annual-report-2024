@@ -20,6 +20,7 @@
     audio.addEventListener('play', handlePlay);
     audio.addEventListener('pause', handlePause);
     audio.addEventListener('timeupdate', handleProgress);
+    audio.addEventListener('ended', handleEnded);
 
     button.addEventListener('click', handleClick);
     button.addEventListener('dragstart', handleDragStart);
@@ -82,6 +83,10 @@
       const progress = currentTime / duration;
 
       wrapper.style.setProperty('--progress', progress);
+    }
+
+    function handleEnded() {
+      wrapper.setAttribute('data-status', 'ready');
     }
 
     function handleDragStart(evt) {

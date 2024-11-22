@@ -202,20 +202,6 @@
   font-size: 0.875rem;
   text-align: left;
 
-  &::before {
-    content: '';
-
-    position: absolute;
-    inset: 0;
-    right: auto;
-    width: calc(var(--_show-audio--button--progress) * 100%);
-    z-index: -1;
-
-    border-radius: 1rem;
-
-    background-color: var(--_show--accent--color2);
-  }
-
   &::after {
     --_inset: 0.25rem;
 
@@ -228,11 +214,40 @@
     border-radius: calc(var(--_show-audio--button--border-radius) - var(--_inset));
   }
 
-  [data-status]:not([data-status="ready"]) & {
+  &:where(:hover, :focus-visible) {
+    --play-icon--color: var(--_show--accent--color2);
+  }
+
+  &:where(:focus-visible) {
+    outline: var(--_show--accent--color2) solid 0.325rem;
+    outline-offset: 0.125rem;
     background-color: var(--_show--accent--color1);
   }
 
+  [data-status]:not([data-status="ready"]) & {
+    background-color: var(--_show--accent--color1);
+
+    &::before {
+      content: '';
+
+      box-sizing: content-box;
+      position: absolute;
+      inset: -0.25rem;
+      right: auto;
+      width: calc(var(--_show-audio--button--progress) * 100%);
+      min-width: 4rem;
+      z-index: -1;
+
+      border: 0.25rem solid $white;
+      border-radius: 1rem;
+
+      background-color: var(--_show--accent--color2);
+    }
+  }
+
   .play-icon {
+    --_play-icon--color: var(--play-icon--color, var(--_show--accent--color1));
+
     transition: background-color 200ms;
 
     grid-row: 1 / -1;
@@ -240,7 +255,7 @@
     place-items: center;
     aspect-ratio: 1;
 
-    background-color: var(--_show--accent--color1);
+    background-color: var(--_play-icon--color);
     border-radius: 999vw;
 
     &::before,
@@ -272,10 +287,6 @@
       border-inline-start: 0.35rem solid $white;
       border-inline-end: 0.35rem solid $white;
       border-block: 0 solid transparent;
-    }
-
-    :where(:hover, :focus-visible) > & {
-      background-color: var(--_show--accent--color2);
     }
 
     [data-status="playing"] & {
@@ -322,9 +333,9 @@
 
 .show-audio--slider {
   --_slider--progress: var(--progress, 0.345);
-  --_slider--color: var(--slider--color, var(--_show--color));
-  --_slider--color--hover: var(--slider--color--hover, var(--_show--color));
-  --_slider--track--color: var(--slider--track--color, #{$white});
+  --_slider--color: var(--slider--color, var(--_show--accent--color2));
+  --_slider--color--hover: var(--slider--color--hover, var(--_show--accent--color2));
+  --_slider--track--color: var(--slider--track--color, var(--_show--accent--color1));
   --_slider--handle--color: var(--slider--handle--color, var(--_slider--color));
   --_slider--handle--color--hover: var(
     --slider--handle--color--hover,
@@ -344,7 +355,7 @@
   min-width: 100px;
   height: var(--_slider--height);
 
-  border: 2px solid var(--_slider--track--color);
+  outline: 4px solid $white;
   border-radius: 100vw;
 
   &::before {
@@ -356,8 +367,10 @@
     width: var(--_slider--handle--width);
     height: var(--_slider--height);
     background-color: var(--_slider--handle--color);
-    box-shadow: -100vw 0 0 100vw var(--_slider--color),
+    box-shadow: -100vw 0 0 calc(100vw - var(--_slider--handle--width) / 2) var(--_slider--color),
+      0 0 0 0.25rem $white,
       100vw 0 0 100vw var(--_slider--track--color);
+    border-radius: 999vw;
   }
 
   &[data-progress='0'] {
