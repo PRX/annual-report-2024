@@ -7,6 +7,7 @@
     const audio = wrapper.querySelector('audio');
     const button = wrapper.querySelector('button');
     const progressSliderInput = wrapper.querySelector('.show-audio--slider input');
+    const buttonIcon = button.querySelector('.play-icon');
 
     if (!(audio || button)) return;
 
@@ -72,10 +73,12 @@
       // initAudioContext();
       // renderFrame();
       wrapper.setAttribute('data-status', 'playing');
+      buttonIcon.setAttribute('aria-label', 'Pause');
     }
 
     function handlePause() {
       wrapper.setAttribute('data-status', 'paused');
+      buttonIcon.setAttribute('aria-label', 'Play');
     }
 
     function handleProgress(evt) {
