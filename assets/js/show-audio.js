@@ -1,8 +1,6 @@
 ((doc, win) => {
   const allShowAudio = doc.querySelectorAll('.show-audio');
 
-  console.log(allShowAudio);
-
   allShowAudio.forEach((wrapper) => {
     const audio = wrapper.querySelector('audio');
     const button = wrapper.querySelector('button');

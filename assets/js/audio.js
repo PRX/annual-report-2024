@@ -8,6 +8,4 @@
       if (!audio.paused) audio.pause();
     });
   };
-
-  console.log('all audio', allAudio);
 })(document, window);
