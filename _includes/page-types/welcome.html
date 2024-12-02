@@ -1,0 +1,40 @@
+<section id="{{ welcome.link.anchor | default: welcome.slug }}" class="container welcome">
+  <div class="welcome-header">
+    <h2 class="welcome-title">{{ welcome.title }}</h2>
+    {%- if welcome.quote -%}
+    <div class="welcome-quote">
+      {% include components/quote.html
+        text=welcome.quote.text
+        citation=welcome.quote.citation
+        image=welcome.quote.image
+        alt=welcome.quote.alt
+      %}
+    </div>
+    {%- endif -%}
+  </div>
+  <div class="welcome-main">
+    <div class="welcome-main--layout">
+      <div class="welcome-content">
+        {{ welcome.content }}
+      </div>
+    </div>
+  </div>
+  {%- if welcome.donor-quote or welcome.featured-image -%}
+  <div class="welcome-footer">
+    {%- if welcome.donor-quote -%}
+    <div class="welcome-donor-quote">
+      {% include components/quote.html
+        text=welcome.donor-quote.text
+        citation=welcome.donor-quote.citation
+      %}
+    </div>
+    {%- endif -%}
+
+    {%- if welcome.featured-image -%}
+    <figure class="welcome-featured-image">
+      {% picture show-featured-image {{ welcome.featured-image.url }} --alt {{ welcome.featured-image.alt }}  %}
+    </figure>
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+</section>

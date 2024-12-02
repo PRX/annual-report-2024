@@ -1,0 +1,98 @@
+.welcome {
+  --_welcome--gutter: var(--welcome--gutter, 4rem);
+  --_welcome--column-gap: var(--welcome---column-gap, 3rem);
+  --_welcome--row-gap: var(--welcome--row-gap, 2rem);
+  --_welcome--padding-x: var(--welcome--padding-x, 0);
+  --_welcome--padding-y: var(--welcome--padding-y, 3rem);
+  --_welcome--color: var(--welcome--color, #{$orange});
+  --_welcome--accent--color1: var(--show-logo--accent--color1, #{$yellow});
+  --_welcome--accent--color2: var(--show-logo--accent--color2, #{$cyan});
+
+  display: grid;
+  grid-template-columns: [full-width-start] 1fr [extra-wide-start] calc(var(--_welcome--gutter) / 2) [wide-start] calc(var(--_welcome--gutter) / 2) [welcome-start] minmax(min-welcome, 900px) [welcome-end] calc(var(--_welcome--gutter) / 2) [wide-end] calc(var(--_welcome--gutter) / 2) [extra-wide-end] 1fr [full-width-end];
+  row-gap: var(--_welcome--row-gap);
+  max-width: 100vw;
+
+  @media (min-width: 768px) {
+    --welcome--gutter: 6rem;
+  }
+
+  @media (min-width: 1600px) {
+    --welcome--gutter: 12rem;
+  }
+}
+
+.welcome-main {
+  grid-column: welcome;
+
+  container-name: welcome-main;
+  container-type: inline-size;
+}
+
+.welcome-main--layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main";
+  column-gap: var(--_welcome--column-gap);
+  row-gap: var(--_welcome--row-gap);
+}
+
+.welcome-header {
+  align-self: center;
+
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+    "title"
+    "quote";
+  max-width: 100vw;
+
+  justify-content: center;
+  align-content: start;
+  column-gap: var(--_content--column-gap);
+  row-gap: var(--_welcome--row-gap);
+
+  margin: 0;
+  text-align: center;
+}
+
+.welcome-title {
+  grid-area: title;
+  grid-column: wide;
+  justify-self: center;
+  margin-bottom: 0;
+}
+
+.welcome-quote {
+  grid-area: quote;
+}
+
+.welcome-content {
+  grid-area: main;
+
+  & > * {
+    margin: 0;
+
+    & + * {
+      margin-top: 1.25em;
+    }
+  }
+
+   & > blockquote p {
+    padding: var(--_welcome--row-gap) 0 var(--_welcome--row-gap) var(--_welcome--row-gap);
+    border-left: 3px dotted #{$orange};
+  }
+}
+
+.welcome-footer {
+  grid-column: full-width;
+
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: var(--_welcome--row-gap);
+
+  max-width: 100vw;
+}

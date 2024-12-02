@@ -7,6 +7,8 @@
   --_content--color: var(--content--color, #{$orange});
   --_content--bg--color--start: var(--content--bg--color--start, #{$white});
   --_content--bg--color--end: var(--content--bg--color--end, color-mix(in oklab, var(--_content--color) 10%, var(--_content--bg--color--start)));
+  --_content--accent--color1: var(--show-logo--accent--color1, #{$yellow});
+  --_content--accent--color2: var(--show-logo--accent--color2, #{$cyan});
 
   display: grid;
   grid-template-columns: [full-width-start] 1fr [extra-wide-start] calc(var(--_content--gutter) / 2) [wide-start] calc(var(--_content--gutter) / 2) [content-start] minmax(min-content, 900px) [content-end] calc(var(--_content--gutter) / 2) [wide-end] calc(var(--_content--gutter) / 2) [extra-wide-end] 1fr [full-width-end];
@@ -110,6 +112,21 @@
   grid-column: wide;
   justify-self: center;
   text-align: center;
+
+  blockquote.image {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, auto);
+    column-gap: var(--_content--column-gap);
+    row-gap: 0;
+
+    picture { grid-area: 1 / 1 / 3 / 2; }
+
+    img {
+      border-radius: 20px;
+      box-shadow: 10px -10px 0px 0px var(--_content--accent--color1), -10px 10px 0px 0px var(--_content--accent--color2);
+    }
+  }
 }
 
 .content-footer {

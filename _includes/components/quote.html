@@ -1,4 +1,7 @@
-<blockquote>
+<blockquote{% if include.image %} class="image"{% endif %}>
+  {%- if include.image -%}
+    {% picture {{ include.image }} --alt {{ include.alt }}  %}
+  {%- endif -%}
   <p class="quote-text">{{ include.text }}</p>
   {%- if include.citation -%}
   <cite class="quote-citation">{{ include.citation }}</cite>

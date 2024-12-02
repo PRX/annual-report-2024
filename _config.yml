@@ -75,7 +75,7 @@ collections_dir: collections
 collections:
   welcome:
     order:
-      - welcome.html
+      - ceo-letter.html
   shows:
     order:
       - the-recipe.html
@@ -94,7 +94,7 @@ collections:
   content:
     order:
       - vision-for-content.html
-      - donor-list.html
-      - planned-giving.html
       - awards-press.html
+      - planned-giving.html
+      - donor-list.html
       - finances.html
