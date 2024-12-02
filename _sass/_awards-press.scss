@@ -171,7 +171,8 @@
   }
 
   :where(h3) {
-    font-size: clamp(1.5rem, 5vw, 2em);
+    font-size: clamp(1.25rem, 5vw, 1.25em);
+    line-height: 1.25;
   }
 
   @container (width > 900px) {
