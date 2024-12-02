@@ -14,6 +14,33 @@
   </div>
   <div class="welcome-main">
     <div class="welcome-main--layout">
+      <div class="welcome-sidebar">
+        <div class="welcome-sidebar--layout">
+          {%- if welcome.image -%}
+          <div class="welcome-image">
+            {% picture {{ welcome.image.url }} --alt {{ welcome.image.alt }}  %}
+          </div>
+          {%- endif -%}
+          {%- if welcome.audio -%}
+          <div class="welcome-audio">
+            {% include components/audio-inline.html
+              url=welcome.audio.url
+              title=welcome.audio.title
+            %}
+            <button type="button" class="welcome-audio--button">
+              <span class="play-icon" aria-label="Play"></span>
+              <span class="welcome-audio--button--label">Featured Episode</span>
+              <span class="welcome-audio--button--title">{{welcome.audio.title}}</span>
+            </button>
+            <div class="welcome-audio--controls">
+              <span class="welcome-audio--slider">
+                <input type="range" defaultValue="0" min="0" max="1" step="0.01" />
+              </span>
+            </div>
+          </div>
+          {%- endif -%}
+        </div>
+      </div>
       <div class="welcome-content">
         {{ welcome.content }}
       </div>
@@ -32,7 +59,7 @@
 
     {%- if welcome.featured-image -%}
     <figure class="welcome-featured-image">
-      {% picture show-featured-image {{ welcome.featured-image.url }} --alt {{ welcome.featured-image.alt }}  %}
+      {% picture welcome-featured-image {{ welcome.featured-image.url }} --alt {{ welcome.featured-image.alt }}  %}
     </figure>
     {%- endif -%}
   </div>
