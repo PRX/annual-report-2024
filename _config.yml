@@ -63,6 +63,9 @@ compress_html:
   # ignore:
   #   envs: all
 
+sass:
+  style: compressed
+
 # Picture plugin configuration: https://rbuchberger.github.io/jekyll_picture_tag/users/configuration/
 picture:
   source: "assets"

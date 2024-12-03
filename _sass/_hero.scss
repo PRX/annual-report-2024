@@ -59,10 +59,18 @@ $hero--card-count: $hero--columns * $hero--rows;
   $bg-colors: $yellow, $navy, $orange, $cyan, $blue;
 
   --_hero-card--bg--color: #{$gray};
+  // Seed used to vary initial image and transition speed.
+  --_hero-card--seed: calc(hypot(var(--_hero-card--column), var(--_hero-card--row)) * var(--_hero-card--bg--color--index));
+  // How long it take to show an image.
+  --_hero-card--step-duration: calc(max(8s, var(--_hero-card--seed) * 1s + 2s));
+  // How long it takes for an image to be shown again.
+  --_hero-card--animation-duration:  calc(var(--hero-card--image-count) * var(--_hero-card--step-duration));
+  // Determine which image is shown first.
 
   grid-column: var(--_hero-card--column, 1);
   grid-row-start: var(--_hero-card--row, 1);
 
+  position: relative;
   display: grid;
   place-content: stretch;
   overflow: hidden;
@@ -74,6 +82,20 @@ $hero--card-count: $hero--columns * $hero--rows;
   border-radius: 20px;
 
   background-color: var(--_hero-card--bg--color);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background-color: inherit;
+
+    animation-name: hero-card-image-cross-fade;
+    animation-duration: var(--_hero-card--step-duration);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-delay: calc((var(--_hero-card--seed) * -1) * var(--_hero-card--step-duration));
+  }
 
   img {
     object-fit: cover;
@@ -174,22 +196,15 @@ $hero--card-count: $hero--columns * $hero--rows;
 }
 
 .hero-card-image {
-  // Seed used to vary initial image and transition speed.
-  --_hero-card-image--seed: calc(hypot(var(--_hero-card--column), var(--_hero-card--row)) * var(--_hero-card--bg--color--index));
-  // How long it take to show an image.
-  --_hero-card-image--step-duration: calc(max(8s, var(--_hero-card-image--seed) * 1s + 2s));
-  // How long it takes for an image to be shown again.
-  --_hero-card-image--animation-duration:  calc(var(--hero-card--image-count) * var(--_hero-card-image--step-duration));
-  // Determine which image is shown first.
-  --_hero-card-image--animation-delay: calc(((var(--hero-card-image--index) + var(--_hero-card-image--seed)) * -1) * var(--_hero-card-image--step-duration));
+  --_hero-card-image--animation-delay: calc(((var(--hero-card-image--index) + var(--_hero-card--seed)) * -1) * var(--_hero-card--step-duration));
 
   grid-row: 1 / -1;
   grid-column: 1 / -1;
 
-  animation-name: hero-card-image-select, hero-card-image-cross-fade;
-  animation-duration: var(--_hero-card-image--animation-duration), var(--_hero-card-image--step-duration);
+  animation-name: hero-card-image-select;
+  animation-duration: var(--_hero-card--animation-duration);
   animation-iteration-count: infinite;
-  animation-timing-function: steps(var(--hero-card--image-count), jump-none), linear;
+  animation-timing-function: steps(var(--hero-card--image-count), jump-none);
   animation-delay: var(--_hero-card-image--animation-delay);
 
   display: grid;
@@ -197,7 +212,7 @@ $hero--card-count: $hero--columns * $hero--rows;
 
   img {
     animation-name: hero-card-image-zoom;
-    animation-duration: var(--_hero-card-image--step-duration);
+    animation-duration: var(--_hero-card--step-duration);
     animation-iteration-count: infinite;
     animation-timing-function: ease;
     animation-delay: var(--_hero-card-image--animation-delay);
@@ -231,10 +246,10 @@ $hero--card-count: $hero--columns * $hero--rows;
 // Animation to smooth out visibility of image and add some time for showing the background color.
 @keyframes hero-card-image-cross-fade {
   0%, 60%, 100% {
-    opacity: 0%;
+    opacity: 100%;
   }
   20%, 40% {
-    opacity: 100%;
+    opacity: 0%;
   }
 }
 
