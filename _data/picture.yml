@@ -20,11 +20,13 @@ presets:
     size: 100vw
 
   hero-card:
+    formats: [webp, original]
     crop: 9:11 entropy
     base_width: 304 # How wide the 1x image should be. Styled to be 270, but zooms to 1.125x.
     pixel_ratios: [1, 1.5, 2] # Which multipliers to target.
 
   show-tile:
+    formats: [webp, original]
     widths: [100, 200, 300, 400, 500]
     fallback_width: 300 # The default is 800, which is probably too big.
     size: calc(10vw - 0.5rem)
@@ -34,6 +36,7 @@ presets:
     dimension_attributes: true
 
   show-logo-featured:
+    formats: [webp, original]
     widths: [250, 300, 360, 416]
     fallback_width: 300 # The default is 800, which is probably too big.
     size: calc(100vw - 8rem)
@@ -44,6 +47,7 @@ presets:
     dimension_attributes: true
 
   show-featured-image:
+    formats: [webp, original]
     widths: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1600]
     fallback_width: 500 # The default is 800, which is probably too big.
     size: 100vw
@@ -53,6 +57,7 @@ presets:
     dimension_attributes: true
 
   mosaic-image:
+    formats: [webp, original]
     widths: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1600]
     fallback_width: 500 # The default is 800, which is probably too big.
     size: 50vw
