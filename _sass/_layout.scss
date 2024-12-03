@@ -20,6 +20,7 @@ body {
 a:link,
 a:visited {
   color: $blue;
+  text-underline-offset: 0.125em;
 
   &.orange {
     color: $orange;

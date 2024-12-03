@@ -22,8 +22,9 @@
   </section>
 
   <div class="welcomes">
-    <h2>Welcome from our CEO</h2>
-    <p>TBD</p>
+    {% for welcome in site.welcome %}
+      {% include page-types/welcome.html %}
+    {% endfor %}
   </div>
 
   <div class="stats">
