@@ -38,6 +38,8 @@ quote:
         <dt class="donor--name">{{ donor.label }}</dt>
         {%- if donor.location -%}
         <dd class="donor--location">{{ donor.location }}</dd>
+        {%- else -%}
+        <dd class="donor--none">Anonymous Location</dd>
         {%- endif -%}
       </dl>
     </li>

@@ -19,11 +19,7 @@
     {%- capture attrs %}{{ attrs }} data-color="{{- info_tile.color -}}"{% endcapture -%}
   {%- endif -%}
   <div class="info-tile"{{ attrs }}>
-  {%- if include.heading -%}
-    <h4>{{ info_tile.heading }}</h4>
-  {%- else -%}
     <h3>{{ info_tile.heading }}</h3>
-  {%- endif -%}
     <p>{{ info_tile.description }}</p>
   </div>
 {%- endfor -%}
