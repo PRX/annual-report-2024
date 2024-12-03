@@ -1,10 +1,10 @@
 ((doc, win) => {
-  const allShowAudio = doc.querySelectorAll('.show-audio');
+  const allShowAudio = doc.querySelectorAll(':where(.show-audio, .welcome-audio)');
 
   allShowAudio.forEach((wrapper) => {
     const audio = wrapper.querySelector('audio');
     const button = wrapper.querySelector('button');
-    const progressSliderInput = wrapper.querySelector('.show-audio--slider input');
+    const progressSliderInput = wrapper.querySelector(':where(.show-audio--slider, .welcome-audio--slider) input');
     const buttonIcon = button.querySelector('.play-icon');
 
     if (!(audio || button)) return;
