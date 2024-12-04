@@ -12,9 +12,9 @@ presets:
     formats: [webp, original] # Order matters!
     widths: [200, 400, 800, 1200, 1600] # Image widths, in pixels.
     format_quality:
-      webp: 90
-      avif: 90
-      jp2: 90
+      webp: 100
+      avif: 100
+      jp2: 100
 
   full_width:
     size: 100vw
@@ -24,6 +24,10 @@ presets:
     crop: 9:11 entropy
     base_width: 304 # How wide the 1x image should be. Styled to be 270, but zooms to 1.125x.
     pixel_ratios: [1, 1.5, 2] # Which multipliers to target.
+    format_quality:
+      webp: 100
+      avif: 100
+      jp2: 100
 
   show-tile:
     formats: [webp, original]
@@ -34,6 +38,10 @@ presets:
       tablet: 100px
     formats:  [webp, original]
     dimension_attributes: true
+    format_quality:
+      webp: 100
+      avif: 100
+      jp2: 100
 
   show-logo-featured:
     formats: [webp, original]
@@ -45,6 +53,10 @@ presets:
       laptop: 360px
     formats:  [webp, original]
     dimension_attributes: true
+    format_quality:
+      webp: 100
+      avif: 100
+      jp2: 100
 
   show-featured-image:
     formats: [webp, original]
@@ -55,6 +67,10 @@ presets:
       wide: 1600px
     formats:  [webp, original]
     dimension_attributes: true
+    format_quality:
+      webp: 100
+      avif: 100
+      jp2: 100
 
   mosaic-image:
     formats: [webp, original]
@@ -68,3 +84,7 @@ presets:
       desktop: 530px
     formats:  [webp, original]
     dimension_attributes: true
+    format_quality:
+      webp: 100
+      avif: 100
+      jp2: 100

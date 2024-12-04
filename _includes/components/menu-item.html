@@ -3,12 +3,6 @@
     <a
       href="{{ include.href }}"
       class="menu-link icon {{ include.color }}"
-      {%- if include.target -%}
-        target="{{ include-target }}"
-      {%- endif -%}
-      {%- if include.campaign-id -%}
-        data-donate-campaign-id="{{ include.campaign-id }}"
-      {%- endif -%}
     >
       <span class="material-icons" aria-label="{{ include.aria-label }}">{{ include.icon }}</span>
       <span>{{ include.label }}</span>
