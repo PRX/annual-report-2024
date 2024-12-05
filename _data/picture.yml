@@ -2,10 +2,10 @@
 
 media_queries:
     mobile: 'max-width: 480px'
-    tablet: 'max-width: 768'
+    tablet: 'max-width: 768px'
     laptop: 'max-width: 1024px'
-    desktop: 'max-width: 1200'
-    wide: 'min-width: 1201'
+    desktop: 'max-width: 1200px'
+    wide: 'min-width: 1201px'
 
 presets:
   default:
@@ -82,6 +82,20 @@ presets:
       tablet: 325px
       laptop: 450px
       desktop: 530px
+    formats:  [webp, original]
+    dimension_attributes: true
+    format_quality:
+      webp: 100
+      avif: 100
+      jp2: 100
+
+  content-image:
+    formats: [webp, original]
+    widths: [250, 300, 360, 416]
+    fallback_width: 300 # The default is 800, which is probably too big.
+    size: calc(100vw - 8rem)
+    sizes:
+      tablet: 300px
     formats:  [webp, original]
     dimension_attributes: true
     format_quality:

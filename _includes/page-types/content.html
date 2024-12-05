@@ -32,7 +32,7 @@
 
     {%- if content.featured-image -%}
     <figure class="content-featured-image">
-      {% picture show-featured-image {{ content.featured-image.url }} --alt {{ content.featured-image.alt }}  %}
+      {% picture content-image {{ content.featured-image.url }} --alt {{ content.featured-image.alt }}  %}
     </figure>
     {%- endif -%}
   </div>

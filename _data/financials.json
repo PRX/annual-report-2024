@@ -75,7 +75,7 @@
     "color": "orange",
     "positions": [
       {
-        "value": "auto / 1 / span 3 / -1"
+        "value": "auto / 1 / span 4 / -1"
       },
       {
         "breakpoint": "sm",
@@ -90,7 +90,7 @@
     "color": "cyan",
     "positions": [
       {
-        "value": "auto / 1 / span 3 / -1"
+        "value": "auto / 1 / span 4 / -1"
       },
       {
         "breakpoint": "sm",
