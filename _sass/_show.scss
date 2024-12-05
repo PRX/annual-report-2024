@@ -419,6 +419,12 @@
   max-width: 100vw;
 }
 
+.show-video {
+  grid-column: wide;
+  justify-self: center;
+  text-align: center;
+}
+
 .show-mosaic {
   grid-column: wide;
 
