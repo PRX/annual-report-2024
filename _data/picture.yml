@@ -89,7 +89,7 @@ presets:
       avif: 100
       jp2: 100
 
-  content-image:
+  quote-image:
     formats: [webp, original]
     widths: [250, 300, 360, 416]
     fallback_width: 300 # The default is 800, which is probably too big.
