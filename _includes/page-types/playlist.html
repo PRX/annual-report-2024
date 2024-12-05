@@ -6,18 +6,13 @@
 
     <div class="flex justify-center">
       <ul class="subscribe-list list-inline">
+        {% for link in site.data.subscribe_links %}
         <li>
-          <a href="#" class="orange"><span class="material-icons">apple</span></a>
+          <a href="{{ link.url }}" title="{{ link.label }}">
+            <img class="subscribe--link" src="/assets/img/icons/{{ link.svg }}" alt="{{ link.label }}" />
+          </a>
         </li>
-        <li>
-          <a href="#" class="orange"><span class="material-icons">spotify</span></a>
-        </li>
-        <li>
-          <a href="https://episodes.fm/1783622485" class="orange"><span class="material-icons">Episodes.FM</span></a>
-        </li>
-        <li>
-          <a href="#" class="orange"><span class="material-icons">rss_feed</span></a>
-        </li>
+        {% endfor %}
       </ul>
     </div>
 
