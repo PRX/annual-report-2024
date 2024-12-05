@@ -60,6 +60,14 @@
     </div>
     {%- endif -%}
 
+    {%- if show.video -%}
+    <div class="show-video">
+      {% include components/video.html
+        url=show.video.url
+      %}
+    </div>
+    {%- endif -%}
+
     {%- if show.mosaic -%}
     {%- assign mosaic = show.mosaic -%}
     <div class="show-mosaic">

@@ -30,7 +30,7 @@
     ]
   },
   {
-    "heading": "$1,815,549",
+    "heading": "$4,906,133",
     "description": "Grants",
     "type": "revenue",
     "color": "yellow",
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "heading": "$1,474,295",
+    "heading": "$2,446,097",
     "description": "Individual Gifts",
     "type": "revenue",
     "color": "blue",
@@ -75,7 +75,7 @@
     "color": "orange",
     "positions": [
       {
-        "value": "auto / 1 / span 3 / -1"
+        "value": "auto / 1 / span 4 / -1"
       },
       {
         "breakpoint": "sm",
@@ -90,7 +90,7 @@
     "color": "cyan",
     "positions": [
       {
-        "value": "auto / 1 / span 3 / -1"
+        "value": "auto / 1 / span 4 / -1"
       },
       {
         "breakpoint": "sm",
