@@ -95,6 +95,7 @@
   grid-column: wide;
   justify-self: center;
   margin-bottom: 0;
+  text-wrap: balance;
 }
 
 .show-quote {
@@ -115,6 +116,7 @@
   blockquote {
     padding: calc(var(--_show--row-gap) / 1.5);
     border-left: 3px dotted var(--_show--accent--color1);
+    text-wrap: balance;
   }
 }
 
@@ -444,6 +446,7 @@
   grid-column: wide;
   justify-self: center;
   text-align: center;
+  text-wrap: balance;
 
   .quote-text {
     &::before {

@@ -84,6 +84,7 @@
   grid-column: wide;
   justify-self: center;
   margin-bottom: 0;
+  text-wrap: balance;
 }
 
 .content-quote {
@@ -112,11 +113,14 @@
   grid-column: wide;
   justify-self: center;
   text-align: center;
+  text-wrap: balance;
 
   blockquote.image {
     display: grid;
     column-gap: var(--_content--column-gap);
     row-gap: var(--_content--row-gap);
+
+    text-wrap: balance;
 
     img {
       border-radius: 20px;
@@ -143,6 +147,7 @@
   grid-column: wide;
   justify-self: center;
   text-align: center;
+  text-wrap: balance;
 
   .quote-text {
     &::before {
