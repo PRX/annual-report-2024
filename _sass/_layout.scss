@@ -131,4 +131,8 @@ blockquote {
 .quote-citation {
   font-size: .875rem;
   font-weight: bold;
+
+  .show-audio + & {
+    @include visually-hidden;
+  }
 }
