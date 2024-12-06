@@ -9,6 +9,25 @@
         image=content.quote.image
         alt=content.quote.alt
       %}
+
+      {%- if content.audio -%}
+      <div class="show-audio">
+        {% include components/audio-inline.html
+          url=content.audio.url
+          title=content.audio.title
+        %}
+        <button type="button" class="show-audio--button">
+          <span class="play-icon" aria-label="Play"></span>
+          <span class="show-audio--button--label">Listen to the quote</span>
+          <span class="show-audio--button--title">{{content.audio.title}}</span>
+        </button>
+        <div class="show-audio--controls">
+          <span class="show-audio--slider">
+            <input id="progress-bar" type="range" defaultValue="0" min="0" max="1" step="0.01" aria-label="Player Progress" />
+          </span>
+        </div>
+      </div>
+      {%- endif -%}
     </div>
     {%- endif -%}
   </div>

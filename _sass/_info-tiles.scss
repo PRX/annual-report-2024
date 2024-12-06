@@ -6,6 +6,10 @@ $info-tile-grid-breakpoints: (
   'xl': '1440px'
 );
 
+.stats--header {
+  text-align: center;
+}
+
 $info-tile-grid-columns: 12;
 
 .info-tile-grid {
