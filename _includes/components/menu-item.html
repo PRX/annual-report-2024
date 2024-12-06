@@ -1,16 +1,12 @@
 <li class="menu-item">
-  {%- if include.icon -%}
     <a
       href="{{ include.href }}"
       class="menu-link icon {{ include.color }}"
     >
-      <span class="material-icons" aria-label="{{ include.aria-label }}">{{ include.icon }}</span>
+      {%- if include.icon -%}
+        {%- capture icon_path %}svg/icons/{{ include.icon }}.svg{% endcapture -%}
+        {% include {{ icon_path }} %}
+      {%- endif -%}
       <span>{{ include.label }}</span>
     </a>
-  {%- else -%}
-    <a
-      href="{{ include.href }}"
-      class="menu-link {{ include.color }}"
-    >{{ include.label }}</a>
-  {%- endif -%}
 </li>

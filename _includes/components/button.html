@@ -1,3 +1,4 @@
 <button id="{{ include.id }}" class="btn {{ include.color }}">
-  <span class="material-icons">{{ include.icon }}</span>
+  {%- capture icon_path %}svg/icons/{{ include.icon }}.svg{% endcapture -%}
+  {% include {{ icon_path }} %}
 </button>

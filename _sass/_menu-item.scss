@@ -7,6 +7,10 @@
   justify-content: space-between;
   border-bottom: 1px solid $border-color;
   list-style: none;
+
+  svg {
+    fill: currentColor;
+  }
 }
 
 .menu-link {
@@ -14,16 +18,16 @@
   --_menu-link-background-color--hover: var(--menu-link-background-color--hover, #{mix(white, $cyan, 10%)});
   --_menu-link-text-color: var(--menu-link-text-color, #{$navy});
   --_menu-link-text-color--hover: var(--menu-link-text-color--hover, var(--_menu-link-text-color));
-  
+
   display: flex;
   align-items: center;
   width: 100%;
   gap: 0.25rem;
   padding: 0.5rem 1rem;
-  
+
   background-color: var(--_menu-link-background-color);
   color: var(--_menu-link-text-color);
-  
+
   text-decoration: none;
 
   &:link,
@@ -50,7 +54,7 @@
     --menu-link-background-color: #{$yellow};
     --menu-link-background-color--hover: #{mix(white, $yellow, 25%)};
   }
-  
+
 
   &.light-blue {
     --menu-link-background-color: #{$cyan-a-10};
