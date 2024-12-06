@@ -40,14 +40,15 @@
 <script defer type="text/javascript" src="assets/js/show-audio.js"></script>
 
 <!-- Menu -->
-<script defer type="text/javascript" src="assets/js/menu.js?cb=2024-12-05 19:35:03 +0000"></script>
+<script defer type="text/javascript" src="assets/js/menu.js?cb=2024-12-06 15:58:59 +0000"></script>
 </head>
 
 <body>
   <header class="navbar">
     <nav>
       <button popovertarget="navDrawerPopover" class="btn white">
-        <span class="material-icons">menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+
       </button>
       <a href="#top" class="prx-logo" aria-label="Back to the top of the Annual Report">
         <svg width="100" height="30" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,12 +64,14 @@
       <a
   href="#playlist"
   class="btn yellow"
-><span class="material-icons" aria-label="hidden">playlist_play</span><span class="label">Playlist</span></a>
+><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-320v-80h320v80H120Zm0-160v-80h480v80H120Zm0-160v-80h480v80H120Zm520 520v-320l240 160-240 160Z"/></svg>
+<span class="label">Playlist</span></a>
 
       <a
   href="https://give.prx.org/give/323700/#!/donation/checkout?c_src=donate_home?c_src=Referral&c_src2=AR-2024"
   class="btn cyan"
-><span class="material-icons" aria-label="hidden">favorite</span><span class="label">Donate</span></a>
+><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
+<span class="label">Donate</span></a>
 
     </nav>
 </header>
@@ -11985,7 +11988,7 @@
 
           </div><div class="welcome-audio">
             <audio class="audio-inline" controls preload="none">
-  <source src="" type="audio/mpeg">
+  <source src="https://dovetail.prxu.org/9003/772f1c0e-9be0-4f68-99a6-53f8f3fb9c76/CEO_message_Dec_2024_diversity.mp3" type="audio/mpeg">
   <em>Your browser does not support the audio element.</em>
 </audio>
 
@@ -14523,18 +14526,38 @@ Chief Executive Officer</p>
 
   <div class="content-wrapper">
     <h2>Listen to the 2024 PRX Annual Report podcast playlist</h2>
-    <p>Each show featured in this year&rsquo;s report includes an audio clip representing some of the best work we wanted you to hear this year. We have compiled these episodes into a podcast playlist. <strong><em>Subscribe where ever podcasts are found.</em></strong></p>
+    <p>Each show featured in this year&rsquo;s report includes an audio clip representing some of the best work we wanted you to hear this year. We have compiled these episodes into a podcast playlist.</p>
 
-    <div class="flex justify-center">
-      <ul class="subscribe-list list-inline">
-        <li>
-          <a href="#" class="orange"><span class="material-icons">rss_feed</span></a>
-        </li>
-        <li>
-          <a href="#" class="orange"><span class="material-icons">rss_feed</span></a>
-        </li>
-      </ul>
-    </div>
+    <nav class="subscribe--nav">
+      <h3>Subscribe wherever you get your podcasts.</h3>
+      <div class="subscribe--list">
+      
+        <a href="https://podcasts.apple.com/us/podcast/prx-annual-report-playlist/id1783622485" title="Apple Podcasts" class="subscribe--link">
+          <img src="/assets/img/icons/apple.svg" alt="Apple Podcasts" />
+        </a>
+      
+        <a href="https://open.spotify.com/show/3dQfbAnQEhNPo3ARrsYxs2" title="Spotify" class="subscribe--link">
+          <img src="/assets/img/icons/spotify.svg" alt="Spotify" />
+        </a>
+      
+        <a href="https://pca.st/39tca8p4" title="PocketCasts" class="subscribe--link">
+          <img src="/assets/img/icons/pocketcasts.svg" alt="PocketCasts" />
+        </a>
+      
+        <a href="https://overcast.fm/login" title="Overcast" class="subscribe--link">
+          <img src="/assets/img/icons/overcast.svg" alt="Overcast" />
+        </a>
+      
+        <a href="https://podcastaddict.com/podcast/prx-annual-report-playlist/5551722" title="Podcast Addict" class="subscribe--link">
+          <img src="/assets/img/icons/podcastaddict.svg" alt="Podcast Addict" />
+        </a>
+      
+        <a href="https://tunein.com/search/?query=PRX%20Annual%20Report%20Playlist" title="TuneIn" class="subscribe--link">
+          <img src="/assets/img/icons/tunein.svg" alt="TuneIn" />
+        </a>
+      
+      </div>
+    </nav>
 
     <div class="playlist-wrapper">
       <iframe
@@ -14544,7 +14567,7 @@ Chief Executive Officer</p>
         width="100%"
         style="min-width: 300px;"
         title="2024 PRX Annual Report Podcast Playlist"
-        src="https://play.prx.org/e?th=light&ac=8CD2F4&ac=FB9306&ac=FEC400&ac=0873A9&sp=all&uf=https%3A%2F%2Fpublicfeeds.net%2Ff%2F284%2Ffeed-rss.xml"
+        src="https://play.prx.org/e?se=2024&th=light&ac=8CD2F4&ac=FB9306&ac=FEC400&ac=0873A9&sp=all&uf=https%3A%2F%2Fpublicfeeds.net%2Ff%2F9003%2Ffeed-rss.xml"
       ></iframe>
     </div>
 
@@ -14554,186 +14577,248 @@ Chief Executive Officer</p>
 
   <nav id="navDrawerPopover" class="nav-drawer" popover>
   <ul class="menu" role="list">
-    <li class="menu-item"><a
+    <li class="menu-item">
+    <a
       href="#intro"
-      class="menu-link white"
-    >Introduction</a></li>
+      class="menu-link icon white"
+    ><span>Introduction</span>
+    </a>
+</li>
 
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#ceo-letter"
-      class="menu-link white"
-    >CEO Letter</a></li>
+      class="menu-link icon white"
+    ><span>CEO Letter</span>
+    </a>
+</li>
 
     
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#the-recipe"
-      class="menu-link "
-    >The Recipe</a></li>
+      class="menu-link icon "
+    ><span>The Recipe</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#ear-hustle"
-      class="menu-link "
-    >Ear Hustle</a></li>
+      class="menu-link icon "
+    ><span>Ear Hustle</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#the-world"
-      class="menu-link "
-    >The World</a></li>
+      class="menu-link icon "
+    ><span>The World</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#reveal"
-      class="menu-link "
-    >Reveal</a></li>
+      class="menu-link icon "
+    ><span>Reveal</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#monumental"
-      class="menu-link "
-    >Monumental</a></li>
+      class="menu-link icon "
+    ><span>Monumental</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#snap-judgment"
-      class="menu-link "
-    >Snap Judgment</a></li>
+      class="menu-link icon "
+    ><span>Snap Judgment</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#the-big-dig"
-      class="menu-link "
-    >The Big Dig</a></li>
+      class="menu-link icon "
+    ><span>The Big Dig</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#song-exploder"
-      class="menu-link "
-    >Song Exploder</a></li>
+      class="menu-link icon "
+    ><span>Song Exploder</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#weight-for-it"
-      class="menu-link "
-    >Weight for It</a></li>
+      class="menu-link icon "
+    ><span>Weight for It</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#marfa-for-beginners"
-      class="menu-link "
-    >Marfa for Beginners</a></li>
+      class="menu-link icon "
+    ><span>Marfa for Beginners</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#normal-gossip"
-      class="menu-link "
-    >Normal Gossip</a></li>
+      class="menu-link icon "
+    ><span>Normal Gossip</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#left-right-center"
-      class="menu-link "
-    >Left, Right &amp; Center</a></li>
+      class="menu-link icon "
+    ><span>Left, Right &amp; Center</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#second-sunday"
-      class="menu-link "
-    >Second Sunday</a></li>
+      class="menu-link icon "
+    ><span>Second Sunday</span>
+    </a>
+</li>
 
     
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#vision-for-content"
-      class="menu-link "
-    >Vision for Content</a></li>
+      class="menu-link icon "
+    ><span>Vision for Content</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#awards-press"
-      class="menu-link "
-    >Awards &amp; Press</a></li>
+      class="menu-link icon "
+    ><span>Awards &amp; Press</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#planned-giving"
-      class="menu-link "
-    >Planned Giving</a></li>
+      class="menu-link icon "
+    ><span>Planned Giving</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#donor-list"
-      class="menu-link "
-    >Donor List</a></li>
+      class="menu-link icon "
+    ><span>Donor List</span>
+    </a>
+</li>
 
     
       
       
-      <li class="menu-item"><a
+      <li class="menu-item">
+    <a
       href="#finances"
-      class="menu-link "
-    >Finances</a></li>
+      class="menu-link icon "
+    ><span>Finances</span>
+    </a>
+</li>
 
     
 
-    <li class="menu-item"><a
+    <li class="menu-item">
+    <a
       href="#playlist"
       class="menu-link icon yellow"
-    >
-      <span class="material-icons" aria-label="hidden">playlist_play</span>
-      <span>Podcast Playlist</span>
-    </a></li>
+    ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-320v-80h320v80H120Zm0-160v-80h480v80H120Zm0-160v-80h480v80H120Zm520 520v-320l240 160-240 160Z"/></svg>
+<span>Podcast Playlist</span>
+    </a>
+</li>
 
 
-    <li class="menu-item"><a
+    <li class="menu-item">
+    <a
       href="https://give.prx.org/give/323700/#!/donation/checkout?c_src=donate_home?c_src=Referral&c_src2=AR-2024"
       class="menu-link icon cyan"
-    >
-      <span class="material-icons" aria-label="hidden">favorite</span>
-      <span>Donate</span>
-    </a></li>
+    ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
+<span>Donate</span>
+    </a>
+</li>
 
   </ul>
 </nav>
