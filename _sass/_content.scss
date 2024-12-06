@@ -9,7 +9,10 @@
   --_content--bg--color--end: var(--content--bg--color--end, color-mix(in oklab, var(--_content--color) 10%, var(--_content--bg--color--start)));
   --_content--accent--color1: var(--show-logo--accent--color1, #{$yellow});
   --_content--accent--color2: var(--show-logo--accent--color2, #{$cyan});
+
   --show--color: var(--_content--color);
+  --show--accent--color1: var(--_content--accent--color1);
+  --show--accent--color2: var(--_content--accent--color2);
 
   display: grid;
   grid-template-columns: [full-width-start] 1fr [extra-wide-start] calc(var(--_content--gutter) / 2) [wide-start] calc(var(--_content--gutter) / 2) [content-start] minmax(min-content, 900px) [content-end] calc(var(--_content--gutter) / 2) [wide-end] calc(var(--_content--gutter) / 2) [extra-wide-end] 1fr [full-width-end];

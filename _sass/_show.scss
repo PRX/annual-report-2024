@@ -161,8 +161,10 @@
 .show-audio {
   grid-area: audio;
 
-  display: grid;
+  display: inline-grid;
   isolation: isolate;
+
+  margin-inline: auto;
 
   &[data-status] {
     .audio-inline {
@@ -177,6 +179,8 @@
 .show-audio--button {
   --_show-audio--button--progress: var(--progress, 0.345);
   --_show-audio--button--border-radius: 1rem;
+  --_show-audio--button--bg-color: var(--show-audio--button--bg-color, var(--show--accent--color1, var(--_show--accent--color1)));
+  --_show-audio--button--progress--color: var(--show-audio--button--bg-color, var(--show--accent--color2, var(--_show--accent--color2)));
 
   appearance: unset;
 
@@ -186,7 +190,6 @@
   isolation: isolate;
   display: none;
   grid-template-columns: 3rem 1fr;
-  grid-template-rows: min-content 1fr;
   column-gap: 0.75rem;
   row-gap: 0.25rem;
   align-items: center;
@@ -204,6 +207,10 @@
   font-size: 0.875rem;
   text-align: left;
 
+  &:has(.show-audio--button--label) {
+    grid-template-rows: min-content 1fr;
+  }
+
   &::after {
     --_inset: 0.25rem;
 
@@ -217,17 +224,17 @@
   }
 
   &:where(:hover, :focus-visible) {
-    --play-icon--color: var(--_show--accent--color2);
+    --play-icon--color: var(--show--accent--color2, var(--_show--accent--color2));
   }
 
   &:where(:focus-visible) {
     outline: var(--_show--accent--color2) solid 0.325rem;
     outline-offset: 0.125rem;
-    background-color: var(--_show--accent--color1);
+    background-color: var(--_show-audio--button--bg-color);
   }
 
   [data-status]:not([data-status="ready"]) & {
-    background-color: var(--_show--accent--color1);
+    background-color: var(--_show-audio--button--bg-color);
 
     &::before {
       content: '';
@@ -243,12 +250,12 @@
       border: 0.25rem solid $white;
       border-radius: 1rem;
 
-      background-color: var(--_show--accent--color2);
+      background-color: var(--_show-audio--button--progress--color);
     }
   }
 
   .play-icon {
-    --_play-icon--color: var(--play-icon--color, var(--_show--accent--color1));
+    --_play-icon--color: var(--play-icon--color, var(--show--accent--color1, var(--_show--accent--color1)));
 
     transition: background-color 200ms;
 
@@ -312,6 +319,8 @@
 }
 
 .show-audio--controls {
+  --_controls--bg-color: var(--controls--bg-color, var(--show--color, var(--_show--color)));
+
   transition: transform 200ms;
 
   position: relative;
@@ -326,7 +335,7 @@
 
   border-radius: 0 0 1rem 1rem;
 
-  background-color: var(--_show--color);
+  background-color: var(--_controls--bg-color);
 
   [data-status="playing"] & {
     transform: translateY(0);
@@ -335,9 +344,9 @@
 
 .show-audio--slider {
   --_slider--progress: var(--progress, 0.345);
-  --_slider--color: var(--slider--color, var(--_show--accent--color2));
-  --_slider--color--hover: var(--slider--color--hover, var(--_show--accent--color2));
-  --_slider--track--color: var(--slider--track--color, var(--_show--accent--color1));
+  --_slider--color: var(--slider--color, var(--show--accent--color2, var(--_show--accent--color2)));
+  --_slider--color--hover: var(--slider--color--hover, var(--show--accent--color2, var(--_show--accent--color2)));
+  --_slider--track--color: var(--slider--track--color, var(--show--accent--color1, var(--_show--accent--color1)));
   --_slider--handle--color: var(--slider--handle--color, var(--_slider--color));
   --_slider--handle--color--hover: var(
     --slider--handle--color--hover,
