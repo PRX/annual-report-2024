@@ -4,7 +4,7 @@
   --_welcome--row-gap: var(--welcome--row-gap, var(--content---row-gap, 4rem));
   --_welcome--padding-y: var(--welcome--padding-y, var(--content--padding-y, 3rem));
   --_welcome--color: var(--welcome--color, #{$orange});
-  --_welcome--bg--color: var(--welcome--bg--color, #{$white});
+  --_welcome--bg--color: var(--welcome--bg--color, #{$navy});
   --_welcome--accent--color1: var(--welcome-image--accent--color1, #{$yellow});
   --_welcome--accent--color2: var(--welcome-image--accent--color2, #{$cyan});
 
@@ -112,7 +112,8 @@
 
   blockquote {
     padding: calc(var(--_welcome--row-gap) / 1.5);
-    border-left: 3px dotted var(--_welcome--accent--color1);
+    border-left: 3px dotted $orange;
+    color: $orange;
   }
 }
 
